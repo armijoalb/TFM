@@ -14,10 +14,13 @@
 \BOOKMARK [1][-]{section.3.2}{Arquitectura}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.3}{Justificaci\363n}{chapter.3}% 15
 \BOOKMARK [0][-]{chapter.4}{Oversampling para clasificaci\363n de series temporales}{}% 16
-\BOOKMARK [0][-]{chapter.5}{Tratamiento de series temporales de clasificaci\363n multivariadas}{}% 17
-\BOOKMARK [0][-]{chapter.6}{Marco Experimental}{}% 18
-\BOOKMARK [1][-]{section.6.1}{Datasets}{chapter.6}% 19
-\BOOKMARK [1][-]{section.6.2}{Medidas utilizadas}{chapter.6}% 20
-\BOOKMARK [1][-]{section.6.3}{Par\341metros de la red}{chapter.6}% 21
-\BOOKMARK [0][-]{chapter.7}{Resultados y discusi\363n}{}% 22
-\BOOKMARK [0][-]{chapter.8}{Conclusiones y trabajos futuros}{}% 23
+\BOOKMARK [1][-]{section.4.1}{SMOTE}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{MWMOTE}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.3}{ADASYN}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Tratamiento de series temporales de clasificaci\363n multivariadas}{}% 20
+\BOOKMARK [0][-]{chapter.6}{Marco Experimental}{}% 21
+\BOOKMARK [1][-]{section.6.1}{Datasets}{chapter.6}% 22
+\BOOKMARK [1][-]{section.6.2}{Medidas utilizadas}{chapter.6}% 23
+\BOOKMARK [1][-]{section.6.3}{Par\341metros de la red}{chapter.6}% 24
+\BOOKMARK [0][-]{chapter.7}{Resultados y discusi\363n}{}% 25
+\BOOKMARK [0][-]{chapter.8}{Conclusiones y trabajos futuros}{}% 26
