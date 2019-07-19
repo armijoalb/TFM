@@ -29,7 +29,7 @@ Pongamos el caso de un problema de clasificación binario, en la que los datos s
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=90mm]{imagenes/conf-matrix.png}
-	\label{fig:13}
+	\label{fig:61}
 	\caption{Ejemplo matriz de confusión.}
 \end{figure}
 
@@ -63,7 +63,7 @@ La última medida es AUC (Area Under Curve), esta medida representa el área baj
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=90mm]{imagenes/auc.png}
-	\label{fig:14}
+	\label{fig:62}
 	\caption{Ejemplo curva ROC.}
 \end{figure}
 \verticalspace
@@ -80,7 +80,7 @@ La red básica utilizada está formada por dos capas; una capa formada por 32 LS
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=100mm]{imagenes/Estructura_Red.png}
-	\label{fig:15}
+	\label{fig:63}
 \end{figure}
 \verticalspace
 Cuando se define la capa de LSTM, se debe especificar el tamaño de la entrada que tendrá la LSTM; como en el caso de este estudio se utilizan diferentes tamaños de ventana, el tamaño de la entrada para la LSTM se especifica como $(1, tamventana * nseries )$, de esta forma cada LSTM procesa una ventana de información en cada momento.\newline
