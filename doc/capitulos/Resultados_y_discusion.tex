@@ -1,4 +1,6 @@
 \chapter{Resultados y discusión}
+En este apartado se mostrarán los resultados obtenidos por los modelos en cada uno de los conjuntos de datos y se discutirá el rendimiento de cada uno de los modelos, tras esto, se mostrará una tabla comparativa de cada uno de los modelos con todos los conjuntos de datos y se analizará el rendimiento general de cada uno de los modelos.\newline
+
 \section{FaceAll}
 \begin{table}[h]
 	\begin{adjustbox}{max width=15cm}
@@ -35,8 +37,8 @@
 			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\label{tab:FaceAllBase}
 	\caption{Resultados Base FaceAll.}
+	\label{tab:faceAllBase}
 \end{table}
 
 \newpage
@@ -44,120 +46,122 @@
 	\centering
 	\begin{adjustbox}{max width=15cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
-			\hline
-			\textbf{Tam. Ventana} &         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
-			\hline
-			\textbf{AUC} & LSTM &  0.9626 &  0.9240 &  0.9200 &  0.9121 &  0.9268 &  0.9292 &  0.9379 &  0.9326 &  0.9428 &  0.9101 &  0.9114 \\
-			& SVM &  0.9591 &  0.9227 &  0.9087 &  0.9306 &  0.9444 &  0.9346 &  0.9491 &  0.9470 &  0.9455 &  0.9247 &  0.9125 \\
-			& RandomForest &  0.9187 &  0.8960 &  0.8964 &  0.8785 &  0.9138 &  0.8871 &  0.9083 &  0.9135 &  0.9190 &  0.8787 &  0.8939 \\
-			& XGBoost &  0.9179 &  0.9109 &  0.9249 &  0.9423 &  0.9582 &  0.9656 &  0.9633 &  0.9270 &  0.9055 &  0.9117 &  0.8638 \\
-			\hline
-			\textbf{F-Score} & LSTM &  0.7953 &  0.5806 &  0.4649 &  0.3706 &  0.3507 &  0.3513 &  0.3738 &  0.3473 &  0.3771 &  0.3333 &  0.4646 \\
-			& SVM &  0.8428 &  0.8054 &  0.8358 &  0.8976 &  0.9194 &  0.9076 &  0.9231 &  0.9123 &  0.9174 &  0.8846 &  0.8776 \\
-			& RandomForest &  0.8188 &  0.8058 &  0.8710 &  0.8547 &  0.8983 &  0.8727 &  0.8991 &  0.8972 &  0.8952 &  0.8367 &  0.8723 \\
-			& XGBoost &  0.7086 &  0.7239 &  0.7564 &  0.8429 &  0.8939 &  0.9134 &  0.8819 &  0.8264 &  0.7731 &  0.7826 &  0.8000 \\
-			\hline
-			\textbf{G-Mean} & LSTM &  0.9625 &  0.9237 &  0.9199 &  0.9111 &  0.9239 &  0.9265 &  0.9358 &  0.9302 &  0.9411 &  0.9095 &  0.9110 \\
-			& SVM &  0.9587 &  0.9204 &  0.9047 &  0.9282 &  0.9429 &  0.9324 &  0.9478 &  0.9457 &  0.9440 &  0.9218 &  0.9085 \\
-			& RandomForest &  0.9159 &  0.8908 &  0.8906 &  0.8701 &  0.9097 &  0.8799 &  0.9037 &  0.9094 &  0.9156 &  0.8705 &  0.8877 \\
-			& XGBoost &  0.9161 &  0.9084 &  0.9231 &  0.9411 &  0.9575 &  0.9651 &  0.9628 &  0.9247 &  0.9016 &  0.9083 &  0.8535 \\
-			\hline
-			\textbf{Precision} & LSTM &  0.6869 &  0.4286 &  0.3103 &  0.2299 &  0.2126 &  0.2131 &  0.2299 &  0.2101 &  0.2324 &  0.2024 &  0.3151 \\
-			& SVM &  0.7701 &  0.7595 &  0.8485 &  0.9344 &  0.9500 &  0.9474 &  0.9474 &  0.9286 &  0.9434 &  0.9200 &  0.9348 \\
-			& RandomForest &  0.7922 &  0.8116 &  0.9643 &  0.9804 &  0.9815 &  1.0000 &  1.0000 &  0.9796 &  0.9592 &  0.9318 &  0.9762 \\
-			& XGBoost &  0.6019 &  0.6344 &  0.6705 &  0.7973 &  0.8676 &  0.8923 &  0.8358 &  0.7937 &  0.7302 &  0.7377 &  0.8837 \\
-			\hline
-			\textbf{Recall} & LSTM &  0.9444 &  0.9000 &  0.9265 &  0.9545 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  0.9444 &  0.8846 \\
-			& SVM &  0.9306 &  0.8571 &  0.8235 &  0.8636 &  0.8906 &  0.8710 &  0.9000 &  0.8966 &  0.8929 &  0.8519 &  0.8269 \\
-			& RandomForest &  0.8472 &  0.8000 &  0.7941 &  0.7576 &  0.8281 &  0.7742 &  0.8167 &  0.8276 &  0.8393 &  0.7593 &  0.7885 \\
-			& XGBoost &  0.8611 &  0.8429 &  0.8676 &  0.8939 &  0.9219 &  0.9355 &  0.9333 &  0.8621 &  0.8214 &  0.8333 &  0.7308 \\
-			\hline
-		\end{tabular}
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{AUC} & LSTM &  0.9555 &  0.9228 &  0.9132 &  0.9128 &  0.9314 &  0.9255 &  0.9342 &  0.9379 &  0.9314 &  0.9083 &  0.9065 \\
+	& SVM &  0.9603 &  0.9227 &  0.9087 &  0.9303 &  0.9447 &  0.9346 &  0.9491 &  0.9473 &  0.9455 &  0.9247 &  0.9125 \\
+	& RandomForest &  0.9196 &  0.8966 &  0.9173 &  0.8936 &  0.9059 &  0.9187 &  0.9410 &  0.9221 &  0.9098 &  0.8975 &  0.9032 \\
+	& XGBoost &  0.9034 &  0.9038 &  0.9092 &  0.9487 &  0.9654 &  0.9653 &  0.9812 &  0.9283 &  0.9141 &  0.8932 &  0.8635 \\
+	\hline
+	\textbf{F-Score} & LSTM &  0.7010 &  0.6294 &  0.4300 &  0.3526 &  0.3657 &  0.3397 &  0.3604 &  0.3659 &  0.3618 &  0.3559 &  0.4299 \\
+	& SVM &  0.8645 &  0.8054 &  0.8358 &  0.8906 &  0.9268 &  0.9076 &  0.9231 &  0.9204 &  0.9174 &  0.8846 &  0.8776 \\
+	& RandomForest &  0.8356 &  0.8175 &  0.8702 &  0.8739 &  0.8889 &  0.8966 &  0.9217 &  0.9074 &  0.8762 &  0.8687 &  0.8750 \\
+	& XGBoost &  0.6857 &  0.7160 &  0.7261 &  0.8276 &  0.8889 &  0.9062 &  0.9280 &  0.8547 &  0.7769 &  0.7611 &  0.7917 \\
+	\hline
+	\textbf{G-Mean} & LSTM &  0.9555 &  0.9220 &  0.9131 &  0.9111 &  0.9289 &  0.9225 &  0.9319 &  0.9358 &  0.9300 &  0.9081 &  0.9062 \\
+	& SVM &  0.9599 &  0.9204 &  0.9047 &  0.9279 &  0.9431 &  0.9324 &  0.9478 &  0.9460 &  0.9440 &  0.9218 &  0.9085 \\
+	& RandomForest &  0.9167 &  0.8914 &  0.9139 &  0.8874 &  0.9011 &  0.9152 &  0.9393 &  0.9189 &  0.9055 &  0.8918 &  0.8982 \\
+	& XGBoost &  0.9007 &  0.9006 &  0.9065 &  0.9478 &  0.9649 &  0.9648 &  0.9811 &  0.9259 &  0.9110 &  0.8879 &  0.8533 \\
+	\hline
+	\textbf{Precision} & LSTM &  0.5574 &  0.4882 &  0.2800 &  0.2155 &  0.2238 &  0.2046 &  0.2198 &  0.2239 &  0.2218 &  0.2203 &  0.2840 \\
+	& SVM &  0.8072 &  0.7595 &  0.8485 &  0.9194 &  0.9661 &  0.9474 &  0.9474 &  0.9455 &  0.9434 &  0.9200 &  0.9348 \\
+	& RandomForest &  0.8243 &  0.8358 &  0.9048 &  0.9811 &  0.9811 &  0.9630 &  0.9636 &  0.9800 &  0.9388 &  0.9556 &  0.9545 \\
+	& XGBoost &  0.5825 &  0.6304 &  0.6404 &  0.7595 &  0.8451 &  0.8788 &  0.8923 &  0.8475 &  0.7231 &  0.7288 &  0.8636 \\
+	\hline
+	\textbf{Recall} & LSTM &  0.9444 &  0.8857 &  0.9265 &  0.9697 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  0.9821 &  0.9259 &  0.8846 \\
+	& SVM &  0.9306 &  0.8571 &  0.8235 &  0.8636 &  0.8906 &  0.8710 &  0.9000 &  0.8966 &  0.8929 &  0.8519 &  0.8269 \\
+	& RandomForest &  0.8472 &  0.8000 &  0.8382 &  0.7879 &  0.8125 &  0.8387 &  0.8833 &  0.8448 &  0.8214 &  0.7963 &  0.8077 \\
+	& XGBoost &  0.8333 &  0.8286 &  0.8382 &  0.9091 &  0.9375 &  0.9355 &  0.9667 &  0.8621 &  0.8393 &  0.7963 &  0.7308 \\
+	\hline
+	\end{tabular}
 	\end{adjustbox}
-	\label{tab:faceAllSMOTE}
 	\caption{Resultados FaceAll con SMOTE.}
+	\label{tab:faceAllSMOTE}
 \end{table}
 
 \begin{table}[h]
-	\centering
-	\begin{adjustbox}{max width=15cm}
-		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
-			\hline
-			\textbf{Tam.Ventana} &         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
-			\hline
-			\textbf{AUC} & LSTM &  0.9626 &  0.9240 &  0.9200 &  0.9121 &  0.9268 &  0.9292 &  0.9379 &  0.9326 &  0.9428 &  0.9101 &  0.9114 \\
-			& SVM &  0.9591 &  0.9227 &  0.9087 &  0.9306 &  0.9444 &  0.9346 &  0.9491 &  0.9470 &  0.9455 &  0.9247 &  0.9125 \\
-			& RandomForest &  0.9187 &  0.8960 &  0.8964 &  0.8785 &  0.9138 &  0.8871 &  0.9083 &  0.9135 &  0.9190 &  0.8787 &  0.8939 \\
-			& XGBoost &  0.9179 &  0.9109 &  0.9249 &  0.9423 &  0.9582 &  0.9656 &  0.9633 &  0.9270 &  0.9055 &  0.9117 &  0.8638 \\
-			\hline
-			\textbf{F-Score} & LSTM &  0.7953 &  0.5806 &  0.4649 &  0.3706 &  0.3507 &  0.3513 &  0.3738 &  0.3473 &  0.3771 &  0.3333 &  0.4646 \\
-			& SVM &  0.8428 &  0.8054 &  0.8358 &  0.8976 &  0.9194 &  0.9076 &  0.9231 &  0.9123 &  0.9174 &  0.8846 &  0.8776 \\
-			& RandomForest &  0.8188 &  0.8058 &  0.8710 &  0.8547 &  0.8983 &  0.8727 &  0.8991 &  0.8972 &  0.8952 &  0.8367 &  0.8723 \\
-			& XGBoost &  0.7086 &  0.7239 &  0.7564 &  0.8429 &  0.8939 &  0.9134 &  0.8819 &  0.8264 &  0.7731 &  0.7826 &  0.8000 \\
-			\hline
-			\textbf{G-Mean} & LSTM &  0.9625 &  0.9237 &  0.9199 &  0.9111 &  0.9239 &  0.9265 &  0.9358 &  0.9302 &  0.9411 &  0.9095 &  0.9110 \\
-			& SVM &  0.9587 &  0.9204 &  0.9047 &  0.9282 &  0.9429 &  0.9324 &  0.9478 &  0.9457 &  0.9440 &  0.9218 &  0.9085 \\
-			& RandomForest &  0.9159 &  0.8908 &  0.8906 &  0.8701 &  0.9097 &  0.8799 &  0.9037 &  0.9094 &  0.9156 &  0.8705 &  0.8877 \\
-			& XGBoost &  0.9161 &  0.9084 &  0.9231 &  0.9411 &  0.9575 &  0.9651 &  0.9628 &  0.9247 &  0.9016 &  0.9083 &  0.8535 \\
-			\hline
-			\textbf{Precision} & LSTM &  0.6869 &  0.4286 &  0.3103 &  0.2299 &  0.2126 &  0.2131 &  0.2299 &  0.2101 &  0.2324 &  0.2024 &  0.3151 \\
-			& SVM &  0.7701 &  0.7595 &  0.8485 &  0.9344 &  0.9500 &  0.9474 &  0.9474 &  0.9286 &  0.9434 &  0.9200 &  0.9348 \\
-			& RandomForest &  0.7922 &  0.8116 &  0.9643 &  0.9804 &  0.9815 &  1.0000 &  1.0000 &  0.9796 &  0.9592 &  0.9318 &  0.9762 \\
-			& XGBoost &  0.6019 &  0.6344 &  0.6705 &  0.7973 &  0.8676 &  0.8923 &  0.8358 &  0.7937 &  0.7302 &  0.7377 &  0.8837 \\
-			\hline
-			\textbf{Recall} & LSTM &  0.9444 &  0.9000 &  0.9265 &  0.9545 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  0.9444 &  0.8846 \\
-			& SVM &  0.9306 &  0.8571 &  0.8235 &  0.8636 &  0.8906 &  0.8710 &  0.9000 &  0.8966 &  0.8929 &  0.8519 &  0.8269 \\
-			& RandomForest &  0.8472 &  0.8000 &  0.7941 &  0.7576 &  0.8281 &  0.7742 &  0.8167 &  0.8276 &  0.8393 &  0.7593 &  0.7885 \\
-			& XGBoost &  0.8611 &  0.8429 &  0.8676 &  0.8939 &  0.9219 &  0.9355 &  0.9333 &  0.8621 &  0.8214 &  0.8333 &  0.7308 \\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-	\label{tab:faceAllADASYN}
-	\caption{Resultados FaceAll con ADASYN.}
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{AUC} & LSTM &  0.9623 &  0.8861 &  0.9032 &  0.9155 &  0.9364 &  0.9140 &  0.9438 &  0.9459 &  0.9460 &  0.9157 &  0.9157 \\
+	& SVM &  0.9603 &  0.9227 &  0.9084 &  0.9230 &  0.9450 &  0.9346 &  0.9491 &  0.9387 &  0.9363 &  0.9062 &  0.9029 \\
+	& RandomForest &  0.8643 &  0.8339 &  0.8597 &  0.8712 &  0.8747 &  0.8626 &  0.8833 &  0.8017 &  0.8393 &  0.8519 &  0.8173 \\
+	& XGBoost &  0.9179 &  0.8653 &  0.8890 &  0.8884 &  0.9113 &  0.9401 &  0.9744 &  0.8966 &  0.9018 &  0.8889 &  0.8651 \\
+	\hline
+	\textbf{F-Score} & LSTM &  0.7907 &  0.5846 &  0.5221 &  0.3830 &  0.4784 &  0.3676 &  0.3974 &  0.3986 &  0.4280 &  0.4923 &  0.5000 \\
+	& SVM &  0.8645 &  0.8054 &  0.8296 &  0.8889 &  0.9344 &  0.9076 &  0.9231 &  0.9107 &  0.8991 &  0.8627 &  0.8660 \\
+	& RandomForest &  0.7737 &  0.7642 &  0.8235 &  0.8522 &  0.8496 &  0.8333 &  0.8679 &  0.7527 &  0.8085 &  0.8261 &  0.7765 \\
+	& XGBoost &  0.7086 &  0.6386 &  0.7297 &  0.7647 &  0.8413 &  0.8594 &  0.9580 &  0.8846 &  0.8911 &  0.8750 &  0.8352 \\
+	\hline
+	\textbf{G-Mean} & LSTM &  0.9622 &  0.8832 &  0.9025 &  0.9146 &  0.9362 &  0.9132 &  0.9421 &  0.9444 &  0.9453 &  0.9153 &  0.9152 \\
+	& SVM &  0.9599 &  0.9204 &  0.9044 &  0.9200 &  0.9434 &  0.9324 &  0.9478 &  0.9368 &  0.9343 &  0.9016 &  0.8979 \\
+	& RandomForest &  0.8548 &  0.8179 &  0.8483 &  0.8616 &  0.8658 &  0.8517 &  0.8756 &  0.7768 &  0.8238 &  0.8389 &  0.7966 \\
+	& XGBoost &  0.9161 &  0.8585 &  0.8839 &  0.8827 &  0.9075 &  0.9387 &  0.9741 &  0.8906 &  0.8964 &  0.8819 &  0.8546 \\
+	\hline
+	\textbf{Precision} & LSTM &  0.6800 &  0.4560 &  0.3734 &  0.2395 &  0.3194 &  0.2278 &  0.2479 &  0.2489 &  0.2736 &  0.3404 &  0.3485 \\
+	& SVM &  0.8072 &  0.7595 &  0.8358 &  0.9333 &  0.9828 &  0.9474 &  0.9474 &  0.9444 &  0.9245 &  0.9167 &  0.9333 \\
+	& RandomForest &  0.8154 &  0.8868 &  0.9608 &  1.0000 &  0.9796 &  0.9783 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& XGBoost &  0.6019 &  0.5521 &  0.6750 &  0.7429 &  0.8548 &  0.8333 &  0.9661 &  1.0000 &  1.0000 &  1.0000 &  0.9744 \\
+	\hline
+	\textbf{Recall} & LSTM &  0.9444 &  0.8143 &  0.8676 &  0.9545 &  0.9531 &  0.9516 &  1.0000 &  1.0000 &  0.9821 &  0.8889 &  0.8846 \\
+	& SVM &  0.9306 &  0.8571 &  0.8235 &  0.8485 &  0.8906 &  0.8710 &  0.9000 &  0.8793 &  0.8750 &  0.8148 &  0.8077 \\
+	& RandomForest &  0.7361 &  0.6714 &  0.7206 &  0.7424 &  0.7500 &  0.7258 &  0.7667 &  0.6034 &  0.6786 &  0.7037 &  0.6346 \\
+	& XGBoost &  0.8611 &  0.7571 &  0.7941 &  0.7879 &  0.8281 &  0.8871 &  0.9500 &  0.7931 &  0.8036 &  0.7778 &  0.7308 \\
+	\hline
+\end{tabular}
+\end{adjustbox}	
+\caption{Resultados FaceAll con ADASYN.}
+\label{tab:faceAllADASYN}
 \end{table}
 \newpage
 \begin{table}[h]
-	\centering
-	\begin{adjustbox}{max width=15cm}
-		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
-			\hline
-			\textbf{Tam.Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
-			\hline
-			\textbf{AUC} & LSTM &  0.9626 &  0.9240 &  0.9200 &  0.9121 &  0.9268 &  0.9292 &  0.9379 &  0.9326 &  0.9428 &  0.9101 &  0.9114 \\
-			& SVM &  0.9591 &  0.9227 &  0.9087 &  0.9306 &  0.9444 &  0.9346 &  0.9491 &  0.9470 &  0.9455 &  0.9247 &  0.9125 \\
-			& RandomForest &  0.9187 &  0.8960 &  0.8964 &  0.8785 &  0.9138 &  0.8871 &  0.9083 &  0.9135 &  0.9190 &  0.8787 &  0.8939 \\
-			& XGBoost &  0.9179 &  0.9109 &  0.9249 &  0.9423 &  0.9582 &  0.9656 &  0.9633 &  0.9270 &  0.9055 &  0.9117 &  0.8638 \\
-			\hline
-			\textbf{F-Score} & LSTM &  0.7953 &  0.5806 &  0.4649 &  0.3706 &  0.3507 &  0.3513 &  0.3738 &  0.3473 &  0.3771 &  0.3333 &  0.4646 \\
-			& SVM &  0.8428 &  0.8054 &  0.8358 &  0.8976 &  0.9194 &  0.9076 &  0.9231 &  0.9123 &  0.9174 &  0.8846 &  0.8776 \\
-			& RandomForest &  0.8188 &  0.8058 &  0.8710 &  0.8547 &  0.8983 &  0.8727 &  0.8991 &  0.8972 &  0.8952 &  0.8367 &  0.8723 \\
-			& XGBoost &  0.7086 &  0.7239 &  0.7564 &  0.8429 &  0.8939 &  0.9134 &  0.8819 &  0.8264 &  0.7731 &  0.7826 &  0.8000 \\
-			\hline
-			\textbf{G-Mean} & LSTM &  0.9625 &  0.9237 &  0.9199 &  0.9111 &  0.9239 &  0.9265 &  0.9358 &  0.9302 &  0.9411 &  0.9095 &  0.9110 \\
-			& SVM &  0.9587 &  0.9204 &  0.9047 &  0.9282 &  0.9429 &  0.9324 &  0.9478 &  0.9457 &  0.9440 &  0.9218 &  0.9085 \\
-			& RandomForest &  0.9159 &  0.8908 &  0.8906 &  0.8701 &  0.9097 &  0.8799 &  0.9037 &  0.9094 &  0.9156 &  0.8705 &  0.8877 \\
-			& XGBoost &  0.9161 &  0.9084 &  0.9231 &  0.9411 &  0.9575 &  0.9651 &  0.9628 &  0.9247 &  0.9016 &  0.9083 &  0.8535 \\
-			\hline
-			\textbf{Precision} & LSTM &  0.6869 &  0.4286 &  0.3103 &  0.2299 &  0.2126 &  0.2131 &  0.2299 &  0.2101 &  0.2324 &  0.2024 &  0.3151 \\
-			& SVM &  0.7701 &  0.7595 &  0.8485 &  0.9344 &  0.9500 &  0.9474 &  0.9474 &  0.9286 &  0.9434 &  0.9200 &  0.9348 \\
-			& RandomForest &  0.7922 &  0.8116 &  0.9643 &  0.9804 &  0.9815 &  1.0000 &  1.0000 &  0.9796 &  0.9592 &  0.9318 &  0.9762 \\
-			& XGBoost &  0.6019 &  0.6344 &  0.6705 &  0.7973 &  0.8676 &  0.8923 &  0.8358 &  0.7937 &  0.7302 &  0.7377 &  0.8837 \\
-			\hline
-			\textbf{Recall} & LSTM &  0.9444 &  0.9000 &  0.9265 &  0.9545 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  0.9444 &  0.8846 \\
-			& SVM &  0.9306 &  0.8571 &  0.8235 &  0.8636 &  0.8906 &  0.8710 &  0.9000 &  0.8966 &  0.8929 &  0.8519 &  0.8269 \\
-			& RandomForest &  0.8472 &  0.8000 &  0.7941 &  0.7576 &  0.8281 &  0.7742 &  0.8167 &  0.8276 &  0.8393 &  0.7593 &  0.7885 \\
-			& XGBoost &  0.8611 &  0.8429 &  0.8676 &  0.8939 &  0.9219 &  0.9355 &  0.9333 &  0.8621 &  0.8214 &  0.8333 &  0.7308 \\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-	\label{tab:faceAllMWMOTE}
-	\caption{Resultados FaceAll con MWMOTE.}
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{AUC} & LSTM &  0.9626 &  0.9240 &  0.9200 &  0.9121 &  0.9268 &  0.9292 &  0.9379 &  0.9326 &  0.9428 &  0.9101 &  0.9114 \\
+	& SVM &  0.9591 &  0.9227 &  0.9087 &  0.9306 &  0.9444 &  0.9346 &  0.9491 &  0.9470 &  0.9455 &  0.9247 &  0.9125 \\
+	& RandomForest &  0.9187 &  0.8960 &  0.8964 &  0.8785 &  0.9138 &  0.8871 &  0.9083 &  0.9135 &  0.9190 &  0.8787 &  0.8939 \\
+	& XGBoost &  0.9179 &  0.9109 &  0.9249 &  0.9423 &  0.9582 &  0.9656 &  0.9633 &  0.9270 &  0.9055 &  0.9117 &  0.8638 \\
+	\hline
+	\textbf{F-Score} & LSTM &  0.7953 &  0.5806 &  0.4649 &  0.3706 &  0.3507 &  0.3513 &  0.3738 &  0.3473 &  0.3771 &  0.3333 &  0.4646 \\
+	& SVM &  0.8428 &  0.8054 &  0.8358 &  0.8976 &  0.9194 &  0.9076 &  0.9231 &  0.9123 &  0.9174 &  0.8846 &  0.8776 \\
+	& RandomForest &  0.8188 &  0.8058 &  0.8710 &  0.8547 &  0.8983 &  0.8727 &  0.8991 &  0.8972 &  0.8952 &  0.8367 &  0.8723 \\
+	& XGBoost &  0.7086 &  0.7239 &  0.7564 &  0.8429 &  0.8939 &  0.9134 &  0.8819 &  0.8264 &  0.7731 &  0.7826 &  0.8000 \\
+	\hline
+	\textbf{G-Mean} & LSTM &  0.9625 &  0.9237 &  0.9199 &  0.9111 &  0.9239 &  0.9265 &  0.9358 &  0.9302 &  0.9411 &  0.9095 &  0.9110 \\
+	& SVM &  0.9587 &  0.9204 &  0.9047 &  0.9282 &  0.9429 &  0.9324 &  0.9478 &  0.9457 &  0.9440 &  0.9218 &  0.9085 \\
+	& RandomForest &  0.9159 &  0.8908 &  0.8906 &  0.8701 &  0.9097 &  0.8799 &  0.9037 &  0.9094 &  0.9156 &  0.8705 &  0.8877 \\
+	& XGBoost &  0.9161 &  0.9084 &  0.9231 &  0.9411 &  0.9575 &  0.9651 &  0.9628 &  0.9247 &  0.9016 &  0.9083 &  0.8535 \\
+	\hline
+	\textbf{Precision} & LSTM &  0.6869 &  0.4286 &  0.3103 &  0.2299 &  0.2126 &  0.2131 &  0.2299 &  0.2101 &  0.2324 &  0.2024 &  0.3151 \\
+	& SVM &  0.7701 &  0.7595 &  0.8485 &  0.9344 &  0.9500 &  0.9474 &  0.9474 &  0.9286 &  0.9434 &  0.9200 &  0.9348 \\
+	& RandomForest &  0.7922 &  0.8116 &  0.9643 &  0.9804 &  0.9815 &  1.0000 &  1.0000 &  0.9796 &  0.9592 &  0.9318 &  0.9762 \\
+	& XGBoost &  0.6019 &  0.6344 &  0.6705 &  0.7973 &  0.8676 &  0.8923 &  0.8358 &  0.7937 &  0.7302 &  0.7377 &  0.8837 \\
+	\hline
+	\textbf{Recall} & LSTM &  0.9444 &  0.9000 &  0.9265 &  0.9545 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  0.9444 &  0.8846 \\
+	& SVM &  0.9306 &  0.8571 &  0.8235 &  0.8636 &  0.8906 &  0.8710 &  0.9000 &  0.8966 &  0.8929 &  0.8519 &  0.8269 \\
+	& RandomForest &  0.8472 &  0.8000 &  0.7941 &  0.7576 &  0.8281 &  0.7742 &  0.8167 &  0.8276 &  0.8393 &  0.7593 &  0.7885 \\
+	& XGBoost &  0.8611 &  0.8429 &  0.8676 &  0.8939 &  0.9219 &  0.9355 &  0.9333 &  0.8621 &  0.8214 &  0.8333 &  0.7308 \\
+	\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Resultados FaceAll con MWMOTE.}
+\label{tab:faceAllMWMOTE}
 \end{table}
+
 \begin{table}[h]
-	\centering
-	\begin{adjustbox}{max width=11cm}
-		
-		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+\centering
+\begin{adjustbox}{max width=11cm}		
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana}&         &   1  &   3  &   5  &   7  &   9  &   11 &   13 &   15 &   17 &   19 &   21 \\
 			\hline
@@ -187,17 +191,17 @@
 			& XGBoost &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 \\
 			\hline
 			
-		\end{tabular}
-	\end{adjustbox}
-	\label{tab:faceAllSMOTEBORUTA}
-	\caption{Resultados FaceAll con SMOTE + BORUTA.}
+\end{tabular}
+\end{adjustbox}
+\caption{Resultados FaceAll con SMOTE + BORUTA.}
+\label{tab:faceAllSMOTEBORUTA}
 \end{table}
 \newpage
 
 \begin{table}[h]
-	\centering
-	\begin{adjustbox}{max width=11cm}
-		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+\centering
+\begin{adjustbox}{max width=11cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana}&         &   1  &   3  &   5  &   7  &   9  &   11 &   13 &   15 &   17 &   19 &   21 \\
 			\hline
@@ -227,16 +231,16 @@
 			& XGBoost &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 \\
 			\hline
 			
-		\end{tabular}
-	\end{adjustbox}
-	\label{tab:faceAllADASYNBORUTA}
-	\caption{Resultados FaceAll con ADASYN + BORUTA.}
+\end{tabular}
+\end{adjustbox}	
+\caption{Resultados FaceAll con ADASYN + BORUTA.}
+\label{tab:faceAllADASYNBORUTA}
 \end{table}
 
 \begin{table}[h]
-	\centering
-	\begin{adjustbox}{max width=11cm}
-		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+\centering
+\begin{adjustbox}{max width=11cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana}&         &   1  &   3  &   5  &   7  &   9  &   11 &   13 &   15 &   17 &   19 &   21 \\
 			\hline
@@ -266,13 +270,21 @@
 			& XGBoost &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 &  1.0 \\
 			\hline
 			
-		\end{tabular}
-	\end{adjustbox}
-	\label{tab:faceAllMWMOTEBORUTA}
-	\caption{Resultados FaceAll con MWMOTE + BORUTA.}
+\end{tabular}
+\end{adjustbox}	
+\caption{Resultados FaceAll con MWMOTE + BORUTA.}
+\label{tab:faceAllMWMOTEBORUTA}
 \end{table}
 
-\newpage	
+\newpage
+
+Para la primera tabla \ref{tab:faceAllBase}, se pueden ver valores para las medidas \textit{AUC} y \textit{G-Mean} muy similares para todos los modelos; aunque en algunas de las pruebas pueda verse apreciarse una cierta mejora de forma específica a excecpción de \textit{XGBoost}, parece que el uso de la ventana no es demasiado efectivo con este conjunto de datos. El \textit{F-Score} nos indica un rendimiento bastante pobre por parte de \textit{LSTM} conforme aumenta la ventana, fijandose en las medidas \textit{Recall} y \textit{Precision} se puede ver que está clasificando demasiados elementos como de la clase positiva. Para los modelos \textit{RandomForest} y \textit{XGBoost} ocurre el caso contrario aunque con un menor sobreajuste, los clasificadores no están siendo capaces de distinguir claramente entre la clase positiva y negativa. Por último, \textit{SVM} obtiene valores estables para las tres métricas anteriores y es el modelo que mejor funciona.\newline
+
+Para las tablas de resultados con métodos de oversampling \ref{tab:faceAllSMOTE} \ref{tab:faceAllADASYN} \ref{tab:faceAllMWMOTE} se puede apreciar una cierta mejora para generalizada para todos los modelos; aunque la pérdida de rendimiento se mantiene; por lo tanto el oversampling no parece ser una buena opción para intentar mejorar el rendimiento en este conjunto de datos.
+
+Por último, para la combinación de selección de características y oversampling de las tablas \ref{tab:faceAllSMOTEBORUTA} \ref{tab:faceAllADASYNBORUTA} \ref{tab:faceAllMWMOTEBORUTA} todos los modelos obtienen una puntuación perfecta, por lo que se puede deducir que para este conjunto de datos hay algunas características (en este caso serían partes de la serie temporal) que son las que realmente marcan la diferencia entre los elementos de una clase; para este conjunto de datos en el cual las series temporales representan el contorno de una cara esas características podrían ser las de la nariz, pelo, etc...
+
+\newpage 
 \section{EGG Eye}
 
 \begin{table}[h]
@@ -309,8 +321,8 @@
 			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\label{tab:EGGEyebase}
 	\caption{Resultados base EGG\_Eye.}
+	\label{tab:EGGEyebase}
 \end{table}
 \begin{table}[h]
 	\centering
@@ -346,46 +358,46 @@
 			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\label{tab:EGGEyeSMOTE}
 	\caption{Resultados base EGG\_Eye con SMOTE.}
+	\label{tab:EGGEyeSMOTE}
 \end{table}
 \newpage
 \begin{table}[h]
-	\centering
-	\begin{adjustbox}{max width=15cm}
-		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
-			\hline
-			\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
-			\hline
-			\textbf{AUC} & LSTM &  0.5055 &  0.5411 &  0.5418 &  0.5724 &  0.5825 &  0.5565 &  0.5469 &  0.5439 &  0.5570 &  0.5506 &  0.5667 \\
-			& SVM &  0.6911 &  0.7035 &  0.6937 &  0.6975 &  0.7044 &  0.7064 &  0.7006 &  0.7124 &  0.7046 &  0.7119 &  0.7142 \\
-			& RandomForest &  0.9320 &  0.9304 &  0.9548 &  0.9546 &  0.9606 &  0.9674 &  0.9620 &  0.9648 &  0.9797 &  0.9784 &  0.9770 \\
-			& XGBoost &  0.8079 &  0.8237 &  0.8284 &  0.8324 &  0.8334 &  0.8522 &  0.8398 &  0.8473 &  0.8521 &  0.8494 &  0.8739 \\
-			\hline
-			\textbf{F-Score} & LSTM &  0.6235 &  0.6347 &  0.6439 &  0.6558 &  0.6413 &  0.6403 &  0.6388 &  0.6550 &  0.6475 &  0.6447 &  0.6403 \\
-			& SVM &  0.6726 &  0.6842 &  0.6707 &  0.6783 &  0.6811 &  0.6791 &  0.6775 &  0.6924 &  0.6758 &  0.6864 &  0.6824 \\
-			& RandomForest &  0.9242 &  0.9238 &  0.9513 &  0.9499 &  0.9564 &  0.9641 &  0.9578 &  0.9618 &  0.9775 &  0.9761 &  0.9749 \\
-			& XGBoost &  0.7847 &  0.8035 &  0.8128 &  0.8180 &  0.8175 &  0.8374 &  0.8211 &  0.8347 &  0.8324 &  0.8330 &  0.8665 \\
-			\hline
-			\textbf{G-Mean} & LSTM &  0.1045 &  0.2867 &  0.2892 &  0.3812 &  0.4062 &  0.3361 &  0.3064 &  0.2985 &  0.3375 &  0.3244 &  0.3679 \\
-			& SVM &  0.6911 &  0.7034 &  0.6937 &  0.6975 &  0.7043 &  0.7064 &  0.7006 &  0.7124 &  0.7040 &  0.7118 &  0.7137 \\
-			& RandomForest &  0.9320 &  0.9304 &  0.9548 &  0.9544 &  0.9605 &  0.9674 &  0.9619 &  0.9648 &  0.9797 &  0.9784 &  0.9770 \\
-			& XGBoost &  0.8079 &  0.8235 &  0.8284 &  0.8324 &  0.8332 &  0.8522 &  0.8398 &  0.8473 &  0.8520 &  0.8494 &  0.8739 \\
-			\hline
-			\textbf{Precision} & LSTM &  0.4530 &  0.4648 &  0.4748 &  0.4880 &  0.4720 &  0.4709 &  0.4693 &  0.4874 &  0.4788 &  0.4767 &  0.4714 \\
-			& SVM &  0.6609 &  0.6578 &  0.6475 &  0.6604 &  0.6705 &  0.6617 &  0.6571 &  0.6800 &  0.6753 &  0.6755 &  0.6773 \\
-			& RandomForest &  0.9238 &  0.9191 &  0.9541 &  0.9598 &  0.9611 &  0.9630 &  0.9592 &  0.9664 &  0.9775 &  0.9684 &  0.9724 \\
-			& XGBoost &  0.7663 &  0.7984 &  0.7971 &  0.8003 &  0.7890 &  0.8215 &  0.8000 &  0.8231 &  0.8200 &  0.8170 &  0.8601 \\
-			\hline
-			\textbf{Recall}& LSTM &  1.0000 &  1.0000 &  1.0000 &  0.9993 &  1.0000 &  1.0000 &  1.0000 &  0.9986 &  1.0000 &  0.9955 &  0.9977 \\
-			& SVM &  0.6847 &  0.7127 &  0.6957 &  0.6971 &  0.6921 &  0.6975 &  0.6991 &  0.7053 &  0.6763 &  0.6976 &  0.6876 \\
-			& RandomForest &  0.9245 &  0.9286 &  0.9486 &  0.9402 &  0.9517 &  0.9651 &  0.9564 &  0.9571 &  0.9775 &  0.9840 &  0.9774 \\
-			& XGBoost &  0.8040 &  0.8086 &  0.8291 &  0.8364 &  0.8482 &  0.8540 &  0.8434 &  0.8467 &  0.8453 &  0.8497 &  0.8729 \\
-			\hline
-		\end{tabular}
-	\end{adjustbox}
-	\label{tab:EGGEyeADASYN}
-	\caption{Resultados EGG\_Eye con ADASYN.}
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{AUC} & LSTM &  0.5047 &  0.5368 &  0.5393 &  0.5425 &  0.5511 &  0.5383 &  0.5237 &  0.5269 &  0.5411 &  0.5116 &  0.5383 \\
+	& SVM &  0.6496 &  0.6801 &  0.6853 &  0.6955 &  0.7028 &  0.7078 &  0.6995 &  0.6937 &  0.7115 &  0.7075 &  0.7112 \\
+	& RandomForest &  0.9299 &  0.9460 &  0.9526 &  0.9583 &  0.9660 &  0.9733 &  0.9745 &  0.9759 &  0.9694 &  0.9695 &  0.9740 \\
+	& XGBoost &  0.8065 &  0.8208 &  0.8201 &  0.8338 &  0.8486 &  0.8410 &  0.8507 &  0.8487 &  0.8464 &  0.8654 &  0.8479 \\
+	\hline
+	\textbf{F-Score} & LSTM &  0.6094 &  0.6400 &  0.6454 &  0.6445 &  0.6433 &  0.6441 &  0.6313 &  0.6147 &  0.6453 &  0.6434 &  0.6432 \\
+	& SVM &  0.6409 &  0.6556 &  0.6597 &  0.6649 &  0.6707 &  0.6700 &  0.6657 &  0.6500 &  0.6844 &  0.6790 &  0.6783 \\
+	& RandomForest &  0.9217 &  0.9407 &  0.9489 &  0.9543 &  0.9623 &  0.9705 &  0.9713 &  0.9734 &  0.9667 &  0.9670 &  0.9724 \\
+	& XGBoost &  0.7861 &  0.8088 &  0.8063 &  0.8203 &  0.8334 &  0.8244 &  0.8373 &  0.8328 &  0.8279 &  0.8502 &  0.8331 \\
+	\hline
+	\textbf{G-Mean} & LSTM &  0.0973 &  0.2714 &  0.2803 &  0.2914 &  0.3196 &  0.2768 &  0.2175 &  0.2382 &  0.2866 &  0.1525 &  0.2767 \\
+	& SVM &  0.6471 &  0.6800 &  0.6853 &  0.6951 &  0.7022 &  0.7058 &  0.6987 &  0.6907 &  0.7103 &  0.7060 &  0.7080 \\
+	& RandomForest &  0.9299 &  0.9460 &  0.9526 &  0.9583 &  0.9660 &  0.9733 &  0.9745 &  0.9759 &  0.9693 &  0.9695 &  0.9739 \\
+	& XGBoost &  0.8061 &  0.8206 &  0.8201 &  0.8338 &  0.8486 &  0.8410 &  0.8507 &  0.8486 &  0.8464 &  0.8653 &  0.8479 \\
+	\hline
+	\textbf{Precision} & LSTM &  0.4383 &  0.4706 &  0.4765 &  0.4755 &  0.4742 &  0.4751 &  0.4612 &  0.4443 &  0.4764 &  0.4743 &  0.4740 \\
+	& SVM &  0.5862 &  0.6404 &  0.6300 &  0.6560 &  0.6659 &  0.6856 &  0.6634 &  0.6715 &  0.6999 &  0.6979 &  0.7162 \\
+	& RandomForest &  0.9220 &  0.9346 &  0.9492 &  0.9568 &  0.9663 &  0.9709 &  0.9691 &  0.9772 &  0.9729 &  0.9751 &  0.9829 \\
+	& XGBoost &  0.7908 &  0.7796 &  0.7888 &  0.8138 &  0.8258 &  0.8109 &  0.8149 &  0.8148 &  0.8193 &  0.8439 &  0.8249 \\
+	\hline
+	\textbf{Recall} & LSTM &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  0.9969 &  1.0000 &  1.0000 &  1.0000 \\
+	& SVM &  0.7068 &  0.6716 &  0.6924 &  0.6742 &  0.6755 &  0.6551 &  0.6679 &  0.6297 &  0.6696 &  0.6611 &  0.6441 \\
+	& RandomForest &  0.9213 &  0.9470 &  0.9485 &  0.9518 &  0.9582 &  0.9702 &  0.9735 &  0.9698 &  0.9606 &  0.9591 &  0.9621 \\
+	& XGBoost &  0.7814 &  0.8402 &  0.8247 &  0.8269 &  0.8412 &  0.8383 &  0.8610 &  0.8517 &  0.8368 &  0.8566 &  0.8415 \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Resultados EGG\_Eye con ADASYN.}
+\label{tab:EGGEyeADASYN}
 \end{table}
 \begin{table}[h]
 	\centering
@@ -421,13 +433,19 @@
 			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\label{tab:EGGEyeMWMOTE}
-	\caption{Resultados base EGG\_Eye con MWMOTE.}
+\caption{Resultados base EGG\_Eye con MWMOTE.}
+\label{tab:EGGEyeMWMOTE}
 \end{table}
 
 Para el algoritmo de selección de características \textit{Boruta} se ha  seleccionado todas las columnas de este conjunto de datos, por lo cuál no se mostrarán los resultados ya que son los mismos que sin utilizar este método.\newline
 
-\newpage
+Para los resultados base \ref{tab:EGGEyebase} de este conjunto de datos se puede ver unos resultados bastante buenos para los modelos \textit{LSTM} y \textit{RandomForest},un poco por debajo está \textit{XGBoost}, \textit{SVM} obtiene resultados bastante pobres. Además, para \textit{LSTM} y \textit{RandomForest} se puede ver una mejora conforme se puede aumenta la ventana, por lo que para este conjunto de datos la técnica de la ventana sí parece un buen preprocesamiento, esto tiene bastante sentido ya que los datos que contiene este conjunto de datos son sensores que miden si un ojo está cerrado o no, por lo que los datos anteriores probablemente sean un buen indicativo de el estado de ojo en un momento dado.\newline
+
+Para las pruebas realizadas con oversampling \ref{tab:EGGEyeSMOTE} \ref{tab:EGGEyeADASYN} \ref{tab:EGGEyeMWMOTE} \textit{LSTM} obtiene una bajada importante en su rendimiento provocado por sobreajuste; si nos fijamos en la métricas \textit{Recall} y \textit{Precision} se puede ver que los modelos sobreajustan demasiado la clase positiva. El resto de modelos obtienen resultados muy parecidos, en algunos casos existe una pequeña mejora aunque tampoco importante. Para \textit{SVM}, \textit{RandomForest} y \textit{XGBoost} se puede ver que hay equilibrio entre \textit{Precision} y \textit{Recall} por lo que no parece haber sobreajuste; \textit{SVM} obtiene resultados bastante malos por lo que podemos afirmar que no ha sido capaz de aprender la diferencia entre ambas clases.\newline
+
+Dados los resultados anteriores, para este conjunto de datos no es interesante aplicar oversampling ya que no aporta nada (o casi nada) a los modelos o directamente los empeora.
+
+
 \section{HAR}
 \begin{table}[h]
 	\centering
@@ -466,6 +484,8 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados HAR base.}
 	\label{tab:HAR_base}
 \end{table}
+\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -503,7 +523,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados HAR con SMOTE.}
 	\label{tab:HAR_SMOTE}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -541,7 +561,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados HAR con ADASYN.}
 	\label{tab:HAR_ADASYN}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -579,7 +599,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados HAR con MWMOTE.}
 	\label{tab:HAR_MWMOTE}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -617,7 +637,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados HAR con SMOTE + BORUTA.}
 	\label{tab:HAR_SMOTE_BORUTA}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -655,7 +675,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados HAR con ADASYN + BORUTA.}
 	\label{tab:HAR_ADASYN_BORUTA}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -695,6 +715,12 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 \end{table}
 
 \newpage
+Para los resultados base \ref{tab:HAR_base} se puede ver buenos resultados para todos los modelos, siendo \textit{LSTM} el que mayor puntuación obtiene para la métrica \textit{AUC}, también se puede ver cierta mejora de este modelo utilizando el método de la ventana.\newline
+
+Para los resultados en los que se utiliza oversampling \ref{tab:HAR_SMOTE} \ref{tab:HAR_ADASYN} \ref{tab:HAR_MWMOTE} se pueden ver al igual que para el conjunto de datos anterior que el rendimiento de \textit{LSTM} empeora de forma considerable y sobreajuste a la clase positiva. \textit{SVM} con \textit{ADASYN} y \textit{MWMOTE} también sobreajusta a la clase positiva aunque no de forma tan exagerada como \textit{LSTM}, para \textit{SMOTE} consigue mejorar los resultados iniciales. El resto de modelos no obtienen una mejora considerable al utilizar oversampling por lo que realemente este tipo de prepocesamiento no es útil para este conjunto de datos.\newline
+
+Por último, los resultados para los datos con oversampling y selección de características con \textit{Boruta} \ref{tab:HAR_SMOTE_BORUTA} \ref{tab:HAR_ADASYN_BORUTA} \ref{tab:HAR_MWMOTE_BORUTA} ocurre lo mismo que para los resultados obtenidos sin selección de características por lo que podemos concluir que la selección de características, al menos con el método utilizado, no es demasiado útil.
+
 \section{Ozone}
 \begin{table}[h]
 	\centering
@@ -733,7 +759,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Ozone base.}
 	\label{tab:Ozone_base}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -771,7 +797,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Ozone con SMOTE.}
 	\label{tab:Ozone_SMOTE}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -809,7 +835,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Ozone con ADASYN.}
 	\label{tab:Ozone_ADASYN}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -847,7 +873,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Ozone con MWMOTE.}
 	\label{tab:Ozone_MWMOTE}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -885,7 +911,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Ozone con SMOTE + BORUTA.}
 	\label{tab:Ozone_SMOTE_BORUTA}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -923,7 +949,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Ozone con ADASYN + BORUTA.}
 	\label{tab:Ozone_ADASYN_BORUTA}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -962,6 +988,15 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\label{tab:Ozone_MWMOTE_BORUTA}
 \end{table}
 \newpage
+
+Los resultados iniciales \ref{tab:Ozone_base} son muy malos, ninguno de los modelos es capaz de distinguir entre ambas clases y probablemente esté clasificando todos los datos como de la clase negativa por los valores que se pueden ver en las medidas \textit{Recall} y \textit{Precision}.\newline
+
+Los resultados obtenidos utilizando oversampling \ref{tab:Ozone_SMOTE} \ref{tab:Ozone_ADASYN} \ref{tab:Ozone_MWMOTE} siguen siendo bastante malos aunque los modelos de \textit{LSTM} y \textit{SVM} consiguen mejorar, aunque tampoco sirven de mucho ya que en este caso ambos sobreajustan a la clase positiva si nos fijamos en las medidas \textit{Recall} y \textit{Precision}. Los modelos de \textit{XGBoost} y \textit{RandomForest} son casi iguales que para los datos de base, aunque en el caso de \textit{XGBoost} consigue clasificar alguno de los datos de la clase positiva de forma correcta.\newline
+
+Por último, los resultados obtenidos utilizando oversampling y selección de características \ref{tab:Ozone_SMOTE_BORUTA} \ref{tab:Ozone_ADASYN_BORUTA} \ref{tab:Ozone_MWMOTE_BORUTA} ocurre los mismo que para los resultados donde solo se aplican oversampling a los datos; por lo que para este conjunto de datos este método no sirve de nada.\newline
+
+La razón por la que probablemente los resultados para este conjunto de datos sean tan malos es porque el desbalanceo de clases es demasiado grande, existen 1791 ejemplos de la clase negativa y solo 57 de la clase positiva; por lo que probablemente fuera necesario aplicar oversampling con un factor mayor, undersampling, una combinación de ambas, etc...
+
 \section{Swedish Leaf}
 \begin{table}[h]
 \centering
@@ -1000,7 +1035,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 \caption{Resultados Swedish Leaf base.}
 \label{tab:SLeaf_base}
 \end{table}
-
+\newpage
 \begin{table}[h]
 \centering
 \begin{adjustbox}{max width=15cm}
@@ -1038,7 +1073,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 \caption{Resultados Swedish Leaf con SMOTE.}
 \label{tab:SLeaf_SMOTE}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1076,7 +1111,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Swedish Leaf con ADASYN.}
 	\label{tab:SLeaf_ADASYN}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1114,7 +1149,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Swedish Leaf con MWMOTE.}
 	\label{tab:SLeaf_MWMOTE}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1152,7 +1187,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Swedish Leaf con SMOTE + BORUTA.}
 	\label{tab:SLeaf_SMOTE_BORUTA}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1190,7 +1225,6 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Swedish Leaf ADASYN + BORUTA.}
 	\label{tab:SLeaf_ADASYN_BORUTA}
 \end{table}
-\newpage
 
 \begin{table}[h]
 	\centering
@@ -1229,8 +1263,14 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Swedish Leaf MWMOTE + BORUTA.}
 	\label{tab:SLeaf_MWMOTE_BORUTA}
 \end{table}
-
 \newpage
+
+Los resultados base \ref{tab:SLeaf_base} para este conjunto de datos muestran un comportamiento bastante pobre para todos los modelos exceptuando \textit{LSTM}, que obtiene una puntuación aceptable para las medidas \textit{AUC} y \textit{G-Mean} para el modelo sin ventana. El resto de modelos obtiene resultados muy pobres.\newline
+
+Los resultados para los datos con oversampling \ref{tab:SLeaf_SMOTE} \ref{tab:SLeaf_ADASYN} \ref{tab:SLeaf_MWMOTE} se pude ver una mejora en el rendimiento de los modelos con tamaños de ventana pequeños, para tamaños grandes los modelos no son capaces de distinguir entre ambas clases. Para \textit{SVM} y \textit{LSTM}, que son los que mejores resultados obtienen, se puede ver que ambos sobreajustan a la clase positiva, los valores de \textit{Recall} son mucho mayores que los de \textit{Precision}; \textit{XGBoost} y \textit{RandomForest} obtienen resultados más bajos sin embargo no sufren de sobreajuste.\newline
+
+Por último, los resultados obtenido con los datos con oversampling y selección de características \ref{tab:SLeaf_SMOTE_BORUTA} \ref{tab:SLeaf_ADASYN_BORUTA} \ref{tab:SLeaf_MWMOTE_BORUTA} muestran una mejora substancial en todos los modelos. Además, se puede ver que para estos datos el uso de la ventana sí consigue mejorar los resultados. Se pude destacar \textit{RandomForest} que obtiene puntuaciones perfectas siempre, \textit{SVM} mejora aumentando el tamaño de la ventana, aunque tiene sigue teniendo sobreajuste hacia la clase positiva, \textit{LSTM} gracias a la ventana consigue dejar de sobreajustar y \textit{XGBoost} presenta buenos resultados, casi iguales a los de \textit{RandomForest}.
+
 \section{Yoga}
 \begin{table}[h]
 	\centering
@@ -1269,6 +1309,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Yoga base.}
 	\label{tab:Yoga_base}
 \end{table}
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1306,7 +1347,6 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Yoga con SMOTE.}
 	\label{tab:Yoga_SMOTE}
 \end{table}
-\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1344,7 +1384,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Yoga con MWMOTE.}
 	\label{tab:Yoga_MWMOTE}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1382,7 +1422,6 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Yoga con SMOTE+BORUTA.}
 	\label{tab:Yoga_SMOTE_BORUTA}
 \end{table}
-\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1420,8 +1459,15 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Yoga con MWMOTE + BORUTA.}
 	\label{tab:Yoga_MWMOTE_BORUTA}
 \end{table}
-
 \newpage
+Para este conjunto de datos no ha sido posible utilizar \textit{ADASYN} ya que no cumple el umbral mínimo de desbalanceo para poder generar instancias.\newline
+
+Los resultados base \ref{tab:Yoga_base} muestran un buen rendimiento inicial por parte de \textit{LSTM} y \textit{RandomForest}, \textit{XGBoost} también aunque un poco más bajo; sin embargo, se puede ver como la calidad de las predicciones baja conforme se aumenta el tamaño de la ventana, por lo que la técnica de la ventana no parece funcionar demasiado bien para este conjunto de datos.\newline
+
+Los resultados utilizando oversampling \ref{tab:Yoga_SMOTE} \ref{tab:Yoga_MWMOTE} muestran una ligera mejora en el modelo de \textit{LSTM} que no utilizan ventana, conforme aumenta el tamaño de la ventana el rendimiento cae; para el resto de modelos el rendimiento es muy similar al base.\newline
+
+Los resultados obtenidos utilizando oversampling y selección de características \ref{tab:Yoga_SMOTE_BORUTA} \ref{tab:Yoga_MWMOTE_BORUTA} una mejora considerable para en todos los modelos, sobretodo \textit{RandomForest} que obtiene una puntuación perfecta incluso sin utilizar la ventana. \textit{XGBoost} obtiene buenos resultados desde el principio, \textit{LSTM} al aumentar el tamaño de ventana consigue una puntuación perfecta también y \textit{SVM} consigue sus mejores resultados con este preprocesamiento y el uso de la ventana.
+
 \section{Adiac}
 \begin{table}[h]
 	\centering
@@ -1460,6 +1506,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Adiac base.}
 	\label{tab:Adiac_base}
 \end{table}
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1497,7 +1544,6 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Adiac con SMOTE.}
 	\label{tab:Adiac_SMOTE}
 \end{table}
-\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1535,7 +1581,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Adiac con ADASYN.}
 	\label{tab:Adiac_ADASYN}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1573,7 +1619,6 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Adiac con MWMOTE.}
 	\label{tab:Adiac_MWMOTE}
 \end{table}
-\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1611,7 +1656,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Adiac con SMOTE+BORUTA.}
 	\label{tab:Adiac_SMOTE_BORUTA}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1649,7 +1694,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Adiac con ADASYN + BORUTA.}
 	\label{tab:Adiac_ADASYN_BORUTA}
 \end{table}
-\newpage
+
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1688,6 +1733,12 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\label{tab:Adiac_MWMOTE_BORUTA}
 \end{table}
 \newpage
+Los resultados base \ref{tab:Adiac_base} muestran resultados bastante pobres para todos los modelos a excepción de \textit{XGBoost} sin utilizar ventana y con ventana de tamaño 3, el resto de modelos no reconoce ninguna instancia de la clase positiva o muy pocas según las medidas \textit{Recall} y \textit{Precision}.\newline
+
+Los resultados obtenidos para los datos con oversampling \ref{tab:Adiac_SMOTE}  \ref{tab:Adiac_ADASYN} \ref{tab:Adiac_MWMOTE} muestran una mejora en el rendimiento de los modelos inicialmente, aunque después al aumentar el tamaño de la ventana el rendimiento vuelve a bajar. Los modelos de \textit{LSTM} y \textit{SVM} tienen sobreajuste hacia la clase positiva; \textit{RandomForest} no consigue distinguir entre ambas clases. \textit{XGBoost} sí obtiene buenos resultados inicialmente.\newline
+
+Los resultados obtenidos para los datos con oversampling y selección de características \ref{tab:Adiac_SMOTE_BORUTA} \ref{tab:Adiac_ADASYN_BORUTA} \ref{tab:Adiac_MWMOTE_BORUTA} se puede ver un buen rendimiento por parte de \textit{XGBoost} aunque se puede ver que hay cierto sobreajuste a la clase positiva si se miran la medidas \textit{Recall} y \textit{Precision}. \textit{SVM} y \textit{RandomForest} también muestran buenos resultados inicialmente pero su rendimiento decae conforme el tamaño de la ventana aumenta. \textit{LSTM} tiene resultados bastante pobres y solamente está clasificando a todos los elementos como de la clase positiva. Por lo tanto, a excepción de \textit{XGBoost} y \textit{SMOTE} ningún modelo funciona realmente bien.
+
 \section{Wafer}
 \begin{table}[h]
 	\centering
@@ -1726,7 +1777,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Wafer base.}
 	\label{tab:Wafer_base}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1765,7 +1816,6 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Wafer con SMOTE.}
 	\label{tab:Wafer_SMOTE}
 \end{table}
-\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1803,7 +1853,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Wafer con ADASYN.}
 	\label{tab:Wafer_ADASYN}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=15cm}
@@ -1841,11 +1891,10 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Wafer con MWMOTE.}
 	\label{tab:Wafer_MWMOTE}
 \end{table}
-\newpage
 
 \begin{table}[h]
 	\centering
-	\begin{adjustbox}{max width=15cm}
+	\begin{adjustbox}{max width=13cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana}&         &      1  &      3  &   5  &   7  &      9  &   11 &   13 &      15 &      17 &   19 &   21 \\
@@ -1880,7 +1929,7 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Wafer con SMOTE+BORUTA.}
 	\label{tab:Wafer_SMOTE_BORUTA}
 \end{table}
-
+\newpage
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{max width=11cm}
@@ -1918,11 +1967,10 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 	\caption{Resultados Wafer con ADASYN + BORUTA.}
 	\label{tab:Wafer_ADASYN_BORUTA}
 \end{table}
-\newpage
 
 \begin{table}[h]
 	\centering
-	\begin{adjustbox}{max width=15cm}
+	\begin{adjustbox}{max width=13cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana}&         &      1  &      3  &   5  &      7  &   9  &      11 &      13 &   15 &   17 &      19 &      21 \\
@@ -1960,5 +2008,392 @@ Para el algoritmo de selección de características \textit{Boruta} se ha  selec
 
 \newpage
 
+Los resultados iniciales \ref{tab:Wafer_base} muestran resultados buenos por parte de todos los modelos, aunque se puede apreciar que para tamaños de ventana los modelos \textit{LSTM} \textit{SVM} y \textit{RandomForest} empeoran.\newline
+
+Los resultados obtenidos con datos con oversampling \ref{tab:Wafer_SMOTE} \ref{tab:Wafer_ADASYN} \ref{tab:Wafer_MWMOTE} muestran una ligera mejora en el rendimiento de los modelos, aunque los modelos de \textit{LSTM} y \textit{SVM} siguen empeorando conforme se aumenta el tamaño de la ventana.\newline
+
+Por último, los resultados obtenidos con datos con overampling y selección de características \ref{tab:Wafer_SMOTE_BORUTA} \ref{tab:Wafer_ADASYN_BORUTA} \ref{tab:Wafer_MWMOTE_BORUTA} muestran casi todos los modelos puntuaciones perfectas, por lo que se puede afirmar que se puede afirmar que dentro de las series existen ciertas características que son las realmente imporantes, utilizando dichas características se pueden obtener buenas predicciones independientemente del modelo.\newline
 
 \section{Comparación resultados}
+En esta sección se mostrarán tablas comparativas de todos los conjuntos de datos junto con la métrica \textit{AUC} de todos los modelos para cada uno de los preprocesamientos, de esta forma se podrá comparar el rendimiento base general de cada uno de los modelos y como afecta el preprocesamiento utilizado a cada uno de ellos.\newline
+
+\newpage
+
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{FaceAll} & LSTM &  0.9540 &  0.8926 &  0.8863 &  0.9315 &  0.9368 &  0.9477 &  0.9512 &  0.9432 &  \textbf{0.9592} &  0.9417 &  0.9157 \\
+	& SVM &  0.9423 &  0.9044 &  0.8952 &  0.8933 &  0.9216 &  0.9265 &  0.9324 &  0.9387 &  0.9276 &  0.8969 &  0.9029 \\
+	& RandomForest &  0.8261 &  0.8143 &  0.8603 &  0.8182 &  0.8281 &  0.8226 &  0.8500 &  0.8276 &  0.8393 &  0.8241 &  0.8462 \\
+	& XGBoost &  0.8454 &  0.8559 &  0.8673 &  0.8633 &  0.8819 &  0.9023 &  0.9000 &  0.8879 &  0.8747 &  0.8704 &  0.8365 \\
+	\hline
+	\textbf{Adiac} & LSTM &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& RandomForest &  0.5714 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& XGBoost &  \textbf{0.7143} &  0.7143 &  0.6415 &  0.6415 &  0.5714 &  0.5701 &  0.5701 &  0.5701 &  0.5000 &  0.5000 &  0.5000 \\
+	\hline
+	\textbf{EGG\_Eye} & LSTM &  0.7666 &  0.8880 &  0.9164 &  0.9411 &  0.9485 &  0.9450 &  0.9679 &  0.9491 &  0.9693 &  0.9773 &  \textbf{0.9815} \\
+	& SVM &  0.6201 &  0.6315 &  0.6343 &  0.6361 &  0.6413 &  0.6503 &  0.6472 &  0.6462 &  0.6489 &  0.6646 &  0.6619 \\
+	& RandomForest &  0.9282 &  0.9342 &  0.9405 &  0.9425 &  0.9496 &  0.9593 &  0.9583 &  0.9696 &  0.9658 &  0.9574 &  0.9696 \\
+	& XGBoost &  0.7967 &  0.8253 &  0.8141 &  0.8253 &  0.8394 &  0.8288 &  0.8268 &  0.8466 &  0.8269 &  0.8591 &  0.8426 \\
+	\hline
+	\textbf{HAR} & LSTM &  0.9566 &  0.9603 &  0.9262 &  \textbf{0.9683} &  0.9513 &  0.9641 &  0.9382 &  0.9062 &  0.9459 &  0.9150 &  0.9622 \\
+	& SVM &  0.9136 &  0.8876 &  0.8740 &  0.8495 &  0.8090 &  0.8109 &  0.7941 &  0.7637 &  0.7288 &  0.7557 &  0.7849 \\
+	& RandomForest &  0.9512 &  0.9356 &  0.9494 &  0.9302 &  0.9262 &  0.9371 &  0.9341 &  0.9260 &  0.9545 &  0.9388 &  0.9333 \\
+	& XGBoost &  0.9668 &  0.9556 &  0.9417 &  0.9543 &  0.9318 &  0.9568 &  0.9549 &  0.9408 &  0.9629 &  0.9390 &  0.9594 \\
+	\hline
+	\textbf{Wafer} & LSTM &  \textbf{0.9874} &  0.9700 &  0.9629 &  0.9547 &  0.9386 &  0.9254 &  0.9032 &  0.8315 &  0.8314 &  0.7105 &  0.7588 \\
+	& SVM &  0.9835 &  0.8322 &  0.7736 &  0.7082 &  0.6044 &  0.5286 &  0.5038 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& RandomForest &  0.9615 &  0.9080 &  0.8996 &  0.9063 &  0.9069 &  0.9131 &  0.8937 &  0.8871 &  0.8770 &  0.8841 &  0.8842 \\
+	& XGBoost &  0.9787 &  0.9788 &  0.9796 &  0.9766 &  0.9774 &  0.9778 &  0.9795 &  0.9787 &  0.9787 &  0.9794 &  0.9771 \\
+	\hline
+	\textbf{Yoga} & LSTM &  \textbf{0.8192} &  0.5617 &  0.5244 &  0.5196 &  0.5066 &  0.5080 &  0.5121 &  0.5033 &  0.4983 &  0.4874 &  0.4949 \\
+	& SVM &  0.6633 &  0.5242 &  0.5114 &  0.5086 &  0.5043 &  0.4993 &  0.5019 &  0.4970 &  0.4973 &  0.4939 &  0.4913 \\
+	& RandomForest &  0.8151 &  0.7325 &  0.6451 &  0.6069 &  0.6038 &  0.5830 &  0.5740 &  0.5839 &  0.5642 &  0.5679 &  0.5715 \\
+	& XGBoost &  0.7721 &  0.7418 &  0.7104 &  0.6779 &  0.6797 &  0.6538 &  0.6479 &  0.6436 &  0.6261 &  0.6195 &  0.6235 \\
+	\hline
+	\textbf{Ozone} & LSTM &  \textbf{0.5000} &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& RandomForest &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& XGBoost &  0.4986 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	\hline
+	\textbf{SLeaf} & LSTM &  \textbf{0.7405} &  0.6009 &  0.5383 &  0.5656 &  0.5494 &  0.5339 &  0.5166 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& RandomForest &  0.6052 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& XGBoost &  0.6779 &  0.6370 &  0.5609 &  0.5392 &  0.5401 &  0.5494 &  0.5411 &  0.5410 &  0.5192 &  0.5410 &  0.5296 \\
+	\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos base.}
+\label{tab:all_comp_base}
+\end{table}
+\newpage
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{FaceAll} & LSTM &  0.9555 &  0.9228 &  0.9132 &  0.9128 &  0.9314 &  0.9255 &  0.9342 &  0.9379 &  0.9314 &  0.9083 &  0.9065 \\
+	& SVM &  0.9603 &  0.9227 &  0.9087 &  0.9303 &  0.9447 &  0.9346 &  0.9491 &  0.9473 &  0.9455 &  0.9247 &  0.9125 \\
+	& RandomForest &  0.9196 &  0.8966 &  0.9173 &  0.8936 &  0.9059 &  0.9187 &  0.9410 &  0.9221 &  0.9098 &  0.8975 &  0.9032 \\
+	& XGBoost &  0.9034 &  0.9038 &  0.9092 &  0.9487 &  0.9654 &  0.9653 &  \textbf{0.9812} &  0.9283 &  0.9141 &  0.8932 &  0.8635 \\
+	\hline
+	\textbf{Adiac} & LSTM &  0.6367 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  0.7812 &  0.6171 &  0.5571 &  0.6389 &  0.5446 &  0.5831 &  0.4589 &  0.5075 &  0.4323 &  0.4379 &  0.5481 \\
+	& RandomForest &  0.7844 &  0.7805 &  0.7103 &  0.5701 &  0.5701 &  0.5714 &  0.5714 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& XGBoost &  0.8532 &  \textbf{0.8545} &  0.7051 &  0.7050 &  0.7050 &  0.7777 &  0.7062 &  0.7075 &  0.7075 &  0.7789 &  0.7074 \\
+	\hline
+	\textbf{EGG\_Eye} & LSTM &  0.5064 &  0.5433 &  0.5833 &  0.5954 &  0.5658 &  0.6151 &  0.5472 &  0.5835 &  0.5764 &  0.5581 &  0.5575 \\
+	& SVM &  0.6640 &  0.6815 &  0.7013 &  0.7108 &  0.7060 &  0.7101 &  0.7139 &  0.6974 &  0.7016 &  0.7179 &  0.7150 \\
+	& RandomForest &  0.9332 &  0.9389 &  0.9371 &  0.9480 &  0.9583 &  0.9538 &  0.9617 &  0.9660 &  0.9699 &  \textbf{0.9710} &  0.9639 \\
+	& XGBoost &  0.8069 &  0.8168 &  0.8169 &  0.8347 &  0.8491 &  0.8368 &  0.8340 &  0.8466 &  0.8471 &  0.8525 &  0.8656 \\
+	\hline
+	\textbf{HAR} & LSTM &  0.8173 &  0.8315 &  0.8459 &  0.8169 &  0.8441 &  0.8359 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  0.9554 &  0.9415 &  0.9524 &  0.9429 &  0.9300 &  0.9336 &  0.9293 &  0.9208 &  0.9322 &  0.9347 &  0.9453 \\
+	& RandomForest &  0.9613 &  0.9531 &  0.9581 &  0.9702 &  0.9507 &  \textbf{0.9745} &  0.9449 &  0.9423 &  0.9611 &  0.9645 &  0.9541 \\
+	& XGBoost &  0.9637 &  0.9576 &  0.9643 &  0.9654 &  0.9742 &  0.9591 &  0.9580 &  0.9565 &  0.9665 &  0.9663 &  0.9556 \\
+	\hline
+	\textbf{Wafer} & LSTM &  0.9890 &  0.9780 &  0.9774 &  0.9717 &  0.9546 &  0.9264 &  0.8911 &  0.8892 &  0.8149 &  0.8105 &  0.7138 \\
+	& SVM &  0.9911 &  0.9617 &  0.8691 &  0.7572 &  0.6887 &  0.6246 &  0.5933 &  0.5694 &  0.5511 &  0.5358 &  0.5284 \\
+	& RandomForest &  0.9841 &  0.9877 &  0.9902 &  0.9853 &  0.9875 &  0.9872 &  0.9874 &  0.9883 &  0.9839 &  0.9811 &  0.9853 \\
+	& XGBoost &  0.9891 &  0.9929 &  0.9860 &  0.9946 &  0.9879 &  0.9873 &  0.9863 &  \textbf{0.9946} &  0.9852 &  0.9883 &  0.9937 \\
+	\hline
+	\textbf{Yoga} & LSTM &  \textbf{0.8256} &  0.5619 &  0.5163 &  0.5067 &  0.5107 &  0.5096 &  0.5144 &  0.5018 &  0.5024 &  0.4979 &  0.4912 \\
+	& SVM &  0.6698 &  0.5253 &  0.5102 &  0.5087 &  0.5077 &  0.4937 &  0.5037 &  0.4941 &  0.4938 &  0.4941 &  0.5043 \\
+	& RandomForest &  0.8071 &  0.7307 &  0.6755 &  0.6148 &  0.5831 &  0.5746 &  0.5818 &  0.5877 &  0.5650 &  0.5382 &  0.5541 \\
+	& XGBoost &  0.7766 &  0.7423 &  0.7072 &  0.6670 &  0.6565 &  0.6451 &  0.6292 &  0.6368 &  0.6056 &  0.6124 &  0.6199 \\
+	\hline
+	\textbf{Ozone} & LSTM &  0.6944 &  0.7332 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  0.8032 &  \textbf{0.8528} &  0.8343 &  0.6475 &  0.7764 &  0.5278 &  0.7522 &  0.7373 &  0.7088 &  0.6020 &  0.6362 \\
+	& RandomForest &  0.4916 &  0.4972 &  0.4986 &  0.4986 &  0.5000 &  0.5371 &  0.4986 &  0.4986 &  0.5000 &  0.5000 &  0.5000 \\
+	& XGBoost &  0.5776 &  0.5554 &  0.5472 &  0.4819 &  0.5399 &  0.4807 &  0.4902 &  0.4819 &  0.5402 &  0.4902 &  0.4916 \\
+	\hline
+	\textbf{SLeaf} & LSTM &  0.9044 &  0.8695 &  0.5078 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+	& SVM &  \textbf{0.9095} &  0.8797 &  0.7487 &  0.6431 &  0.5629 &  0.5339 &  0.5699 &  0.5157 &  0.5052 &  0.5051 &  0.5165 \\
+	& RandomForest &  0.7988 &  0.7079 &  0.6083 &  0.6024 &  0.6322 &  0.6161 &  0.5821 &  0.5690 &  0.5611 &  0.5629 &  0.5847 \\
+	& XGBoost &  0.8523 &  0.7879 &  0.7735 &  0.6928 &  0.7047 &  0.7056 &  0.7018 &  0.6851 &  0.6572 &  0.7358 &  0.7043 \\
+	\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos con SMOTE.}
+\label{tab:all_comp_smote}
+\end{table}
+\newpage
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+		\hline
+		\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+		\hline
+		\textbf{FaceAll} & LSTM &  \textbf{0.9623} &  0.8861 &  0.9032 &  0.9155 &  0.9364 &  0.9140 &  0.9438 &  0.9459 &  0.9460 &  0.9157 &  0.9157 \\
+		& SVM &  0.9603 &  0.9227 &  0.9084 &  0.9230 &  0.9450 &  0.9346 &  0.9491 &  0.9387 &  0.9363 &  0.9062 &  0.9029 \\
+		& RandomForest &  0.8643 &  0.8339 &  0.8597 &  0.8712 &  0.8747 &  0.8626 &  0.8833 &  0.8017 &  0.8393 &  0.8519 &  0.8173 \\
+		& XGBoost &  0.9179 &  0.8653 &  0.8890 &  0.8884 &  0.9113 &  0.9401 &  0.9744 &  0.8966 &  0.9018 &  0.8889 &  0.8651 \\
+		\hline
+		\textbf{Adiac} & LSTM &  0.6185 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  0.7461 &  0.6223 &  0.5664 &  0.6362 &  0.5606 &  0.5951 &  0.4441 &  0.5519 &  0.3956 &  0.4229 &  0.4148 \\
+		& RandomForest &  0.7831 &  0.7091 &  0.6415 &  0.6415 &  0.5701 &  0.5701 &  0.6429 &  0.5714 &  0.5000 &  0.4986 &  0.5000 \\
+		& XGBoost &  \textbf{0.8558} &  0.8558 &  0.8479 &  0.7050 &  0.7050 &  0.7777 &  0.7076 &  0.7075 &  0.7075 &  0.7075 &  0.7074 \\
+		\hline
+		\textbf{EGG\_Eye} & LSTM &  0.5047 &  0.5368 &  0.5393 &  0.5425 &  0.5511 &  0.5383 &  0.5237 &  0.5269 &  0.5411 &  0.5116 &  0.5383 \\
+		& SVM &  0.6496 &  0.6801 &  0.6853 &  0.6955 &  0.7028 &  0.7078 &  0.6995 &  0.6937 &  0.7115 &  0.7075 &  0.7112 \\
+		& RandomForest &  0.9299 &  0.9460 &  0.9526 &  0.9583 &  0.9660 &  0.9733 &  0.9745 &  \textbf{0.9759} &  0.9694 &  0.9695 &  0.9740 \\
+		& XGBoost &  0.8065 &  0.8208 &  0.8201 &  0.8338 &  0.8486 &  0.8410 &  0.8507 &  0.8487 &  0.8464 &  0.8654 &  0.8479 \\
+		\hline
+		\textbf{HAR} & LSTM &  0.8174 &  0.8349 &  0.5000 &  0.5000 &  0.5000 &  0.8418 &  0.5000 &  0.8636 &  0.8623 &  0.5000 &  0.8882 \\
+		& SVM &  0.8652 &  0.8737 &  0.8931 &  0.8904 &  0.9058 &  0.9056 &  0.9126 &  0.8990 &  0.9118 &  0.9120 &  0.9170 \\
+		& RandomForest &  0.9576 &  0.9440 &  0.9520 &  0.9407 &  0.9491 &  0.9500 &  0.9590 &  0.9367 &  0.9553 &  0.9593 &  0.9658 \\
+		& XGBoost &  0.9582 &  0.9631 &  0.9655 &  \textbf{0.9761} &  0.9405 &  0.9631 &  0.9403 &  0.9527 &  0.9590 &  0.9551 &  0.9631 \\
+		\hline
+		\textbf{Wafer} & LSTM &  0.9890 &  0.9750 &  0.9787 &  0.9765 &  0.9639 &  0.9297 &  0.9370 &  0.8800 &  0.8017 &  0.7922 &  0.7475 \\
+		& SVM &  0.9913 &  0.9640 &  0.8661 &  0.7568 &  0.6880 &  0.6297 &  0.5881 &  0.5666 &  0.5535 &  0.5350 &  0.5284 \\
+		& RandomForest &  0.9886 &  0.9870 &  0.9893 &  0.9861 &  0.9883 &  0.9858 &  0.9850 &  0.9825 &  0.9720 &  0.9798 &  0.9838 \\
+		& XGBoost &  0.9877 &  0.9919 &  0.9867 &  0.9945 &  0.9871 &  0.9873 &  0.9865 &  0.9859 &  \textbf{0.9945} &  0.9910 &  0.9912 \\
+		\hline
+		\textbf{Yoga} & LSTM &  \textbf{0.8192} &  0.5617 &  0.5244 &  0.5196 &  0.5066 &  0.5080 &  0.5121 &  0.5033 &  0.4983 &  0.4874 &  0.4949 \\
+		& SVM &  0.6633 &  0.5242 &  0.5114 &  0.5086 &  0.5043 &  0.4993 &  0.5019 &  0.4970 &  0.4973 &  0.4939 &  0.4913 \\
+		& RandomForest &  0.8151 &  0.7325 &  0.6451 &  0.6069 &  0.6038 &  0.5830 &  0.5740 &  0.5839 &  0.5642 &  0.5679 &  0.5715 \\
+		& XGBoost &  0.7721 &  0.7418 &  0.7104 &  0.6779 &  0.6797 &  0.6538 &  0.6479 &  0.6436 &  0.6261 &  0.6195 &  0.6235 \\
+		\hline
+		\textbf{Ozone} & LSTM &  0.6396 &  0.6826 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  0.7949 &  \textbf{0.8333} &  0.7541 &  0.7238 &  0.6093 &  0.5792 &  0.6323 &  0.7745 &  0.6948 &  0.7431 &  0.6909 \\
+		& RandomForest &  0.4944 &  0.4986 &  0.4972 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& XGBoost &  0.5503 &  0.5361 &  0.4819 &  0.5473 &  0.5227 &  0.5360 &  0.4872 &  0.4889 &  0.6151 &  0.5684 &  0.5430 \\
+		\hline
+		\textbf{SLeaf} & LSTM &  0.9049 &  0.8660 &  0.8130 &  0.6885 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  \textbf{0.9161} &  0.8871 &  0.7561 &  0.6294 &  0.5638 &  0.5339 &  0.5699 &  0.5166 &  0.5043 &  0.5051 &  0.5069 \\
+		& RandomForest &  0.7545 &  0.7170 &  0.6191 &  0.5904 &  0.6024 &  0.5921 &  0.6171 &  0.6162 &  0.5506 &  0.5515 &  0.6092 \\
+		& XGBoost &  0.8606 &  0.8262 &  0.7878 &  0.7373 &  0.7141 &  0.7158 &  0.7674 &  0.7219 &  0.6755 &  0.6886 &  0.7008 \\
+		\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos con ADASYN.}
+\label{tab:all_comp_adasyn}
+\end{table}
+\newpage
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+		\hline
+		\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+		\hline
+		\textbf{FaceAll} & LSTM &  0.9626 &  0.9240 &  0.9200 &  0.9121 &  0.9268 &  0.9292 &  0.9379 &  0.9326 &  0.9428 &  0.9101 &  0.9114 \\
+		& SVM &  0.9591 &  0.9227 &  0.9087 &  0.9306 &  0.9444 &  0.9346 &  0.9491 &  0.9470 &  0.9455 &  0.9247 &  0.9125 \\
+		& RandomForest &  0.9187 &  0.8960 &  0.8964 &  0.8785 &  0.9138 &  0.8871 &  0.9083 &  0.9135 &  0.9190 &  0.8787 &  0.8939 \\
+		& XGBoost &  0.9179 &  0.9109 &  0.9249 &  0.9423 &  0.9582 &  \textbf{0.9656} &  0.9633 &  0.9270 &  0.9055 &  0.9117 &  0.8638 \\
+		\hline
+		\textbf{Adiac} & LSTM &  0.5807 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  0.7773 &  0.6445 &  0.5966 &  0.6323 &  0.6058 &  0.6245 &  0.5125 &  0.5104 &  0.5382 &  0.4871 &  0.5728 \\
+		& RandomForest &  0.7130 &  0.7130 &  0.5714 &  0.7143 &  0.5714 &  0.5000 &  0.5000 &  0.5714 &  0.5000 &  0.5000 &  0.5000 \\
+		& XGBoost &  \textbf{0.7857} &  0.7844 &  0.7844 &  0.7844 &  0.7804 &  0.7089 &  0.7790 &  0.7062 &  0.7075 &  0.7061 &  0.7074 \\
+		\hline
+		\textbf{EGG\_eye} & LSTM &  0.5055 &  0.5411 &  0.5418 &  0.5724 &  0.5825 &  0.5565 &  0.5469 &  0.5439 &  0.5570 &  0.5506 &  0.5667 \\
+		& SVM &  0.6911 &  0.7035 &  0.6937 &  0.6975 &  0.7044 &  0.7064 &  0.7006 &  0.7124 &  0.7046 &  0.7119 &  0.7142 \\
+		& RandomForest &  0.9320 &  0.9304 &  0.9548 &  0.9546 &  0.9606 &  0.9674 &  0.9620 &  0.9648 &  \textbf{0.9797} &  0.9784 &  0.9770 \\
+		& XGBoost &  0.8079 &  0.8237 &  0.8284 &  0.8324 &  0.8334 &  0.8522 &  0.8398 &  0.8473 &  0.8521 &  0.8494 &  0.8739 \\
+		\hline
+		\textbf{HAR} & LSTM &  0.8216 &  0.8187 &  0.8252 &  0.5000 &  0.8431 &  0.5000 &  0.8591 &  0.5000 &  0.8857 &  0.5000 &  0.5000 \\
+		& SVM &  0.8652 &  0.8737 &  0.8931 &  0.8904 &  0.9058 &  0.9056 &  0.9126 &  0.8990 &  0.9118 &  0.9120 &  0.9170 \\
+		& RandomForest &  \textbf{0.9740} &  0.9506 &  0.9454 &  0.9667 &  0.9536 &  0.9557 &  0.9529 &  0.9570 &  0.9524 &  0.9406 &  0.9403 \\
+		& XGBoost &  0.9500 &  0.9562 &  0.9559 &  0.9538 &  0.9555 &  0.9521 &  0.9314 &  0.9462 &  0.9514 &  0.9692 &  0.9613 \\
+		\hline
+		\textbf{Wafer} & LSTM &  0.9846 &  0.9777 &  0.9805 &  0.9758 &  0.9574 &  0.9217 &  0.8880 &  0.8652 &  0.8028 &  0.7423 &  0.7254 \\
+		& SVM &  0.9932 &  0.9664 &  0.8826 &  0.7651 &  0.6841 &  0.6096 &  0.5786 &  0.5619 &  0.5520 &  0.5366 &  0.5336 \\
+		& RandomForest &  0.9723 &  0.9854 &  0.9894 &  0.9871 &  0.9881 &  0.9871 &  0.9815 &  0.9820 &  0.9812 &  0.9871 &  0.9818 \\
+		& XGBoost &  0.9865 &  0.9907 &  \textbf{0.9934} &  0.9863 &  0.9864 &  0.9868 &  0.9858 &  0.9866 &  0.9873 &  0.9864 &  0.9870 \\
+		\hline
+		\textbf{Yoga} & LSTM &  \textbf{0.8192} &  0.5617 &  0.5244 &  0.5196 &  0.5066 &  0.5080 &  0.5121 &  0.5033 &  0.4983 &  0.4874 &  0.4949 \\
+		& SVM &  0.6633 &  0.5242 &  0.5114 &  0.5086 &  0.5043 &  0.4993 &  0.5019 &  0.4970 &  0.4973 &  0.4939 &  0.4913 \\
+		& RandomForest &  0.8151 &  0.7325 &  0.6451 &  0.6069 &  0.6038 &  0.5830 &  0.5740 &  0.5839 &  0.5642 &  0.5679 &  0.5715 \\
+		& XGBoost &  0.7721 &  0.7418 &  0.7104 &  0.6779 &  0.6797 &  0.6538 &  0.6479 &  0.6436 &  0.6261 &  0.6195 &  0.6235 \\
+		\hline
+		\textbf{Ozone} & LSTM &  0.7331 &  0.5892 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  0.6644 &  0.7773 &  0.7357 &  \textbf{0.7468} &  0.6698 &  0.6919 &  0.5643 &  0.6763 &  0.7363 &  0.6407 &  0.6134 \\
+		& RandomForest &  0.5343 &  0.5357 &  0.6364 &  0.5305 &  0.4986 &  0.5000 &  0.5000 &  0.5000 &  0.4986 &  0.5000 &  0.5000 \\
+		& XGBoost &  0.4998 &  0.5305 &  0.5986 &  0.5629 &  0.5755 &  0.5764 &  0.5721 &  0.5778 &  0.4916 &  0.5220 &  0.4888 \\
+		\hline
+		\textbf{SLeaf} & LSTM &  0.9083 &  0.8681 &  0.7717 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  \textbf{0.9178} &  0.8640 &  0.7130 &  0.6262 &  0.5562 &  0.5322 &  0.5603 &  0.5270 &  0.5061 &  0.4956 &  0.4973 \\
+		& RandomForest &  0.7923 &  0.7079 &  0.7170 &  0.6024 &  0.6015 &  0.6152 &  0.6084 &  0.5979 &  0.5506 &  0.5323 &  0.5419 \\
+		& XGBoost &  0.8071 &  0.8262 &  0.7826 &  0.7475 &  0.6945 &  0.7047 &  0.7246 &  0.6983 &  0.6790 &  0.6440 &  0.6344 \\
+		\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos con MWMOTE.}
+\label{tab:all_comp_mwmote}
+\end{table}
+\newpage
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+	\hline
+	\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+	\hline
+	\textbf{FaceAll} & LSTM &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& SVM &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& RandomForest &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& XGBoost &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	\hline
+	\textbf{Adiac} & LSTM &  0.5026 &  0.5196 &  0.5000 &  0.5000 &  0.5000 &  0.4794 &  0.5000 &  0.5000 &  0.5000 &  0.5055 &  0.5000 \\
+	& SVM &  0.8242 &  0.7749 &  0.7645 &  0.6944 &  0.6772 &  0.7334 &  0.7243 &  0.7205 &  0.6683 &  0.7151 &  0.5701 \\
+	& RandomForest &  0.9169 &  0.9194 &  0.7791 &  0.8545 &  0.7103 &  0.6402 &  0.6375 &  0.5701 &  0.5000 &  0.5701 &  0.5000 \\
+	& XGBoost &  0.9169 &  0.9168 &  0.8479 &  0.9167 &  0.9179 &  0.9152 &  0.9192 &  0.9151 &  0.9204 &  0.9217 &  \textbf{0.9217} \\
+	\hline
+	\textbf{EGG\_eye} & LSTM &  0.5064 &  0.5433 &  0.5833 &  0.5954 &  0.5658 &  0.6151 &  0.5472 &  0.5835 &  0.5764 &  0.5581 &  0.5575 \\
+	& SVM &  0.6640 &  0.6815 &  0.7013 &  0.7108 &  0.7060 &  0.7101 &  0.7139 &  0.6974 &  0.7016 &  0.7179 &  0.7150 \\
+	& RandomForest &  0.9332 &  0.9389 &  0.9371 &  0.9480 &  0.9583 &  0.9538 &  0.9617 &  0.9660 &  0.9699 &  \textbf{0.9710} &  0.9639 \\
+	& XGBoost &  0.8069 &  0.8168 &  0.8169 &  0.8347 &  0.8491 &  0.8368 &  0.8340 &  0.8466 &  0.8471 &  0.8525 &  0.8656 \\
+	\hline
+	\textbf{HAR} & LSTM &  0.8237 &  0.8395 &  0.8209 &  0.5000 &  0.8427 &  0.5000 &  0.8341 &  0.8596 &  0.5000 &  0.5000 &  0.8894 \\
+	& SVM &  0.9515 &  0.9440 &  0.9491 &  0.9451 &  0.9515 &  0.9395 &  0.9435 &  0.9235 &  0.9365 &  0.9481 &  0.9404 \\
+	& RandomForest &  0.9596 &  0.9684 &  0.9598 &  0.9508 &  0.9520 &  0.9580 &  0.9672 &  0.9713 &  0.9704 &  0.9575 &  0.9777 \\
+	& XGBoost &  0.9659 &  0.9587 &  0.9588 &  0.9551 &  0.9533 &  0.9636 &  0.9745 &  0.9698 &  0.9568 &  0.9626 &  \textbf{0.9800} \\
+	\hline
+	\textbf{Wafer} & LSTM &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& SVM &  0.9983 &  0.9989 &  1.0000 &  1.0000 &  0.9948 &  1.0000 &  1.0000 &  0.9948 &  0.9842 &  1.0000 &  1.0000 \\
+	& RandomForest &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& XGBoost &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	\hline
+	\textbf{Yoga} & LSTM &  0.6197 &  0.7470 &  0.9263 &  0.9962 &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& SVM &  0.6906 &  0.6867 &  0.7450 &  0.7628 &  0.8009 &  0.7833 &  0.8388 &  0.8378 &  0.8605 &  0.8559 &  0.8611 \\
+	& RandomForest &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& XGBoost &  0.9543 &  0.9716 &  0.9963 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	\hline
+	\textbf{Ozone} & LSTM &  0.6500 &  0.6300 &  0.6256 &  0.6253 &  0.6176 &  0.6062 &  0.6385 &  0.6039 &  0.6389 &  0.6391 &  0.6092 \\
+	& SVM &  0.7048 &  0.7621 &  0.6880 &  0.6338 &  \textbf{0.7764} &  0.6411 &  0.7102 &  0.6551 &  0.3995 &  0.5213 &  0.7276 \\
+	& RandomForest &  0.5696 &  0.4818 &  0.4861 &  0.4873 &  0.4986 &  0.4901 &  0.4944 &  0.4959 &  0.4986 &  0.4958 &  0.4986 \\
+	& XGBoost &  0.6577 &  0.5245 &  0.6064 &  0.5008 &  0.4526 &  0.5333 &  0.5092 &  0.4568 &  0.5131 &  0.5275 &  0.5845 \\
+	\hline
+	\textbf{SLeaf} & LSTM &  0.8795 &  0.9060 &  0.9422 &  0.9656 &  0.9849 &  0.9946 &  0.9956 &  0.9989 &  \textbf{1.0000} &  0.9989 &  1.0000 \\
+	& SVM &  0.8910 &  0.9079 &  0.9324 &  0.9344 &  0.9471 &  0.9653 &  0.9728 &  0.9726 &  0.9402 &  0.9790 &  0.9834 \\
+	& RandomForest &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	& XGBoost &  0.9968 &  0.9989 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+	\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos con SMOTE+BORUTA.}
+\label{tab:all_comp_smote_boruta}
+\end{table}
+\newpage
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+		\hline
+		\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+		\hline
+		\textbf{FaceAll} & LSTM &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& SVM &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& RandomForest &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& XGBoost &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		\hline
+		\textbf{Adiac} & LSTM &  0.5117 &  0.5000 &  0.5039 &  0.5053 &  0.5000 &  0.5053 &  0.5255 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+		& SVM &  0.8164 &  0.7736 &  0.7009 &  0.6984 &  0.6178 &  0.7320 &  0.7162 &  0.7083 &  0.6588 &  0.6563 &  0.5783 \\
+		& RandomForest &  0.9142 &  0.8467 &  0.7791 &  0.7103 &  0.7103 &  0.5688 &  0.4973 &  0.5687 &  0.5000 &  0.5714 &  0.5714 \\
+		& XGBoost &  0.9156 &  0.9168 &  0.8466 &  0.9180 &  0.9166 &  0.9152 &  0.9165 &  \textbf{0.9205} &  0.9177 &  0.8503 &  0.9203 \\
+		\hline
+		\textbf{EGG\_eye} & LSTM &  0.5047 &  0.5368 &  0.5393 &  0.5425 &  0.5511 &  0.5383 &  0.5237 &  0.5269 &  0.5411 &  0.5116 &  0.5383 \\
+		& SVM &  0.6496 &  0.6801 &  0.6853 &  0.6955 &  0.7028 &  0.7078 &  0.6995 &  0.6937 &  0.7115 &  0.7075 &  0.7112 \\
+		& RandomForest &  0.9299 &  0.9460 &  0.9526 &  0.9583 &  0.9660 &  0.9733 &  0.9745 &  \textbf{0.9759} &  0.9694 &  0.9695 &  0.9740 \\
+		& XGBoost &  0.8065 &  0.8208 &  0.8201 &  0.8338 &  0.8486 &  0.8410 &  0.8507 &  0.8487 &  0.8464 &  0.8654 &  0.8479 \\
+		\hline
+		\textbf{HAR} & LSTM &  0.8185 &  0.8274 &  0.8214 &  0.8379 &  0.8479 &  0.8349 &  0.8414 &  0.8230 &  0.8807 &  0.5000 &  0.8502 \\
+		& SVM &  0.8579 &  0.8771 &  0.8871 &  0.8882 &  0.8995 &  0.8969 &  0.9102 &  0.9207 &  0.9157 &  0.9356 &  0.9364 \\
+		& RandomForest &  0.9473 &  0.9601 &  0.9571 &  0.9417 &  0.9417 &  0.9537 &  0.9566 &  0.9578 &  \textbf{0.9724} &  0.9642 &  0.9629 \\
+		& XGBoost &  0.9624 &  0.9588 &  0.9567 &  0.9383 &  0.9515 &  0.9494 &  0.9614 &  0.9563 &  0.9648 &  0.9600 &  0.9590 \\
+		\hline
+		\textbf{Wafer} & LSTM &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& SVM &  0.9983 &  0.9989 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& RandomForest &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& XGBoost &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		\hline
+		\textbf{Yoga} & LSTM &  0.6596 &  0.7511 &  0.9239 &  0.9925 &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& SVM &  0.7066 &  0.6913 &  0.7181 &  0.7185 &  0.7611 &  0.7988 &  0.7731 &  0.8122 &  0.8205 &  0.8472 &  0.8479 \\
+		& RandomForest &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& XGBoost &  0.9537 &  0.9778 &  0.9963 &  1.0000 &  0.9962 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		\hline
+		\textbf{Ozone} & LSTM &  0.6688 &  0.6754 &  0.6905 &  0.6676 &  0.6783 &  0.6838 &  0.5683 &  0.6046 &  0.6768 &  0.5632 &  0.5817 \\
+		& SVM &  0.7805 &  0.7548 &  \textbf{0.8259} &  0.6296 &  0.6882 &  0.6159 &  0.6189 &  0.5890 &  0.6707 &  0.6633 &  0.6567 \\
+		& RandomForest &  0.5161 &  0.5258 &  0.4915 &  0.4930 &  0.4957 &  0.5328 &  0.4972 &  0.4986 &  0.4972 &  0.4986 &  0.4986 \\
+		& XGBoost &  0.6176 &  0.7922 &  0.5399 &  0.5469 &  0.6061 &  0.5066 &  0.4649 &  0.5131 &  0.5423 &  0.5135 &  0.4787 \\
+		\hline
+		\textbf{SLeaf} & LSTM &  0.8785 &  0.9211 &  0.9465 &  0.9559 &  0.9741 &  0.9848 &  0.9902 &  0.9978 &  \textbf{1.0000} &  0.9989 &  1.0000 \\
+		& SVM &  0.9384 &  0.9241 &  0.9346 &  0.9387 &  0.9644 &  0.9588 &  0.9728 &  0.9716 &  0.9714 &  0.9629 &  0.9650 \\
+		& RandomForest &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		& XGBoost &  0.9958 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+		\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos con ADASYN+BORUTA.}
+\label{tab:all_comp_adasyn_boruta}
+\end{table}
+\newpage
+\begin{table}[h]
+\centering
+\begin{adjustbox}{max width=15cm}
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
+				\hline
+				\textbf{Tam. Ventana}&         &      1  &      3  &      5  &      7  &      9  &      11 &      13 &      15 &      17 &      19 &      21 \\
+				\hline
+				\textbf{FaceAll} & LSTM &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& SVM &  0.9990 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& RandomForest &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& XGBoost &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				\hline
+				\textbf{Adiac} & LSTM &  0.5143 &  0.5275 &  0.5066 &  0.5000 &  0.5027 &  0.5147 &  0.5013 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+				& SVM &  0.8216 &  0.7906 &  0.7592 &  0.7063 &  0.6497 &  0.6553 &  0.7283 &  0.6761 &  0.5969 &  0.6550 &  0.5920 \\
+				& RandomForest &  0.7779 &  0.8506 &  0.7778 &  0.6415 &  0.7130 &  0.7116 &  0.5687 &  0.5000 &  0.5000 &  0.5000 &  0.5000 \\
+				& XGBoost &  0.7792 &  0.8493 &  0.8479 &  0.8492 &  0.8492 &  \textbf{0.9152} &  0.8477 &  0.8477 &  0.8490 &  0.7789 &  0.7102 \\
+				\hline
+				\textbf{EGG\_eye} & LSTM &  0.5055 &  0.5411 &  0.5418 &  0.5724 &  0.5825 &  0.5565 &  0.5469 &  0.5439 &  0.5570 &  0.5506 &  0.5667 \\
+				& SVM &  0.6911 &  0.7035 &  0.6937 &  0.6975 &  0.7044 &  0.7064 &  0.7006 &  0.7124 &  0.7046 &  0.7119 &  0.7142 \\
+				& RandomForest &  0.9320 &  0.9304 &  0.9548 &  0.9546 &  0.9606 &  0.9674 &  0.9620 &  0.9648 &  \textbf{0.9797} &  0.9784 &  0.9770 \\
+				& XGBoost &  0.8079 &  0.8237 &  0.8284 &  0.8324 &  0.8334 &  0.8522 &  0.8398 &  0.8473 &  0.8521 &  0.8494 &  0.8739 \\
+				\hline
+				\textbf{HAR} & LSTM &  0.8317 &  0.8319 &  0.8376 &  0.5000 &  0.8513 &  0.8579 &  0.8702 &  0.8663 &  0.5000 &  0.5000 &  0.5000 \\
+				& SVM &  0.9590 &  0.9496 &  0.9524 &  0.9413 &  0.9433 &  0.9385 &  0.9408 &  0.9248 &  0.9296 &  0.9415 &  0.9474 \\
+				& RandomForest &  0.9704 &  0.9614 &  0.9605 &  \textbf{0.9730} &  0.9518 &  0.9631 &  0.9584 &  0.9646 &  0.9629 &  0.9553 &  0.9713 \\
+				& XGBoost &  0.9411 &  0.9435 &  0.9675 &  0.9622 &  0.9762 &  0.9613 &  0.9537 &  0.9555 &  0.9526 &  0.9669 &  0.9550 \\
+				\hline
+				\textbf{Wafer} & LSTM &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& SVM &  0.9989 &  0.9989 &  1.0000 &  0.9948 &  1.0000 &  0.9948 &  0.9948 &  1.0000 &  1.0000 &  0.9895 &  0.9947 \\
+				& RandomForest &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& XGBoost &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				\hline
+				\textbf{Yoga} & LSTM &  0.6381 &  0.7630 &  0.9232 &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& SVM &  0.6665 &  0.6738 &  0.7146 &  0.7409 &  0.7924 &  0.8096 &  0.8485 &  0.8244 &  0.8560 &  0.8714 &  0.8794 \\
+				& RandomForest &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& XGBoost &  0.9482 &  0.9852 &  0.9963 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				\hline
+				\textbf{Ozone} & LSTM &  0.6271 &  0.5208 &  0.5779 &  0.6059 &  0.6527 &  0.6831 &  0.5639 &  0.6163 &  0.6574 &  0.6250 &  0.5609 \\
+				& SVM &  0.7123 &  0.6720 &  0.6282 &  0.7263 &  \textbf{0.7811} &  0.6882 &  0.7161 &  0.6297 &  0.6787 &  0.7064 &  0.6829 \\
+				& RandomForest &  0.5134 &  0.6012 &  0.5202 &  0.4888 &  0.4916 &  0.5645 &  0.4972 &  0.4972 &  0.4972 &  0.4986 &  0.4986 \\
+				& XGBoost &  0.4823 &  0.5676 &  0.6112 &  0.5690 &  0.4964 &  0.5179 &  0.4678 &  0.5381 &  0.5244 &  0.5968 &  0.5290 \\
+				\hline
+				\textbf{SLeaf} & LSTM &  0.8817 &  0.9286 &  0.9454 &  0.9667 &  0.9903 &  0.9957 &  0.9956 &  0.9978 &  0.9989 &  0.9989 &  \textbf{1.0000} \\
+				& SVM &  0.9222 &  0.9305 &  0.9346 &  0.9354 &  0.9622 &  0.9566 &  0.9339 &  0.9587 &  0.9091 &  0.9629 &  0.9467 \\
+				& RandomForest &  \textbf{1.0000} &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				& XGBoost &  0.9947 &  0.9989 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 &  1.0000 \\
+				\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Comparación métodos con MWMOTE+BORUTA.}
+\label{tab:all_comp_mwmote_boruta}
+\end{table}
+\newpage
+
+Mirando la tabla de resultados sin preprocesamiento \ref{tab:all_comp_base}, se puede ver una clara ventaja de \textit{LSTM} conforme a otros modelos, esto no es de extrañar ya que este tipo de modelos suelen ser especialmente buenos para problemas como los que se utilizan en este estudio; aunque también los modelos ensemble, \textit{RandomForest} y \textit{XGBoost} obtienen resultados competitivos en algunos casos como por ejemplo para el conjunto de datos \textit{Yoga}.\newline
+
+Una vez se utilizan métodos de oversampling \ref{tab:all_comp_smote} \ref{tab:all_comp_adasyn} \ref{tab:all_comp_mwmote}, se puede ver una mejora general en el rendimiento de todos los modelos haciendo que ganen a \textit{LSTM}, incluso en alguno casos empeora, seguramente provocado por un exceso de datos y sobreaprendizaje.\newline
+
+Por último, la combinación de oversampling y selección de características \ref{tab:all_comp_smote_boruta} \ref{tab:all_comp_adasyn_boruta} \ref{tab:all_comp_mwmote_boruta} hace que se mejore todavía más los datos en la mayoría de casos independientemente del modelo.
+
