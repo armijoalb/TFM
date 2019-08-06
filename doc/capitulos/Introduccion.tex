@@ -1,5 +1,19 @@
 \chapter{Introducción}
 \section{Objetivos}
+Los objetivos propuesto para este Trabajo Fin de Máster son los siguientes:
+\begin{itemize}
+	\item Estudio de algoritmos básicos para series temporales y clasificación.
+	\item Estudio sobre LSTM.
+	\item Estudio sobre desbalanceo de clases y métodos para tratar con desbalanceo.
+	\item Estudio sobre aplicación de LSTMs a problemas de clasificación.
+	\item Estudio sobre técnicas de oversampling para series temporales.
+	\item Estudio sobre tratamiento de series temporales de clasificación.
+	\item Búsqueda de un conjunto de datasets de series temporales de clasificación con desbalanceo.
+	\item Estudio de métricas más utilizadas para problemas de clasificación desbalanceada.
+	\item Realización de pruebas con el conjunto de datasets elegido con LSTMs y métodos clásicos junto con diferentes métodos de preprocesamiento.
+	\item Comparación y análisis de rendimiento de modelos obtenidos con LSTMs y modelos clásicos.
+	\item Obtener conclusiones sobre las pruebas realizadas y nuevos campos de estudio sobre este tema.
+\end{itemize}
 \newpage
 \section{Motivación}
 A día de hoy, la minería de datos en series temporales son un tipo de problema en auge. La Clasificación de Series Temporales (TSC, Time Series Classification en Inglés) es una de las áreas donde más investigación se está realizando en los últimos años debido a su gran número de aplicaciones en diferentes sectores como la industria, salud o transporte. Obtener una buena precisión en este tipo de problema puede ofrecer grandes beneficios por lo que existe un gran interés en este área.\newline
@@ -15,5 +29,13 @@ Por otro lado, las redes neuronales son unos de los modelos más famosos actualm
 En este trabajo se utilizarán diferentes conjuntos de datos sobre Clasificación de Series Temporales. Los conjuntos de datos utilizados de clasificación binaria y contienen desbalanceo entre las clases. Para el procesamiento de dichos conjuntos de datos se utilizará una red de LSTM y diferentes métodos de procesamiento para intentar obtener un buen rendimiento.\newline
 
 Para paliar el desbalanceo de clases se utilizarán métodos de oversampling, en concreto SMOTE; este algoritmo es uno de los más utilizados para oversampling y suele ofrecer buenos resultados. Los resultados obtenidos se compararán con algoritmos clásicos de Machine Learning como por ejemplo SVM.
+\newpage
 
 \section{Organización de la memoria}
+La memoria de este TFM se organizará en ocho capítulos. En el primer capítulo se mostrarán los objetivos de este trabajo y se describirá la motivación para su realización.\newline
+
+El segundo capítulo trata sobre antecedentes, métodos de clásificación clásicos y métodos de predicción de series temporales, teoría básica sobre funcionamiento de LSTMs y algunas aplicaciones, por último, teoría sobre el problema de desbalanceo de clases.\newline
+
+El tercer, cuarto y quinto capítulo describen tanto métodos de preprocesamiento, funcionamiento de métodos de oversampling que se utilizarán en el estudio, características específicas al preprocesar series temporales de clasificación  como implementación de una red de LSTMs para clasificación.\newline
+
+El sexto capítulo contiene la información sobre los datos que se utilizan en el estudio, la arquitectura de la red básica que se utilizará y medidas para evaluar el rendimiento de la red. El capítulo siete contiene los resultados de las pruebas realizadas y un análisis sobre estos. Por último, el capítulo ocho contiene las conclusiones obtenidas por el estudio.
