@@ -1,0 +1,167 @@
+\begin{thebibliography}{10}
+
+\bibitem{mwmote}
+Sukarna Barua, Md~Islam, Xin Yao, and Kazuyuki Murase.
+\newblock Mwmote--majority weighted minority oversampling technique for
+  imbalanced data set learning.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on},
+  26:405--425, 02 2014.
+\newblock \href {http://dx.doi.org/10.1109/TKDE.2012.232}
+  {\path{doi:10.1109/TKDE.2012.232}}.
+
+\bibitem{smote}
+Nitesh Chawla, Kevin Bowyer, Lawrence O.~Hall, and W~Philip~Kegelmeyer.
+\newblock Smote: Synthetic minority over-sampling technique.
+\newblock {\em J. Artif. Intell. Res. (JAIR)}, 16:321--357, 01 2002.
+\newblock \href {http://dx.doi.org/10.1613/jair.953}
+  {\path{doi:10.1613/jair.953}}.
+
+\bibitem{adasyn}
+{Haibo He}, {Yang Bai}, E.~A. {Garcia}, and {Shutao Li}.
+\newblock Adasyn: Adaptive synthetic sampling approach for imbalanced learning.
+\newblock pages 1322--1328, June 2008.
+\newblock \href {http://dx.doi.org/10.1109/ijcnn.2008.4633969}
+  {\path{doi:10.1109/ijcnn.2008.4633969}}.
+
+\bibitem{hybrid_sampling}
+G~Liang.
+\newblock An effective method for imbalanced time series classification: Hybrid
+  sampling.
+\newblock pages 374--385, 2013.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-03680-9_38}
+  {\path{doi:10.1007/978-3-319-03680-9_38}}.
+
+\bibitem{cost_sensitive_tsc}
+S.~Roychoudhury, M.~Ghalwash, and Z~Obradovic.
+\newblock Cost sensitive time-series classification.
+\newblock page 495–511, 2017.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-71246-8_30 }
+  {\path{doi:10.1007/978-3-319-71246-8_30 }}.
+
+\bibitem{svm_paper}
+Bernhard~E. Boser, Isabelle~M. Guyon, and Vladimir~N. Vapnik.
+\newblock A training algorithm for optimal margin classifiers.
+\newblock pages 144--152, 1992.
+\newblock URL: \url{http://doi.acm.org/10.1145/130385.130401}, \href
+  {http://dx.doi.org/10.1145/130385.130401} {\path{doi:10.1145/130385.130401}}.
+
+\bibitem{gaussian_trees_tsc}
+H.~{Cao}, V.~Y.~F. {Tan}, and J.~Z.~F. {Pang}.
+\newblock A parsimonious mixture of gaussian trees model for oversampling in
+  imbalanced and multimodal time-series classification.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  25(12):2226--2239, Dec 2014.
+\newblock \href {http://dx.doi.org/10.1109/TNNLS.2014.2308321}
+  {\path{doi:10.1109/TNNLS.2014.2308321}}.
+
+\bibitem{int_oversampling_tsc}
+Hong Cao, Xiaoli li, Yew-Kwong Woon, and See-Kiong Ng.
+\newblock Integrated oversampling for imbalanced time series classification.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on},
+  25:2809--2822, 12 2013.
+\newblock \href {http://dx.doi.org/10.1109/TKDE.2013.37}
+  {\path{doi:10.1109/TKDE.2013.37}}.
+
+\bibitem{DBLP:journals/corr/abs-1801-04396}
+Yue Geng and Xinyu Luo.
+\newblock Cost-sensitive convolution based neural networks for imbalanced
+  time-series classification.
+\newblock {\em CoRR}, abs/1801.04396, 2018.
+\newblock URL: \url{http://arxiv.org/abs/1801.04396}.
+
+\bibitem{He2017AnUA}
+Guoliang He, Yifei Li, and Wen Zhao.
+\newblock An uncertainty and density based active semi-supervised learning
+  scheme for positive unlabeled multivariate time series classification.
+\newblock {\em Knowl.-Based Syst.}, 124:80--92, 2017.
+
+\bibitem{8486964}
+M.~{Xu}, Y.~{Yang}, M.~{Han}, T.~{Qiu}, and H.~{Lin}.
+\newblock Spatio-temporal interpolated echo state network for meteorological
+  series prediction.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  30(6):1621--1634, June 2019.
+\newblock \href {http://dx.doi.org/10.1109/TNNLS.2018.2869131}
+  {\path{doi:10.1109/TNNLS.2018.2869131}}.
+
+\bibitem{G20181253}
+Swapna G, Soman Kp, and Vinayakumar R.
+\newblock Automated detection of diabetes using cnn and cnn-lstm network and
+  heart rate signals.
+\newblock {\em Procedia Computer Science}, 132:1253 -- 1262, 2018.
+\newblock International Conference on Computational Intelligence and Data
+  Science.
+\newblock URL:
+  \url{http://www.sciencedirect.com/science/article/pii/S1877050918307737},
+  \href {http://dx.doi.org/https://doi.org/10.1016/j.procs.2018.05.041}
+  {\path{doi:https://doi.org/10.1016/j.procs.2018.05.041}}.
+
+\bibitem{DBLP:journals/corr/ChungGCB15}
+Junyoung Chung, {\c{C}}aglar G{\"{u}}l{\c{c}}ehre, KyungHyun Cho, and Yoshua
+  Bengio.
+\newblock Gated feedback recurrent neural networks.
+\newblock {\em CoRR}, abs/1502.02367, 2015.
+\newblock URL: \url{http://arxiv.org/abs/1502.02367}.
+
+\bibitem{doi:10.1162/neco.1997.9.8.1735}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 1997.
+\newblock URL: \url{https://doi.org/10.1162/neco.1997.9.8.1735}, \href
+  {http://arxiv.org/abs/https://doi.org/10.1162/neco.1997.9.8.1735}
+  {\path{arXiv:https://doi.org/10.1162/neco.1997.9.8.1735}}, \href
+  {http://dx.doi.org/10.1162/neco.1997.9.8.1735}
+  {\path{doi:10.1162/neco.1997.9.8.1735}}.
+
+\bibitem{DBLP:journals/corr/ChoMBB14}
+KyungHyun Cho, Bart van Merrienboer, Dzmitry Bahdanau, and Yoshua Bengio.
+\newblock On the properties of neural machine translation: Encoder-decoder
+  approaches.
+\newblock {\em CoRR}, abs/1409.1259, 2014.
+\newblock URL: \url{http://arxiv.org/abs/1409.1259}.
+
+\bibitem{8141873}
+F.~{Karim}, S.~{Majumdar}, H.~{Darabi}, and S.~{Chen}.
+\newblock Lstm fully convolutional networks for time series classification.
+\newblock {\em IEEE Access}, 6:1662--1669, 2018.
+\newblock \href {http://dx.doi.org/10.1109/ACCESS.2017.2779939}
+  {\path{doi:10.1109/ACCESS.2017.2779939}}.
+
+\bibitem{ts_libro}
+Rob~J Hyndman and George Athanasopoulos.
+\newblock {\em Forecasting: Principles and Practice}.
+\newblock OTexts, 2014.
+
+\bibitem{Breiman2001}
+Leo Breiman.
+\newblock Random forests.
+\newblock {\em Machine Learning}, 45(1):5--32, Oct 2001.
+\newblock URL: \url{https://doi.org/10.1023/A:1010933404324}, \href
+  {http://dx.doi.org/10.1023/A:1010933404324}
+  {\path{doi:10.1023/A:1010933404324}}.
+
+\bibitem{FRIEDMAN2002367}
+Jerome~H. Friedman.
+\newblock Stochastic gradient boosting.
+\newblock {\em Computational Statistics \& Data Analysis}, 38(4):367 -- 378,
+  2002.
+\newblock Nonlinear Methods and Data Mining.
+\newblock URL:
+  \url{http://www.sciencedirect.com/science/article/pii/S0167947301000652},
+  \href {http://dx.doi.org/https://doi.org/10.1016/S0167-9473(01)00065-2}
+  {\path{doi:https://doi.org/10.1016/S0167-9473(01)00065-2}}.
+
+\bibitem{DBLP:journals/corr/ChenG16}
+Tianqi Chen and Carlos Guestrin.
+\newblock Xgboost: {A} scalable tree boosting system.
+\newblock {\em CoRR}, abs/1603.02754, 2016.
+\newblock URL: \url{http://arxiv.org/abs/1603.02754}, \href
+  {http://arxiv.org/abs/1603.02754} {\path{arXiv:1603.02754}}.
+
+\bibitem{Schapire:1999:BIB:1624312.1624417}
+Robert~E. Schapire.
+\newblock A brief introduction to boosting.
+\newblock pages 1401--1406, 1999.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=1624312.1624417}.
+
+\end{thebibliography}

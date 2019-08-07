@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: proyecto.aux
+The style file: unsrturl.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bibliografia/bibliografia.bib
+Warning--empty journal in adasyn
+Warning--empty journal in hybrid_sampling
+Warning--empty journal in cost_sensitive_tsc
+Warning--empty journal in svm_paper
+Warning--empty journal in Schapire:1999:BIB:1624312.1624417
+You've used 21 entries,
+            2522 wiz_defined-function locations,
+            734 strings with 9288 characters,
+and the built_in function-call counts, 8424 in all, are:
+= -- 880
+> -- 259
+< -- 5
++ -- 81
+- -- 60
+* -- 493
+:= -- 1092
+add.period$ -- 84
+call.type$ -- 21
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 265
+empty$ -- 865
+format.name$ -- 60
+if$ -- 2339
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 22
+newline$ -- 129
+num.names$ -- 21
+pop$ -- 121
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 677
+stack$ -- 0
+substring$ -- 422
+swap$ -- 107
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 44
+width$ -- 23
+write$ -- 276
+(There were 5 warnings)
