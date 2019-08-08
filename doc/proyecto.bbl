@@ -164,4 +164,11 @@ Robert~E. Schapire.
 \newblock pages 1401--1406, 1999.
 \newblock URL: \url{http://dl.acm.org/citation.cfm?id=1624312.1624417}.
 
+\bibitem{boruta}
+Miron B.~Kursa, Aleksander Jankowski, and Witold Rudnicki.
+\newblock Boruta - a system for feature selection.
+\newblock {\em Fundam. Inform.}, 101:271--285, 01 2010.
+\newblock \href {http://dx.doi.org/10.3233/FI-2010-288}
+  {\path{doi:10.3233/FI-2010-288}}.
+
 \end{thebibliography}
