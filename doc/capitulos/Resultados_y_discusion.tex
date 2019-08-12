@@ -1,12 +1,10 @@
 \chapter{Resultados y discusión}
-En este apartado se mostrarán los resultados obtenidos por los modelos en cada uno de los conjuntos de datos y se discutirá el rendimiento de cada uno de los modelos, tras esto, se mostrará una tabla comparativa de cada uno de los modelos con todos los conjuntos de datos y se analizará el rendimiento general de cada uno de los modelos.\newline
+En este aparatado se describirán los resultados obtenidos por los modelos en cada uno de los conjuntos de datos y se discutirá el rendimiento de cada uno. Para ver las tablas de resultados de dichas pruebas se puede mirar el apéndice. Tras esto, se mostrarán tablas comparativas para analizar el rendimiento general de cada uno de los modelos. \newline 
 
 En la tabla \ref{tab:resumen_datasets} se muestran el tamaño de entrenamiento, tamaño de test y número de atributos de cada uno de los conjuntos de datos utilizados en el trabajo.\newline
 
 \begin{table}[h]
 	\centering
-	\caption{Resumen datos conjunto de datos.}
-	\label{tab:resumen_datasets}
 \begin{tabular}{|l|c|c|c|}
 	\hline
 	\textbf{Nombre} &  \textbf{Num Atributos} & \textbf{Train Size} &   \textbf{Test Size} \\
@@ -21,81 +19,12 @@ En la tabla \ref{tab:resumen_datasets} se muestran el tamaño de entrenamiento, 
 	\textbf{Wafer} &          152 &     1000 &       6164 \\
 	\hline
 \end{tabular}
+	\caption{Resumen datos conjunto de datos.}
+	\label{tab:resumen_datasets}
 \end{table}
-
-\section{FaceAll}
-Para la primera tabla \ref{tab:faceAllBase}, se pueden ver valores para las medidas \textit{AUC} y \textit{G-Mean} muy similares para todos los modelos; aunque en algunas de las pruebas pueda verse apreciarse una cierta mejora de forma específica a excepción de \textit{XGBoost}, parece que el uso de la ventana no es demasiado efectivo con este conjunto de datos. El \textit{F-Score} nos indica un rendimiento bastante pobre por parte de \textit{LSTM} conforme aumenta la ventana, fijándose en las medidas \textit{Recall} y \textit{Precision} se puede ver que está clasificando demasiados elementos como de la clase positiva. Para los modelos \textit{RandomForest} y \textit{XGBoost} ocurre el caso contrario aunque con un menor sobreajuste, los clasificadores no están siendo capaces de distinguir claramente entre la clase positiva y negativa. Por último, \textit{SVM} obtiene valores estables para las tres métricas anteriores y es el modelo que mejor funciona.\newline
-
-Para las tablas de resultados con métodos de oversampling \ref{tab:faceAllSMOTE} \ref{tab:faceAllADASYN} \ref{tab:faceAllMWMOTE} se puede apreciar una cierta mejora para generalizada para todos los modelos; aunque la pérdida de rendimiento se mantiene; por lo tanto el oversampling no parece ser una buena opción para intentar mejorar el rendimiento en este conjunto de datos.
-
-Por último, para la combinación de selección de características y oversampling de las tablas \ref{tab:faceAllSMOTEBORUTA} \ref{tab:faceAllADASYNBORUTA} \ref{tab:faceAllMWMOTEBORUTA} todos los modelos obtienen una puntuación perfecta, por lo que se puede deducir que para este conjunto de datos hay algunas características (en este caso serían partes de la serie temporal) que son las que realmente marcan la diferencia entre los elementos de una clase; para este conjunto de datos en el cual las series temporales representan el contorno de una cara esas características podrían ser las de la nariz, pelo, etc...
-
-\section{EGG Eye}
-
-Para el algoritmo de selección de características \textit{Boruta} se ha  seleccionado todas las columnas de este conjunto de datos, por lo cuál no se mostrarán los resultados ya que son los mismos que sin utilizar este método.\newline
-
-Para los resultados base \ref{tab:EGGEyebase} de este conjunto de datos se puede ver unos resultados bastante buenos para los modelos \textit{LSTM} y \textit{RandomForest},un poco por debajo está \textit{XGBoost}, \textit{SVM} obtiene resultados bastante pobres. Además, para \textit{LSTM} y \textit{RandomForest} se puede ver una mejora conforme se puede aumenta la ventana, por lo que para este conjunto de datos la técnica de la ventana sí parece un buen preprocesamiento, esto tiene bastante sentido ya que los datos que contiene este conjunto de datos son sensores que miden si un ojo está cerrado o no, por lo que los datos anteriores probablemente sean un buen indicativo de el estado de ojo en un momento dado.\newline
-
-Para las pruebas realizadas con oversampling \ref{tab:EGGEyeSMOTE} \ref{tab:EGGEyeADASYN} \ref{tab:EGGEyeMWMOTE} \textit{LSTM} obtiene una bajada importante en su rendimiento provocado por sobreajuste; si nos fijamos en la métricas \textit{Recall} y \textit{Precision} se puede ver que los modelos sobreajustan demasiado la clase positiva. El resto de modelos obtienen resultados muy parecidos, en algunos casos existe una pequeña mejora aunque tampoco importante. Para \textit{SVM}, \textit{RandomForest} y \textit{XGBoost} se puede ver que hay equilibrio entre \textit{Precision} y \textit{Recall} por lo que no parece haber sobreajuste; \textit{SVM} obtiene resultados bastante malos por lo que podemos afirmar que no ha sido capaz de aprender la diferencia entre ambas clases.\newline
-
-Dados los resultados anteriores, para este conjunto de datos no es interesante aplicar oversampling ya que no aporta nada (o casi nada) a los modelos o directamente los empeora.
-
-
-\section{HAR}
-
-Para los resultados base \ref{tab:HAR_base} se puede ver buenos resultados para todos los modelos, siendo \textit{LSTM} el que mayor puntuación obtiene para la métrica \textit{AUC}, también se puede ver cierta mejora de este modelo utilizando el método de la ventana.\newline
-
-Para los resultados en los que se utiliza oversampling \ref{tab:HAR_SMOTE} \ref{tab:HAR_ADASYN} \ref{tab:HAR_MWMOTE} se pueden ver al igual que para el conjunto de datos anterior que el rendimiento de \textit{LSTM} empeora de forma considerable y sobreajuste a la clase positiva. \textit{SVM} con \textit{ADASYN} y \textit{MWMOTE} también sobreajusta a la clase positiva aunque no de forma tan exagerada como \textit{LSTM}, para \textit{SMOTE} consigue mejorar los resultados iniciales. El resto de modelos no obtienen una mejora considerable al utilizar oversampling por lo que realemente este tipo de prepocesamiento no es útil para este conjunto de datos.\newline
-
-Por último, los resultados para los datos con oversampling y selección de características con \textit{Boruta} \ref{tab:HAR_SMOTE_BORUTA} \ref{tab:HAR_ADASYN_BORUTA} \ref{tab:HAR_MWMOTE_BORUTA} ocurre lo mismo que para los resultados obtenidos sin selección de características por lo que podemos concluir que la selección de características, al menos con el método utilizado, no es demasiado útil.
-
-\section{Ozone}
-
-Los resultados iniciales \ref{tab:Ozone_base} son muy malos, ninguno de los modelos es capaz de distinguir entre ambas clases y probablemente esté clasificando todos los datos como de la clase negativa por los valores que se pueden ver en las medidas \textit{Recall} y \textit{Precision}.\newline
-
-Los resultados obtenidos utilizando oversampling \ref{tab:Ozone_SMOTE} \ref{tab:Ozone_ADASYN} \ref{tab:Ozone_MWMOTE} siguen siendo bastante malos aunque los modelos de \textit{LSTM} y \textit{SVM} consiguen mejorar, aunque tampoco sirven de mucho ya que en este caso ambos sobreajustan a la clase positiva si nos fijamos en las medidas \textit{Recall} y \textit{Precision}. Los modelos de \textit{XGBoost} y \textit{RandomForest} son casi iguales que para los datos de base, aunque en el caso de \textit{XGBoost} consigue clasificar alguno de los datos de la clase positiva de forma correcta.\newline
-
-Por último, los resultados obtenidos utilizando oversampling y selección de características \ref{tab:Ozone_SMOTE_BORUTA} \ref{tab:Ozone_ADASYN_BORUTA} \ref{tab:Ozone_MWMOTE_BORUTA} ocurre los mismo que para los resultados donde solo se aplican oversampling a los datos; por lo que para este conjunto de datos este método no sirve de nada.\newline
-
-La razón por la que probablemente los resultados para este conjunto de datos sean tan malos es porque el desbalanceo de clases es demasiado grande, existen 1791 ejemplos de la clase negativa y solo 57 de la clase positiva; por lo que probablemente fuera necesario aplicar oversampling con un factor mayor, undersampling, una combinación de ambas, etc...
-
-\section{Swedish Leaf}
-
-Los resultados base \ref{tab:SLeaf_base} para este conjunto de datos muestran un comportamiento bastante pobre para todos los modelos exceptuando \textit{LSTM}, que obtiene una puntuación aceptable para las medidas \textit{AUC} y \textit{G-Mean} para el modelo sin ventana. El resto de modelos obtiene resultados muy pobres.\newline
-
-Los resultados para los datos con oversampling \ref{tab:SLeaf_SMOTE} \ref{tab:SLeaf_ADASYN} \ref{tab:SLeaf_MWMOTE} se pude ver una mejora en el rendimiento de los modelos con tamaños de ventana pequeños, para tamaños grandes los modelos no son capaces de distinguir entre ambas clases. Para \textit{SVM} y \textit{LSTM}, que son los que mejores resultados obtienen, se puede ver que ambos sobreajustan a la clase positiva, los valores de \textit{Recall} son mucho mayores que los de \textit{Precision}; \textit{XGBoost} y \textit{RandomForest} obtienen resultados más bajos sin embargo no sufren de sobreajuste.\newline
-
-Por último, los resultados obtenido con los datos con oversampling y selección de características \ref{tab:SLeaf_SMOTE_BORUTA} \ref{tab:SLeaf_ADASYN_BORUTA} \ref{tab:SLeaf_MWMOTE_BORUTA} muestran una mejora substancial en todos los modelos. Además, se puede ver que para estos datos el uso de la ventana sí consigue mejorar los resultados. Se pude destacar \textit{RandomForest} que obtiene puntuaciones perfectas siempre, \textit{SVM} mejora aumentando el tamaño de la ventana, aunque tiene sigue teniendo sobreajuste hacia la clase positiva, \textit{LSTM} gracias a la ventana consigue dejar de sobreajustar y \textit{XGBoost} presenta buenos resultados, casi iguales a los de \textit{RandomForest}.
-
-\section{Yoga}
-Para este conjunto de datos no ha sido posible utilizar \textit{ADASYN} ya que no cumple el umbral mínimo de desbalanceo para poder generar instancias.\newline
-
-Los resultados base \ref{tab:Yoga_base} muestran un buen rendimiento inicial por parte de \textit{LSTM} y \textit{RandomForest}, \textit{XGBoost} también aunque un poco más bajo; sin embargo, se puede ver como la calidad de las predicciones baja conforme se aumenta el tamaño de la ventana, por lo que la técnica de la ventana no parece funcionar demasiado bien para este conjunto de datos.\newline
-
-Los resultados utilizando oversampling \ref{tab:Yoga_SMOTE} \ref{tab:Yoga_MWMOTE} muestran una ligera mejora en el modelo de \textit{LSTM} que no utilizan ventana, conforme aumenta el tamaño de la ventana el rendimiento cae; para el resto de modelos el rendimiento es muy similar al base.\newline
-
-Los resultados obtenidos utilizando oversampling y selección de características \ref{tab:Yoga_SMOTE_BORUTA} \ref{tab:Yoga_MWMOTE_BORUTA} una mejora considerable para en todos los modelos, sobretodo \textit{RandomForest} que obtiene una puntuación perfecta incluso sin utilizar la ventana. \textit{XGBoost} obtiene buenos resultados desde el principio, \textit{LSTM} al aumentar el tamaño de ventana consigue una puntuación perfecta también y \textit{SVM} consigue sus mejores resultados con este preprocesamiento y el uso de la ventana.
-
-\section{Adiac}
-
-Los resultados base \ref{tab:Adiac_base} muestran resultados bastante pobres para todos los modelos a excepción de \textit{XGBoost} sin utilizar ventana y con ventana de tamaño 3, el resto de modelos no reconoce ninguna instancia de la clase positiva o muy pocas según las medidas \textit{Recall} y \textit{Precision}.\newline
-
-Los resultados obtenidos para los datos con oversampling \ref{tab:Adiac_SMOTE}  \ref{tab:Adiac_ADASYN} \ref{tab:Adiac_MWMOTE} muestran una mejora en el rendimiento de los modelos inicialmente, aunque después al aumentar el tamaño de la ventana el rendimiento vuelve a bajar. Los modelos de \textit{LSTM} y \textit{SVM} tienen sobreajuste hacia la clase positiva; \textit{RandomForest} no consigue distinguir entre ambas clases. \textit{XGBoost} sí obtiene buenos resultados inicialmente.\newline
-
-Los resultados obtenidos para los datos con oversampling y selección de características \ref{tab:Adiac_SMOTE_BORUTA} \ref{tab:Adiac_ADASYN_BORUTA} \ref{tab:Adiac_MWMOTE_BORUTA} se puede ver un buen rendimiento por parte de \textit{XGBoost} aunque se puede ver que hay cierto sobreajuste a la clase positiva si se miran la medidas \textit{Recall} y \textit{Precision}. \textit{SVM} y \textit{RandomForest} también muestran buenos resultados inicialmente pero su rendimiento decae conforme el tamaño de la ventana aumenta. \textit{LSTM} tiene resultados bastante pobres y solamente está clasificando a todos los elementos como de la clase positiva. Por lo tanto, a excepción de \textit{XGBoost} y \textit{SMOTE} ningún modelo funciona realmente bien.
-
-\section{Wafer}
-
-Los resultados iniciales \ref{tab:Wafer_base} muestran resultados buenos por parte de todos los modelos, aunque se puede apreciar que para tamaños de ventana los modelos \textit{LSTM} \textit{SVM} y \textit{RandomForest} empeoran.\newline
-
-Los resultados obtenidos con datos con oversampling \ref{tab:Wafer_SMOTE} \ref{tab:Wafer_ADASYN} \ref{tab:Wafer_MWMOTE} muestran una ligera mejora en el rendimiento de los modelos, aunque los modelos de \textit{LSTM} y \textit{SVM} siguen empeorando conforme se aumenta el tamaño de la ventana.\newline
-
-Por último, los resultados obtenidos con datos con overampling y selección de características \ref{tab:Wafer_SMOTE_BORUTA} \ref{tab:Wafer_ADASYN_BORUTA} \ref{tab:Wafer_MWMOTE_BORUTA} muestran casi todos los modelos puntuaciones perfectas, por lo que se puede afirmar que se puede afirmar que dentro de las series existen ciertas características que son las realmente imporantes, utilizando dichas características se pueden obtener buenas predicciones independientemente del modelo.\newline
 
 \section{Comparación resultados}
 En esta sección se mostrarán tablas comparativas de todos los conjuntos de datos junto con la métrica \textit{AUC} de todos los modelos para cada uno de los preprocesamientos, de esta forma se podrá comparar el rendimiento base general de cada uno de los modelos y como afecta el preprocesamiento utilizado a cada uno de ellos.\newline
-
-\newpage
 
 \begin{table}[h]
 \centering

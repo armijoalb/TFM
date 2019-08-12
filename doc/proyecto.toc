@@ -71,7 +71,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.5}Swedish Leaf}{58}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.6}Yoga}{58}{section.7.6}
+\contentsline {section}{\numberline {7.6}Yoga}{59}{section.7.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.7}Adiac}{59}{section.7.7}
 \defcounter {refsection}{0}\relax 
