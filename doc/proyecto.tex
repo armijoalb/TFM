@@ -7,6 +7,8 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{adjustbox}
+\usepackage[maxnames=50,firstinits=true,backend=bibtex]{biblatex}
+\captionsetup[table]{name=Tabla}
 
 % \usepackage[style=list, number=none]{glossary} %
 %\usepackage{titlesec}
@@ -176,6 +178,8 @@ pdfproducer = {pdflatex}
 \makeatother
 
 \usepackage{pdfpages}
+\addbibresource{bibliografia/bibliografia.bib}
+
 \begin{document}
 \input{portada/portada}
 \input{prefacios/prefacio}
@@ -194,14 +198,11 @@ pdfproducer = {pdflatex}
 \input{capitulos/Marco_Experimental}
 \input{capitulos/Resultados_y_discusion}
 \input{capitulos/Conclusiones_y_trabajos_futuros}
-%
-%%\chapter{Conclusiones y Trabajos Futuros}
-%
-%
+
 \nocite{*}
-\bibliography{bibliografia/bibliografia}
 \addcontentsline{toc}{chapter}{Bibliografía}
-\bibliographystyle{unsrturl}
+\printbibliography
+
 %
 %\appendix
 %\input{apendices/manual_usuario/manual_usuario}

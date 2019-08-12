@@ -1,174 +1,932 @@
-\begin{thebibliography}{10}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{mwmote}
-Sukarna Barua, Md~Islam, Xin Yao, and Kazuyuki Murase.
-\newblock Mwmote--majority weighted minority oversampling technique for
-  imbalanced data set learning.
-\newblock {\em Knowledge and Data Engineering, IEEE Transactions on},
-  26:405--425, 02 2014.
-\newblock \href {http://dx.doi.org/10.1109/TKDE.2012.232}
-  {\path{doi:10.1109/TKDE.2012.232}}.
+\datalist[entry]{nty/global//global/global}
+  \entry{barua2012mwmote}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BS}{%
+         family={Barua},
+         familyi={B\bibinitperiod},
+         given={Sukarna},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=IMM}{%
+         family={Islam},
+         familyi={I\bibinitperiod},
+         given={Md\bibnamedelima Monirul},
+         giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=YX}{%
+         family={Yao},
+         familyi={Y\bibinitperiod},
+         given={Xin},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=MK}{%
+         family={Murase},
+         familyi={M\bibinitperiod},
+         given={Kazuyuki},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BSIMMYXMK1}
+    \strng{fullhash}{BSIMMYXMK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{2}
+    \field{pages}{405\bibrangedash 425}
+    \field{title}{MWMOTE--majority weighted minority oversampling technique for
+  imbalanced data set learning}
+    \field{volume}{26}
+    \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+    \field{year}{2012}
+  \endentry
 
-\bibitem{smote}
-Nitesh Chawla, Kevin Bowyer, Lawrence O.~Hall, and W~Philip~Kegelmeyer.
-\newblock Smote: Synthetic minority over-sampling technique.
-\newblock {\em J. Artif. Intell. Res. (JAIR)}, 16:321--357, 01 2002.
-\newblock \href {http://dx.doi.org/10.1613/jair.953}
-  {\path{doi:10.1613/jair.953}}.
+  \entry{boser1992training}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BBE}{%
+         family={Boser},
+         familyi={B\bibinitperiod},
+         given={Bernhard\bibnamedelima E},
+         giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=GIM}{%
+         family={Guyon},
+         familyi={G\bibinitperiod},
+         given={Isabelle\bibnamedelima M},
+         giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=VVN}{%
+         family={Vapnik},
+         familyi={V\bibinitperiod},
+         given={Vladimir\bibnamedelima N},
+         giveni={V\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{BBEGIMVVN1}
+    \strng{fullhash}{BBEGIMVVN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the fifth annual workshop on Computational
+  learning theory}
+    \field{pages}{144\bibrangedash 152}
+    \field{title}{A training algorithm for optimal margin classifiers}
+    \field{year}{1992}
+  \endentry
 
-\bibitem{adasyn}
-{Haibo He}, {Yang Bai}, E.~A. {Garcia}, and {Shutao Li}.
-\newblock Adasyn: Adaptive synthetic sampling approach for imbalanced learning.
-\newblock pages 1322--1328, June 2008.
-\newblock \href {http://dx.doi.org/10.1109/ijcnn.2008.4633969}
-  {\path{doi:10.1109/ijcnn.2008.4633969}}.
+  \entry{breiman2001random}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BL}{%
+         family={Breiman},
+         familyi={B\bibinitperiod},
+         given={Leo},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BL1}
+    \strng{fullhash}{BL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1}
+    \field{pages}{5\bibrangedash 32}
+    \field{title}{Random forests}
+    \field{volume}{45}
+    \field{journaltitle}{Machine learning}
+    \field{year}{2001}
+  \endentry
 
-\bibitem{hybrid_sampling}
-G~Liang.
-\newblock An effective method for imbalanced time series classification: Hybrid
-  sampling.
-\newblock pages 374--385, 2013.
-\newblock \href {http://dx.doi.org/10.1007/978-3-319-03680-9_38}
-  {\path{doi:10.1007/978-3-319-03680-9_38}}.
+  \entry{cao2013integrated}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CH}{%
+         family={Cao},
+         familyi={C\bibinitperiod},
+         given={Hong},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LXL}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiao-Li},
+         giveni={X\bibinitperiod-L\bibinitperiod},
+      }}%
+      {{hash=WDYK}{%
+         family={Woon},
+         familyi={W\bibinitperiod},
+         given={David Yew-Kwong},
+         giveni={D\bibinitperiod\bibinitdelim Y\bibinitperiod-K\bibinitperiod},
+      }}%
+      {{hash=NSK}{%
+         family={Ng},
+         familyi={N\bibinitperiod},
+         given={See-Kiong},
+         giveni={S\bibinitperiod-K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CHLXLWDYKNSK1}
+    \strng{fullhash}{CHLXLWDYKNSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{12}
+    \field{pages}{2809\bibrangedash 2822}
+    \field{title}{Integrated oversampling for imbalanced time series
+  classification}
+    \field{volume}{25}
+    \field{journaltitle}{IEEE Transactions on Knowledge and Data Engineering}
+    \field{year}{2013}
+  \endentry
 
-\bibitem{cost_sensitive_tsc}
-S.~Roychoudhury, M.~Ghalwash, and Z~Obradovic.
-\newblock Cost sensitive time-series classification.
-\newblock page 495–511, 2017.
-\newblock \href {http://dx.doi.org/10.1007/978-3-319-71246-8_30 }
-  {\path{doi:10.1007/978-3-319-71246-8_30 }}.
+  \entry{cao2014parsimonious}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CH}{%
+         family={Cao},
+         familyi={C\bibinitperiod},
+         given={Hong},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TVY}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Vincent\bibnamedelima YF},
+         giveni={V\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=PJZ}{%
+         family={Pang},
+         familyi={P\bibinitperiod},
+         given={John\bibnamedelima ZF},
+         giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CHTVYPJZ1}
+    \strng{fullhash}{CHTVYPJZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{12}
+    \field{pages}{2226\bibrangedash 2239}
+    \field{title}{A parsimonious mixture of Gaussian trees model for
+  oversampling in imbalanced and multimodal time-series classification}
+    \field{volume}{25}
+    \field{journaltitle}{IEEE transactions on neural networks and learning
+  systems}
+    \field{year}{2014}
+  \endentry
 
-\bibitem{svm_paper}
-Bernhard~E. Boser, Isabelle~M. Guyon, and Vladimir~N. Vapnik.
-\newblock A training algorithm for optimal margin classifiers.
-\newblock pages 144--152, 1992.
-\newblock URL: \url{http://doi.acm.org/10.1145/130385.130401}, \href
-  {http://dx.doi.org/10.1145/130385.130401} {\path{doi:10.1145/130385.130401}}.
+  \entry{chawla2002smote}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CNV}{%
+         family={Chawla},
+         familyi={C\bibinitperiod},
+         given={Nitesh\bibnamedelima V},
+         giveni={N\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=BKW}{%
+         family={Bowyer},
+         familyi={B\bibinitperiod},
+         given={Kevin\bibnamedelima W},
+         giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=HLO}{%
+         family={Hall},
+         familyi={H\bibinitperiod},
+         given={Lawrence\bibnamedelima O},
+         giveni={L\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+      {{hash=KWP}{%
+         family={Kegelmeyer},
+         familyi={K\bibinitperiod},
+         given={W\bibnamedelima Philip},
+         giveni={W\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CNVBKWHLOKWP1}
+    \strng{fullhash}{CNVBKWHLOKWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{321\bibrangedash 357}
+    \field{title}{SMOTE: synthetic minority over-sampling technique}
+    \field{volume}{16}
+    \field{journaltitle}{Journal of artificial intelligence research}
+    \field{year}{2002}
+  \endentry
 
-\bibitem{gaussian_trees_tsc}
-H.~{Cao}, V.~Y.~F. {Tan}, and J.~Z.~F. {Pang}.
-\newblock A parsimonious mixture of gaussian trees model for oversampling in
-  imbalanced and multimodal time-series classification.
-\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
-  25(12):2226--2239, Dec 2014.
-\newblock \href {http://dx.doi.org/10.1109/TNNLS.2014.2308321}
-  {\path{doi:10.1109/TNNLS.2014.2308321}}.
+  \entry{chen2016xgboost}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=CT}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Tianqi},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Guestrin},
+         familyi={G\bibinitperiod},
+         given={Carlos},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{CTGC1}
+    \strng{fullhash}{CTGC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the 22nd acm sigkdd international
+  conference on knowledge discovery and data mining}
+    \field{pages}{785\bibrangedash 794}
+    \field{title}{Xgboost: A scalable tree boosting system}
+    \field{year}{2016}
+  \endentry
 
-\bibitem{int_oversampling_tsc}
-Hong Cao, Xiaoli li, Yew-Kwong Woon, and See-Kiong Ng.
-\newblock Integrated oversampling for imbalanced time series classification.
-\newblock {\em Knowledge and Data Engineering, IEEE Transactions on},
-  25:2809--2822, 12 2013.
-\newblock \href {http://dx.doi.org/10.1109/TKDE.2013.37}
-  {\path{doi:10.1109/TKDE.2013.37}}.
+  \entry{cho2014properties}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CK}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Kyunghyun},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=VMB}{%
+         family={Van\bibnamedelima Merri{\"e}nboer},
+         familyi={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Bart},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bahdanau},
+         familyi={B\bibinitperiod},
+         given={Dzmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CKVMBBDBY1}
+    \strng{fullhash}{CKVMBBDBY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{On the properties of neural machine translation:
+  Encoder-decoder approaches}
+    \field{journaltitle}{arXiv preprint arXiv:1409.1259}
+    \field{year}{2014}
+  \endentry
 
-\bibitem{DBLP:journals/corr/abs-1801-04396}
-Yue Geng and Xinyu Luo.
-\newblock Cost-sensitive convolution based neural networks for imbalanced
-  time-series classification.
-\newblock {\em CoRR}, abs/1801.04396, 2018.
-\newblock URL: \url{http://arxiv.org/abs/1801.04396}.
+  \entry{chung2015gated}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=CJ}{%
+         family={Chung},
+         familyi={C\bibinitperiod},
+         given={Junyoung},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Gulcehre},
+         familyi={G\bibinitperiod},
+         given={Caglar},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Kyunghyun},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CJGCCKBY1}
+    \strng{fullhash}{CJGCCKBY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{International Conference on Machine Learning}
+    \field{pages}{2067\bibrangedash 2075}
+    \field{title}{Gated feedback recurrent neural networks}
+    \field{year}{2015}
+  \endentry
 
-\bibitem{He2017AnUA}
-Guoliang He, Yifei Li, and Wen Zhao.
-\newblock An uncertainty and density based active semi-supervised learning
-  scheme for positive unlabeled multivariate time series classification.
-\newblock {\em Knowl.-Based Syst.}, 124:80--92, 2017.
+  \entry{friedman2002stochastic}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FJH}{%
+         family={Friedman},
+         familyi={F\bibinitperiod},
+         given={Jerome\bibnamedelima H},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{FJH1}
+    \strng{fullhash}{FJH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{4}
+    \field{pages}{367\bibrangedash 378}
+    \field{title}{Stochastic gradient boosting}
+    \field{volume}{38}
+    \field{journaltitle}{Computational statistics \& data analysis}
+    \field{year}{2002}
+  \endentry
 
-\bibitem{8486964}
-M.~{Xu}, Y.~{Yang}, M.~{Han}, T.~{Qiu}, and H.~{Lin}.
-\newblock Spatio-temporal interpolated echo state network for meteorological
-  series prediction.
-\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
-  30(6):1621--1634, June 2019.
-\newblock \href {http://dx.doi.org/10.1109/TNNLS.2018.2869131}
-  {\path{doi:10.1109/TNNLS.2018.2869131}}.
+  \entry{geng2018cost}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GY}{%
+         family={Geng},
+         familyi={G\bibinitperiod},
+         given={Yue},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Xinyu},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GYLX1}
+    \strng{fullhash}{GYLX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Cost-sensitive convolution based neural networks for
+  imbalanced time-series classification}
+    \field{journaltitle}{arXiv preprint arXiv:1801.04396}
+    \field{year}{2018}
+  \endentry
 
-\bibitem{G20181253}
-Swapna G, Soman Kp, and Vinayakumar R.
-\newblock Automated detection of diabetes using cnn and cnn-lstm network and
-  heart rate signals.
-\newblock {\em Procedia Computer Science}, 132:1253 -- 1262, 2018.
-\newblock International Conference on Computational Intelligence and Data
-  Science.
-\newblock URL:
-  \url{http://www.sciencedirect.com/science/article/pii/S1877050918307737},
-  \href {http://dx.doi.org/https://doi.org/10.1016/j.procs.2018.05.041}
-  {\path{doi:https://doi.org/10.1016/j.procs.2018.05.041}}.
+  \entry{han2005borderline}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=HH}{%
+         family={Han},
+         familyi={H\bibinitperiod},
+         given={Hui},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WWY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Wen-Yuan},
+         giveni={W\bibinitperiod-Y\bibinitperiod},
+      }}%
+      {{hash=MBH}{%
+         family={Mao},
+         familyi={M\bibinitperiod},
+         given={Bing-Huan},
+         giveni={B\bibinitperiod-H\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HHWWYMBH1}
+    \strng{fullhash}{HHWWYMBH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{International conference on intelligent computing}
+    \field{pages}{878\bibrangedash 887}
+    \field{title}{Borderline-SMOTE: a new over-sampling method in imbalanced
+  data sets learning}
+    \field{year}{2005}
+  \endentry
 
-\bibitem{DBLP:journals/corr/ChungGCB15}
-Junyoung Chung, {\c{C}}aglar G{\"{u}}l{\c{c}}ehre, KyungHyun Cho, and Yoshua
-  Bengio.
-\newblock Gated feedback recurrent neural networks.
-\newblock {\em CoRR}, abs/1502.02367, 2015.
-\newblock URL: \url{http://arxiv.org/abs/1502.02367}.
+  \entry{hart1968condensed}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HP}{%
+         family={Hart},
+         familyi={H\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{HP1}
+    \strng{fullhash}{HP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{3}
+    \field{pages}{515\bibrangedash 516}
+    \field{title}{The condensed nearest neighbor rule (Corresp.)}
+    \field{volume}{14}
+    \field{journaltitle}{IEEE transactions on information theory}
+    \field{year}{1968}
+  \endentry
 
-\bibitem{doi:10.1162/neco.1997.9.8.1735}
-Sepp Hochreiter and Jürgen Schmidhuber.
-\newblock Long short-term memory.
-\newblock {\em Neural Computation}, 9(8):1735--1780, 1997.
-\newblock URL: \url{https://doi.org/10.1162/neco.1997.9.8.1735}, \href
-  {http://arxiv.org/abs/https://doi.org/10.1162/neco.1997.9.8.1735}
-  {\path{arXiv:https://doi.org/10.1162/neco.1997.9.8.1735}}, \href
-  {http://dx.doi.org/10.1162/neco.1997.9.8.1735}
-  {\path{doi:10.1162/neco.1997.9.8.1735}}.
+  \entry{he2017uncertainty}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HG}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Guoliang},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Yifei},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZW}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Wen},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{HGLYZW1}
+    \strng{fullhash}{HGLYZW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{pages}{80\bibrangedash 92}
+    \field{title}{An uncertainty and density based active semi-supervised
+  learning scheme for positive unlabeled multivariate time series
+  classification}
+    \field{volume}{124}
+    \field{journaltitle}{Knowledge-Based Systems}
+    \field{year}{2017}
+  \endentry
 
-\bibitem{DBLP:journals/corr/ChoMBB14}
-KyungHyun Cho, Bart van Merrienboer, Dzmitry Bahdanau, and Yoshua Bengio.
-\newblock On the properties of neural machine translation: Encoder-decoder
-  approaches.
-\newblock {\em CoRR}, abs/1409.1259, 2014.
-\newblock URL: \url{http://arxiv.org/abs/1409.1259}.
+  \entry{he2008adasyn}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HH}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Haibo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bai},
+         familyi={B\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=GEA}{%
+         family={Garcia},
+         familyi={G\bibinitperiod},
+         given={Edwardo\bibnamedelima A},
+         giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Shutao},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{HHBYGEALS1}
+    \strng{fullhash}{HHBYGEALS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{2008 IEEE International Joint Conference on Neural
+  Networks (IEEE World Congress on Computational Intelligence)}
+    \field{pages}{1322\bibrangedash 1328}
+    \field{title}{ADASYN: Adaptive synthetic sampling approach for imbalanced
+  learning}
+    \field{year}{2008}
+  \endentry
 
-\bibitem{8141873}
-F.~{Karim}, S.~{Majumdar}, H.~{Darabi}, and S.~{Chen}.
-\newblock Lstm fully convolutional networks for time series classification.
-\newblock {\em IEEE Access}, 6:1662--1669, 2018.
-\newblock \href {http://dx.doi.org/10.1109/ACCESS.2017.2779939}
-  {\path{doi:10.1109/ACCESS.2017.2779939}}.
+  \entry{hochreiter1997long}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HS}{%
+         family={Hochreiter},
+         familyi={H\bibinitperiod},
+         given={Sepp},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schmidhuber},
+         familyi={S\bibinitperiod},
+         given={J{\"u}rgen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{HSSJ1}
+    \strng{fullhash}{HSSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{8}
+    \field{pages}{1735\bibrangedash 1780}
+    \field{title}{Long short-term memory}
+    \field{volume}{9}
+    \field{journaltitle}{Neural computation}
+    \field{year}{1997}
+  \endentry
 
-\bibitem{ts_libro}
-Rob~J Hyndman and George Athanasopoulos.
-\newblock {\em Forecasting: Principles and Practice}.
-\newblock OTexts, 2014.
+  \entry{ts_libro}{book}{}
+    \name{author}{2}{}{%
+      {{hash=HRJ}{%
+         family={Hyndman},
+         familyi={H\bibinitperiod},
+         given={Rob\bibnamedelima J},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=AG}{%
+         family={Athanasopoulos},
+         familyi={A\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OTexts}%
+    }
+    \strng{namehash}{HRJAG1}
+    \strng{fullhash}{HRJAG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Forecasting: Principles and Practice}
+    \field{year}{2014}
+  \endentry
 
-\bibitem{Breiman2001}
-Leo Breiman.
-\newblock Random forests.
-\newblock {\em Machine Learning}, 45(1):5--32, Oct 2001.
-\newblock URL: \url{https://doi.org/10.1023/A:1010933404324}, \href
-  {http://dx.doi.org/10.1023/A:1010933404324}
-  {\path{doi:10.1023/A:1010933404324}}.
+  \entry{karim2017lstm}{article}{}
+    \name{author}{4}{}{%
+      {{hash=KF}{%
+         family={Karim},
+         familyi={K\bibinitperiod},
+         given={Fazle},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Majumdar},
+         familyi={M\bibinitperiod},
+         given={Somshubra},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DH}{%
+         family={Darabi},
+         familyi={D\bibinitperiod},
+         given={Houshang},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Shun},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{KFMSDHCS1}
+    \strng{fullhash}{KFMSDHCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{1662\bibrangedash 1669}
+    \field{title}{LSTM fully convolutional networks for time series
+  classification}
+    \field{volume}{6}
+    \field{journaltitle}{IEEE Access}
+    \field{year}{2017}
+  \endentry
 
-\bibitem{FRIEDMAN2002367}
-Jerome~H. Friedman.
-\newblock Stochastic gradient boosting.
-\newblock {\em Computational Statistics \& Data Analysis}, 38(4):367 -- 378,
-  2002.
-\newblock Nonlinear Methods and Data Mining.
-\newblock URL:
-  \url{http://www.sciencedirect.com/science/article/pii/S0167947301000652},
-  \href {http://dx.doi.org/https://doi.org/10.1016/S0167-9473(01)00065-2}
-  {\path{doi:https://doi.org/10.1016/S0167-9473(01)00065-2}}.
+  \entry{kubat1997addressing}{inproceedings}{}
+    \true{moreauthor}
+    \name{author}{2}{}{%
+      {{hash=KM}{%
+         family={Kubat},
+         familyi={K\bibinitperiod},
+         given={Miroslav},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Matwin},
+         familyi={M\bibinitperiod},
+         given={Stan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Nashville, USA}%
+    }
+    \strng{namehash}{KMMS+1}
+    \strng{fullhash}{KMMS+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Icml}
+    \field{pages}{179\bibrangedash 186}
+    \field{title}{Addressing the curse of imbalanced training sets: one-sided
+  selection}
+    \field{volume}{97}
+    \field{year}{1997}
+  \endentry
 
-\bibitem{DBLP:journals/corr/ChenG16}
-Tianqi Chen and Carlos Guestrin.
-\newblock Xgboost: {A} scalable tree boosting system.
-\newblock {\em CoRR}, abs/1603.02754, 2016.
-\newblock URL: \url{http://arxiv.org/abs/1603.02754}, \href
-  {http://arxiv.org/abs/1603.02754} {\path{arXiv:1603.02754}}.
+  \entry{kursa2010boruta}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KMB}{%
+         family={Kursa},
+         familyi={K\bibinitperiod},
+         given={Miron\bibnamedelima B},
+         giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=JA}{%
+         family={Jankowski},
+         familyi={J\bibinitperiod},
+         given={Aleksander},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RWR}{%
+         family={Rudnicki},
+         familyi={R\bibinitperiod},
+         given={Witold\bibnamedelima R},
+         giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IOS Press}%
+    }
+    \strng{namehash}{KMBJARWR1}
+    \strng{fullhash}{KMBJARWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{4}
+    \field{pages}{271\bibrangedash 285}
+    \field{title}{Boruta--a system for feature selection}
+    \field{volume}{101}
+    \field{journaltitle}{Fundamenta Informaticae}
+    \field{year}{2010}
+  \endentry
 
-\bibitem{Schapire:1999:BIB:1624312.1624417}
-Robert~E. Schapire.
-\newblock A brief introduction to boosting.
-\newblock pages 1401--1406, 1999.
-\newblock URL: \url{http://dl.acm.org/citation.cfm?id=1624312.1624417}.
+  \entry{liang2013effective}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=LG}{%
+         family={Liang},
+         familyi={L\bibinitperiod},
+         given={Guohua},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{LG1}
+    \strng{fullhash}{LG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{Australasian Joint Conference on Artificial Intelligence}
+    \field{pages}{374\bibrangedash 385}
+    \field{title}{An effective method for imbalanced time series
+  classification: hybrid sampling}
+    \field{year}{2013}
+  \endentry
 
-\bibitem{boruta}
-Miron B.~Kursa, Aleksander Jankowski, and Witold Rudnicki.
-\newblock Boruta - a system for feature selection.
-\newblock {\em Fundam. Inform.}, 101:271--285, 01 2010.
-\newblock \href {http://dx.doi.org/10.3233/FI-2010-288}
-  {\path{doi:10.3233/FI-2010-288}}.
+  \entry{roychoudhury2017cost}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=RS}{%
+         family={Roychoudhury},
+         familyi={R\bibinitperiod},
+         given={Shoumik},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Ghalwash},
+         familyi={G\bibinitperiod},
+         given={Mohamed},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=OZ}{%
+         family={Obradovic},
+         familyi={O\bibinitperiod},
+         given={Zoran},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{RSGMOZ1}
+    \strng{fullhash}{RSGMOZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Joint European Conference on Machine Learning and
+  Knowledge Discovery in Databases}
+    \field{pages}{495\bibrangedash 511}
+    \field{title}{Cost sensitive time-series classification}
+    \field{year}{2017}
+  \endentry
 
-\end{thebibliography}
+  \entry{schapire1999brief}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=SRE}{%
+         family={Schapire},
+         familyi={S\bibinitperiod},
+         given={Robert\bibnamedelima E},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SRE1}
+    \strng{fullhash}{SRE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Ijcai}
+    \field{pages}{1401\bibrangedash 1406}
+    \field{title}{A brief introduction to boosting}
+    \field{volume}{99}
+    \field{year}{1999}
+  \endentry
+
+  \entry{swapna2018automated}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SG}{%
+         family={Swapna},
+         familyi={S\bibinitperiod},
+         given={G},
+         giveni={G},
+      }}%
+      {{hash=KS}{%
+         family={Kp},
+         familyi={K\bibinitperiod},
+         given={Soman},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Vinayakumar},
+         familyi={V\bibinitperiod},
+         given={R},
+         giveni={R},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{SGKSVR1}
+    \strng{fullhash}{SGKSVR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{1253\bibrangedash 1262}
+    \field{title}{Automated detection of diabetes using CNN and CNN-LSTM
+  network and heart rate signals}
+    \field{volume}{132}
+    \field{journaltitle}{Procedia computer science}
+    \field{year}{2018}
+  \endentry
+
+  \entry{tomek1976two}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TI}{%
+         family={Tomek},
+         familyi={T\bibinitperiod},
+         given={Ivan},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TI1}
+    \strng{fullhash}{TI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{pages}{769\bibrangedash 772}
+    \field{title}{Two modifications of CNN}
+    \field{volume}{6}
+    \field{journaltitle}{IEEE Trans. Systems, Man and Cybernetics}
+    \field{year}{1976}
+  \endentry
+
+  \entry{xu2018spatio}{article}{}
+    \name{author}{5}{}{%
+      {{hash=XM}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Meiling},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Yuanzhe},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Han},
+         familyi={H\bibinitperiod},
+         given={Min},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=QT}{%
+         family={Qiu},
+         familyi={Q\bibinitperiod},
+         given={Tie},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Hongfei},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{XMYYHMQTLH1}
+    \strng{fullhash}{XMYYHMQTLH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{number}{6}
+    \field{pages}{1621\bibrangedash 1634}
+    \field{title}{Spatio-Temporal Interpolated Echo State Network for
+  Meteorological Series Prediction}
+    \field{volume}{30}
+    \field{journaltitle}{IEEE transactions on neural networks and learning
+  systems}
+    \field{year}{2018}
+  \endentry
+\enddatalist
+\endinput

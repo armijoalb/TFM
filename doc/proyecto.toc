@@ -1,44 +1,88 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {spanish}{}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{13}{chapter.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Objetivos}{13}{section.1.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Motivaci\IeC {\'o}n}{14}{section.1.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Organizaci\IeC {\'o}n de la memoria}{16}{section.1.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Antecedentes}{17}{chapter.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Clasificaci\IeC {\'o}n de series temporales. Algoritmos B\IeC {\'a}sicos}{17}{section.2.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}Series temporales de regresi\IeC {\'o}n.}{17}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Series temporales de clasificaci\IeC {\'o}n}{20}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{SVM}{20}{section*.7}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{RandomForest}{22}{section*.10}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Boosting}{23}{section*.12}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}LSTM}{25}{section.2.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Clasificaci\IeC {\'o}n con clases no balanceadas}{29}{section.2.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.1}T\IeC {\'e}cnicas basadas en modificaci\IeC {\'o}n del algoritmo}{30}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}T\IeC {\'e}cnicas basadas en la modificaci\IeC {\'o}n del conjunto de datos}{31}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.3}Otros enfoques}{33}{subsection.2.3.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}LSTMs para clasificaci\IeC {\'o}n de series temporales}{35}{chapter.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Descripci\IeC {\'o}n}{35}{section.3.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Arquitectura}{36}{section.3.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Justificaci\IeC {\'o}n}{37}{section.3.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Oversampling para clasificaci\IeC {\'o}n de series temporales}{39}{chapter.4}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}SMOTE}{39}{section.4.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}MWMOTE}{41}{section.4.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}ADASYN}{42}{section.4.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Tratamiento de series temporales de clasificaci\IeC {\'o}n multivariadas}{45}{chapter.5}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Marco Experimental}{49}{chapter.6}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Datasets}{49}{section.6.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.2}Medidas utilizadas}{50}{section.6.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.3}Par\IeC {\'a}metros de la red}{53}{section.6.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Resultados y discusi\IeC {\'o}n}{55}{chapter.7}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.1}FaceAll}{55}{section.7.1}
-\contentsline {section}{\numberline {7.2}EGG Eye}{60}{section.7.2}
-\contentsline {section}{\numberline {7.3}HAR}{62}{section.7.3}
-\contentsline {section}{\numberline {7.4}Ozone}{66}{section.7.4}
-\contentsline {section}{\numberline {7.5}Swedish Leaf}{70}{section.7.5}
-\contentsline {section}{\numberline {7.6}Yoga}{74}{section.7.6}
-\contentsline {section}{\numberline {7.7}Adiac}{77}{section.7.7}
-\contentsline {section}{\numberline {7.8}Wafer}{81}{section.7.8}
-\contentsline {section}{\numberline {7.9}Comparaci\IeC {\'o}n resultados}{85}{section.7.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}EGG Eye}{61}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}HAR}{63}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Ozone}{67}{section.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.5}Swedish Leaf}{71}{section.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.6}Yoga}{75}{section.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.7}Adiac}{78}{section.7.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.8}Wafer}{82}{section.7.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.9}Comparaci\IeC {\'o}n resultados}{86}{section.7.9}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{95}{chapter.8}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.1}Conclusiones}{95}{section.8.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.2}Trabajos Futuros}{96}{section.8.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{99}{chapter*.90}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{96}{section.8.2}

@@ -1,33 +1,34 @@
 \chapter{LSTMs para clasificación de series temporales}
 En este capítulo se describirán el uso de las LSTM para problemas de series temporales de clasificación, así como una pequeña descripción de las LSTM y las series temporales de clasificación.
 \section{Descripción}
-Las LSTM son un tipo de red recurrente, esto quiere decir que tiene la capacidad de utilizar como entrada información que ya ha sido procesada; en el caso de las LSTM, dicha información es de gran importancia ya que es utilizada para calcular la salida de la LSTM a parte de la nueva información que se haya obtenido.\newline
+Las LSTM son un tipo de red recurrente, esto quiere decir que tiene la capacidad de utilizar como entrada información que ya ha sido procesada; en el caso de las LSTM, dicha información es de gran importancia ya que es utilizada para calcular la salida de la LSTM a parte de la nueva información que se haya obtenido. La figura \ref{fig:31} muestra una representación de una neurona LSTM.\newline
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=40mm]{imagenes/lstm_basico.png}
+	\caption{Ejemplo neurona LSTM.}
 	\label{fig:31}
 \end{figure}
 \verticalspace
 
-Las series temporales de clasificación son un caso especial de serie temporal, ya que el objetivo tras estas series no es obtener una predicción sobre el comportamiento futuro de la serie sino predecir una clase. Sobre este tipo de series temporales se pueden distinguir dos tipos, aquellos donde la serie entera corresponde con una clase y otros donde cada instante de la serie corresponde con una clase. El primer caso se podría expresar de la siguiente forma $ S \rightarrow Y $ donde $S$  es una serie cualquiera e $Y$ es la clase asociada a esta serie. El segundo caso se podría expresar de la siguiente forma $ S = (S_0, S_1,..., S_m) \rightarrow (Y_0,Y_1,..., Y_n) $ donde $S$ es una serie temporal de clasificación de longitud $n$, $S_i$ representa la serie en un momento determinado e $Y_i$ la clase asociada a dicho momento.\newline
+Las series temporales de clasificación son un caso especial de serie temporal, ya que el objetivo tras estas series no es obtener una predicción sobre el comportamiento futuro de la serie sino predecir una clase. Sobre este tipo de series temporales se pueden distinguir dos tipos: aquellos donde la serie entera corresponde con una clase y otros donde cada instante de la serie corresponde con una clase. El primer caso se podría expresar de la siguiente forma $ S \rightarrow Y $ donde $S$  es una serie cualquiera e $Y$ es la clase asociada a esta serie. El segundo caso se podría expresar de la siguiente forma $ S = (S_0, S_1,..., S_m) \rightarrow (Y_0,Y_1,..., Y_n) $ donde $S$ es una serie temporal de clasificación de longitud $n$, $S_i$ representa la serie en un momento determinado e $Y_i$ la clase asociada a dicho momento.\newline
 
 \section{Arquitectura}
-Para procesar series temporales de clasificación con LSTM se debe utilizar una estructura como la siguiente; una primera capa formadas por LSTM y una segunda capa para la predicción de la clase, esta capa no tiene porque ser LSTM.\newline
+Para procesar series temporales de clasificación con LSTM se debe utilizar una estructura como la siguiente; una primera capa formadas por LSTM y una segunda capa para la predicción de la clase, esta capa no tiene por qué ser LSTM.\newline
 
 La primera capa de esta red es la encargada de procesar la información, las LSTM procesan una serie temporal o un trozo de una serie, dependiendo del tipo de problema que se esté procesando, en cada momento; una vez procesada la información la salida de cada una de las LSTM se pasa a la segunda capa que es la encargada de predecir la clase correspondiente. Para el cálculo de la clase se utiliza una función de activación, para el caso de problemas de clasificación binaria se puede utilizar una función sigmoide, si se trata de un problema de clasificación múltiple se puede añadir tantas neuronas como clases diferentes hay o utilizar la función de activación softmax, que tiene un comportamiento muy parecido a la función sigmoide pero está adaptada a más de dos clases.\newline
 
 Una vez se ha calcula la clase, al igual que cualquier otra red neuronal,  se comprueba si esta es correcta y se recalculan los pesos de las neuronas de la red para mejorar el rendimiento de esta; al tratarse de un problema de clasificación, las métricas de rendimiento deben ser las usuales para clasificación como por ejemplo Accuracy.\newline
 
 La red descrita arriba es un ejemplo de la arquitectura más simple necesaria para afrontar este tipo de problemas. A partir de esta red pueden crearse redes más complejas y que en problemas específicos pueden tener un mejor rendimiento, como por ejemplo añadiendo más capas intermedias o combinando esta red con una red convolucional.\newline
-\newpage
-Para este trabajo se utilizará la red básica descrita, ya que se utilizarán problemas diferentes para los cuales unas estructuras pueden ser más útiles que otras.
+
+Para este trabajo se utilizará la red básica descrita, ya que se utilizarán problemas diferentes para los cuales unas estructuras pueden ser más útiles que otras. La imagen \ref{fig:32} muestra un ejemplo básico de red LSTM para clasificación.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=80mm]{imagenes/arquitectura_base.png}
-	\label{fig:32}
 	\caption{Estructura básica de una red de LSTM para clasificación}
+	\label{fig:32}
 \end{figure}
 \verticalspace
 
