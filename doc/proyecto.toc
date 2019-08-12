@@ -61,30 +61,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Resultados y discusi\IeC {\'o}n}{55}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}FaceAll}{55}{section.7.1}
+\contentsline {section}{\numberline {7.1}Comparaci\IeC {\'o}n resultados}{56}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}EGG Eye}{56}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{63}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}HAR}{57}{section.7.3}
+\contentsline {section}{\numberline {8.1}Conclusiones}{63}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Ozone}{57}{section.7.4}
+\contentsline {section}{\numberline {8.2}Trabajos Futuros}{64}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Swedish Leaf}{58}{section.7.5}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{64}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.6}Yoga}{59}{section.7.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.7}Adiac}{59}{section.7.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.8}Wafer}{60}{section.7.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.9}Comparaci\IeC {\'o}n resultados}{60}{section.7.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{69}{chapter.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Conclusiones}{69}{section.8.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Trabajos Futuros}{70}{section.8.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{70}{section.8.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Ap\IeC {\'e}ndice}{75}{chapter.9}
+\contentsline {chapter}{\numberline {9}Ap\IeC {\'e}ndice}{69}{chapter.9}

@@ -22,9 +22,11 @@ En la tabla \ref{tab:resumen_datasets} se muestran el tamaño de entrenamiento, 
 	\caption{Resumen datos conjunto de datos.}
 	\label{tab:resumen_datasets}
 \end{table}
-
+\newpage
 \section{Comparación resultados}
 En esta sección se mostrarán tablas comparativas de todos los conjuntos de datos junto con la métrica \textit{AUC} de todos los modelos para cada uno de los preprocesamientos, de esta forma se podrá comparar el rendimiento base general de cada uno de los modelos y como afecta el preprocesamiento utilizado a cada uno de ellos.\newline
+
+Primero, se analizará los resultados obtenidos sin realizar ningún procesamiento a los datos.\newline
 
 \begin{table}[h]
 \centering
@@ -78,7 +80,12 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos base.}
 \label{tab:all_comp_base}
 \end{table}
-\newpage
+\verticalspace
+
+En la tabla de resultados sin preprocesamiento \ref{tab:all_comp_base}, \textit{LSTM} muestra una clara ventaja conforme a otros modelos, esto no es de extrañar ya que este tipo de modelos suelen ser especialmente buenos para problemas como los que se utilizan en este estudio; aunque también los modelos ensemble, \textit{RandomForest} y \textit{XGBoost} obtienen resultados competitivos en algunos casos como por ejemplo para el conjunto de datos \textit{Yoga}.\newline
+
+A continuación, se analizarán los resultados obtenidos utilizando \newline \textit{SMOTE} balancear los conjuntos de datos. Tras esta, se analizarán las tablas de resultados utilizando \textit{ADASYN} y \textit{MWMOTE}.
+
 \begin{table}[h]
 \centering
 \begin{adjustbox}{max width=15cm}
@@ -131,7 +138,9 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos con SMOTE.}
 \label{tab:all_comp_smote}
 \end{table}
-\newpage
+
+La tabla \ref{tab:all_comp_smote} muestra una mejora general en el rendimiento de todos los modelos, haciendo que ganen a \textit{LSTM}. \textit{LSTM} en algunos casos incluso empeora, posiblemente provocado por exceso de datos y sobreapredizaje.\newline
+
 \begin{table}[h]
 \centering
 \begin{adjustbox}{max width=15cm}
@@ -184,7 +193,17 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos con ADASYN.}
 \label{tab:all_comp_adasyn}
 \end{table}
-\newpage
+
+La tabla \ref{tab:all_comp_adasyn} muestra resultados muy parecidos a los obtenidos con \textit{SMOTE}, en algunos casos el rendimiento es un poco más bajo o un poco más alto dependiendo del conjunto de datos que se mire. Al igual que en el caso con \textit{SMOTE} el rendimiento de \textit{LSTM} ha bajado en comparación con su rendimiento inicial.\newline
+
+La tabla \ref{tab:all_comp_mwmote} muestra los resultados utilizando \textit{MWMOTE} como método de oversampling. De esta tabla no se puede comentar mucho ya que los resultados son muy similares a las dos anteriores y la conclusión es la misma, \textit{LSTM} tiene un descenso en su rendimiento de forma general y el resto de modelos consiguen mejorar y ganar en la mayoría de conjuntos de datos a \textit{LSTM}.\newline
+
+La tabla \ref{tab:all_comp_smote_boruta} muestra los resultados obtenidos utilizando selección de características con \textit{Boruta} y oversampling con \textit{SMOTE}. A diferencia de para los resultados obtenidos utilizando solamente \textit{SMOTE}, aquí \textit{LSTM} consigue mejorar su rendimiento en casi todos los conjuntos de datos menos en aquellos para los que en ningún caso consigue mejorar como es el caso de \textit{Adiac}.\newline
+
+La tabla \ref{tab:all_comp_adasyn_boruta} muestra los resultados obtenidos utilizando \textit{Boruta} y \textit{ADASYN}. En esta tabla se pueden ver resultados muy parecidos a la tabla anterior, todos los modelos consigue una mejora con respecto a utilizar solamente \textit{ADASYN}. Además, el método de la ventana en estos casos, tanto en esta tabla como en la anterior, consigue también una mejora en el rendimiento de los algoritmos.\newline
+
+La tabla \ref{tab:all_comp_mwmote_boruta} muestra los resultados al combinar el uso de \textit{Boruta} y \textit{MWMOTE}; al igual que en las dos tablas anteriores que hacen uso de \textit{Boruta}, los resultados mejoran conforme a cuando solamente se utiliza oversampling y el uso de una ventana comienza a ser útil para los casos en los que no lo era.
+
 \begin{table}[h]
 \centering
 \begin{adjustbox}{max width=15cm}
@@ -237,6 +256,8 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos con MWMOTE.}
 \label{tab:all_comp_mwmote}
 \end{table}
+
+
 \newpage
 \begin{table}[h]
 \centering
@@ -290,7 +311,8 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos con SMOTE+BORUTA.}
 \label{tab:all_comp_smote_boruta}
 \end{table}
-\newpage
+
+
 \begin{table}[h]
 \centering
 \begin{adjustbox}{max width=15cm}
@@ -343,7 +365,9 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos con ADASYN+BORUTA.}
 \label{tab:all_comp_adasyn_boruta}
 \end{table}
-\newpage
+
+
+
 \begin{table}[h]
 \centering
 \begin{adjustbox}{max width=15cm}
@@ -396,11 +420,4 @@ En esta sección se mostrarán tablas comparativas de todos los conjuntos de dat
 \caption{Comparación métodos con MWMOTE+BORUTA.}
 \label{tab:all_comp_mwmote_boruta}
 \end{table}
-\newpage
-
-Mirando la tabla de resultados sin preprocesamiento \ref{tab:all_comp_base}, se puede ver una clara ventaja de \textit{LSTM} conforme a otros modelos, esto no es de extrañar ya que este tipo de modelos suelen ser especialmente buenos para problemas como los que se utilizan en este estudio; aunque también los modelos ensemble, \textit{RandomForest} y \textit{XGBoost} obtienen resultados competitivos en algunos casos como por ejemplo para el conjunto de datos \textit{Yoga}.\newline
-
-Una vez se utilizan métodos de oversampling \ref{tab:all_comp_smote} \ref{tab:all_comp_adasyn} \ref{tab:all_comp_mwmote}, se puede ver una mejora general en el rendimiento de todos los modelos haciendo que ganen a \textit{LSTM}, incluso en alguno casos empeora, seguramente provocado por un exceso de datos y sobreaprendizaje.\newline
-
-Por último, la combinación de oversampling y selección de características \ref{tab:all_comp_smote_boruta} \ref{tab:all_comp_adasyn_boruta} \ref{tab:all_comp_mwmote_boruta} hace que se mejore todavía más los datos en la mayoría de casos independientemente del modelo.
 
