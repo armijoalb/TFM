@@ -8,9 +8,39 @@ Para balancear los datos de las diferentes clases, SMOTE propone generar instanc
 
 Para conseguir dicho objetivo SMOTE sigue el siguiente proceso, elige una instancia de la clase minoritaria cualquiera, tras esto se buscan sus $K$ vecinos más cercanos que sean también de la clase minoritaria; dicho parámetro $K$ se puede cambiar y afecta a como son las instancias generadas sintéticamente; si por ejemplo su valor fuera $K=1$, las instancias se generan a partir de dos instancias de la clase minoritaria, esto hace que las características de dichas instancias nuevas sean muy parecidas a las de las instancias que se han utilizado; en cambio si $K$ tiene un valor muy grande entonces las instancias generadas tienen menos parecido a las instancias con las que se han generado.\newline
 
-Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se genera como una combinación de las instancias que se utilizan, por ejemplo si $K=1$, la nueva instancia se generaría como la media de los valores de dichas instancias. La figura \ref{fig:41} muestra un ejemplo de generación de instancias con SMOTE.\newline
+Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se genera como una combinación de las instancias que se utilizan, por ejemplo si $K=1$, la nueva instancia se generaría como la media de los valores de dichas instancias. El algoritmo \ref{algo:smote} muestra el pseudocodigo de este algoritmo.\newline
 
-\begin{figure}[h]
+\begin{algorithm}[H]
+	\caption{SMOTE(T,N,k)}
+	\label{algo:smote}
+	\begin{algorithmic}[0]
+		\State \textbf{Entrada:} Número de elementos de la clase minoritaria $T$; Cantidad de instancias creadas con SMOTE $N\%$; Número de vecinos $k$
+		\State \textbf{Salida:} $(N/100) * T$ instancias sintéticas de la clase minoritaria.
+		\State \textit{N} = $N/100$
+		\State \textit{numattrs} = número de atributos
+		\State \textit{Muestra} = vector de elementos de la clase minoritaria inicial.
+		\State \textit{instancias\_generadas} = guarda el número de instancias generadas, inicialmente su valor es 0.
+		\State \textit{Sinteticas} = vector de elementos para guardar instancias generadas.
+		\State \textit{k\_vecinos} = vector para almacenar los $k$ vecinos más cercanos.
+		\For{$i \gets 1,T$}
+			\State Calcular los $k$ vecinos más cercanos a $i$ y guardar el resultado en $k\_vecinos$
+			\While{$N \neq 0$}
+				\State Elegir un elemento de $k\_vecinos$ de forma aleatoria y llamarlo $nn$.
+				\For{$attr \gets 1,numattrs$}
+					\State $dif = Muestra[nn][attr] - Muestra[i][attr]$
+					\State $gap =$ Número aleatorio entre 0 y 1.
+					\State $Sinteticas[instancias\_generadas][attr] = Muestra[i][attr] + gap*dif$
+				\EndFor
+				\State $instancias\_generadas ++$
+				\State $N = N-1$
+			\EndWhile
+		\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+La figura \ref{fig:41} muestra un ejemplo de generación de instancias con SMOTE.\newline
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/SMOTE_comparison.png}
 	\caption{Ejemplo de generación de instancias con SMOTE.}
@@ -29,10 +59,51 @@ En la primera fase se identifican los ejemplos de la clase minoritaria, a este c
 
 En la segunda fase, cada uno de los ejemplos de $S_{imin}$ se le agrega un peso dependiendo de la importancia de dicho ejemplo dentro de el conjunto de datos de $S_{min}$. Para ello se calcula la cantidad de información que se obtiene de cada uno de los puntos, esta medida se calcula teniendo en cuenta como de cercano está cada instancia al conjunto de datos de la clase mayoritaria. Por último, una vez calculado el peso de cada instancia se le asocia una probabilidad a dicho peso.\newline
 
-En la tercera fase, el algoritmo genera instancias sintéticas a partir de $S_{imin}$ usando dicho peso y los añade al conjunto de datos de la clase minoritaria. Para generar dichas instancias, se detectan diferentes clústers dentro de $S_{min}$ y se por cada instancia que se genera se elige un elemento del conjunto $S_{imin}$ $x$, se elige otra instancia $y$ de $S_{min}$ que se encuentre en el mismo clúster que $x$ y se genera una nueva instancia de la siguiente forma: $ s = x + \alpha \times (y-x)$. La figura \ref{fig:42} muestra un ejemplo de generación de instancias con MWMOTE.\newline
+En la tercera fase, el algoritmo genera instancias sintéticas a partir de $S_{imin}$ usando dicho peso y los añade al conjunto de datos de la clase minoritaria. Para generar dichas instancias, se detectan diferentes clústers dentro de $S_{min}$ y se por cada instancia que se genera se elige un elemento del conjunto $S_{imin}$ $x$, se elige otra instancia $y$ de $S_{min}$ que se encuentre en el mismo clúster que $x$ y se genera una nueva instancia de la siguiente forma: $ s = x + \alpha \times (y-x)$. El pseudocódigo de este algoritmo se puede encontrar en el algoritmo \ref{algo:mwmote}.
+
 \newpage
 
-\begin{figure}[h]
+\begin{algorithm}[H]
+	\caption{MWMOTE($S_{maj},S_{min},N$)}
+	\label{algo:mwmote}
+	\begin{algorithmic}[0]
+		\State \textit{Entrada:} Conjunto de datos de la clase mayoritaria $S_{maj}$; Conjunto de datos de la clase minoritaria $S_{min}$; Número de instancias a generar $N$
+		\State \textit{Salida:} Conjunto de datos de la clase minoritaria ampliado $_{omin}$
+		\ForAll{$x_i \in S_{min} $}
+			\State Calcular su conjunto de vecinos más cercano, $NN(x_i)$
+		\EndFor
+		\State Calcular $S_{minf}$ como el conjunto de ejemplos de la clase minoritaria que no tiene ningún vecino de la clase minoritaria en su conjunto de vecinos más cercanos. $S_{minf} = S_{min} - \{x_i \in S_{min} : NN(x_i) $ no contiene ninguna instancia de $S_{min}  \}$
+		\ForAll{$x_i \in S_{minf} $}
+			\State Calcular conjunto de elementos más cercanos de la clase mayoritaria, $N_{maj}(x_i)$
+		\EndFor
+		\State Calcular el conjunto de la clase mayoritaria que forma frontera, $S_{bmaj} = \bigcup_{x_i \in S_{minf} } N_{maj}(x_i)$
+		\ForAll{$y_i \in S_{bmaj}$}
+			\State Calcular el conjunto de elementos más cercanos de la clase minoritaria, $N_{min} (y_i)$
+		\EndFor
+		\State Calcular el conjunto informativo minoritario, $S_{imin} = \bigcup_{y_i \in S_{bmaj}} N_{min}(y_i)$
+		\ForAll{$y_i \in S_{bmaj}$}
+			\State Calcular la cantidad de información, $I_w(y_i,x_i)$
+		\EndFor
+		\ForAll{$x_i \in S_{imin}$}
+			\State Calcular peso de selección, $S_w(x_i) = \sum{y_i \in S_{bmaj}} I_w(y_i,x_i)$
+		\EndFor
+		\ForAll{$x_i \in S_{imin}$}
+			\State Convertir $S_w(x_i)$ en probabilidad, $S_p(x_i) = S_w(x_i)/\sum{z_i \in S_{imin}}$
+		\EndFor
+		\State Calcular $M$ clúster sobre $S_{min}$, $L_1, L_2, ..., L_M$
+		\State Inicializar $_{omin} = S_{min}$
+		\For{$j \gets 1, N$}
+			\State Seleccionar aleatoriamente un elemento $x$ de $S_imin$ con probabilidad $S_p(x)$; $x$ es un elemento perteneciente a un clúster $k$ de los calculados anteriormente.
+			\State Seleccionar otra instancia $y$ aleatoriamente del clúster $k$.
+			\State Crear una nueva instancia sintética $s$ como combinación lineal de las anteriores, $s = x + \alpha \times (y-x)$, donde $\alpha$ es un número aleatorio entre 0 y 1.
+			\State Añadir $s$ a $S_{omin}$
+		\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+La figura \ref{fig:42} muestra un ejemplo de generación de instancias con MWMOTE.\newline
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/MWMOTE_comparison.png}
 	\caption{Ejemplo de generación de instancias con MWMOTE.}
@@ -50,9 +121,42 @@ Tras esto, por cada instancia perteneciente a la clase minoritaria, se calcula s
 Cuando todas las medidas $r_i$ han sido calculadas, se calcula el número de instancias a generar en el vecindario de dicha instancia de la siguiente manera: $G_i = G r_i$; donde $G$ es el número de instancias a generar que se calculó al principio.\newline
 \newpage
 
-Por último, cada una de las instancias en un vecindario $i$ se genera de la siguiente forma: se selecciona una instancia del vecindario, $x_i$; después se selecciona de forma aleatoria otra instancia vecina a la instancia $x_i$, la llamaremos $x_{zi}$; por último se calcula un número aleatorio entre 0 y 1 y se calcula la nueva instancia como la siguiente fórmula: $ s_i = x_i + (x_{zi}-x_i)\lambda$. La figura \ref{fig:43} muestra un ejemplo de generación de instancias con ADASYN.\newline
+Por último, cada una de las instancias en un vecindario $i$ se genera de la siguiente forma: se selecciona una instancia del vecindario, $x_i$; después se selecciona de forma aleatoria otra instancia vecina a la instancia $x_i$, la llamaremos $x_{zi}$; por último se calcula un número aleatorio entre 0 y 1 y se calcula la nueva instancia como la siguiente fórmula: $ s_i = x_i + (x_{zi}-x_i)\lambda$. El algoritmo \ref{algo:adasyn} muestra el pseudocodigo del algoritmo \textit{ADASYN}.
 
-\begin{figure}[h]
+\begin{algorithm}
+	\caption{ADASYN($D_{tr}, \beta, K$)}
+	\label{algo:adasyn}
+	\begin{algorithmic}[0]
+		\State \textbf{Entrada:} Conjunto de datos de entrada $D_{tr}$; Parámetro para regular cantidad de ejemplos a crear $\beta$; Número de vecinos a tener en cuenta $K$.
+		\State \textbf{Salida:} Conjunto de datos con oversampling de la clase minoritaria.
+		\State $m_s$ = Número de instancias de la clase minoritaria.
+		\State $m_j$ = Número de instancias de la clase mayoritaria.
+		\State $d_{th}$ = Umbral máximo de desbalanceo
+		\State Calcular grado de desbalanceo de clases, $d = m_s/m_j$
+		\If{ $d < d_{th} $}
+			\State Calcular número de instancias a generar $G = (m_j - m_s) \times \beta$
+			\ForAll{$x_i \in m_s$}
+				\State Calcular los $K$ vecinos más cercanos de $x_i$
+				\State Calcular la dominancia de la clase positiva de $x_i$, $r_i = \bigtriangleup_i / K$, donde $\bigtriangleup_i$ es el número de vecinos de la clase positiva dentro de los $K$ vecinos de $x_i$
+			\EndFor
+			\State Normalizar todos los $r_i$ entre [0,1], para ello dividir cada uno sobre $\sum_{i=1}^{m_s} r_i$
+			\State Calcular el número de instancias a generar por cada instancia de la clase minoritaria, $g_i = r_i \times G$
+			\ForAll{$x_i \in m_s$}
+				\For{$j \gets 1,g_i$}
+					\State Elegir aleatoriamente un ejemplo de la clase minoritaria vecino de $x_i$, $x_{zi}$
+					\State Generar una instancia sintética $s_i = x_i + (x_i - x_{zi}) \times \lambda$ donde $\lambda$ es un número aleatorio entre [0,1].
+					\State Añadir $s_i$ a conjunto de datos de entrenamiento $D_{tr}$
+				\EndFor
+			\EndFor
+		\EndIf
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+La figura \ref{fig:43} muestra un ejemplo de generación de instancias con ADASYN.\newline
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/ADASYN_comparison.png}
 	\caption{Ejemplo de generación de instancias con ADASYN.}

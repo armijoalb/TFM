@@ -19,7 +19,7 @@ Otro tipo de tratamiento necesario para series temporales es analizar valores pe
 
 Un buen método para imputar datos puede ser realizar un media móvil. La idea es calcular la media de los $x$ momentos anteriores y $x$ momentos siguientes, de esta forma se puede imputar cada dato con un valor cercano al resto de valores. La siguiente imagen muestra un ejemplo de media móvil. A parte de este método, se pueden utilizar métodos clásicos de predicción con series temporales como ARIMA, usando los datos anteriores al dato que se quiere imputar y realizar una predicción del valor de dicho dato con el modelo entrenado; sin embargo esto puede ser bastante costoso si hay bastantes datos perdidos ya que habría que generar un modelo para cada uno de ellos. La figura \ref{fig:51} muestra un ejemplo de serie procesada mediante medias móviles.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=90mm]{imagenes/moving_averages.png}
 	\caption{Ejemplo algoritmo medias móviles.}
@@ -35,7 +35,7 @@ Normalmente $f$ suele tomar el valor $1.5$ , pero para el caso de las series tem
 Otro proceso que se puede aplicar es crear ventanas de tiempo, es decir, en vez de utilizar solamente los datos en un momento dado, utilizar también los datos de n momentos anteriores para intentar mejorar el rendimiento de un clasificador. Elegir el tamaño de la ventana puede ser complicado ya que la ventana se aplica por igual a todas las series, por lo que requiere de experimentación para comprobar si hay una mejora en el rendimiento. La imagen \ref{fig:52} muestra un ejemplo de uso de ventanas en series temporales.\newline
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/sliding_window_ts.png}
 	\caption{Ejemplo método de la ventana.}

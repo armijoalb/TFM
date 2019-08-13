@@ -14,7 +14,7 @@ $$ y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + ... + \phi_p y_{t-p} + \varepsilo
 
 \noindent donde $\varepsilon_t$ es ruido blanco, el ruido blanco es un tipo de serie temporal donde su varianza es siempre la misma y cada valor no tiene correlación con el resto de valores de la serie. Los valores $y_{t-1}, ..., y_{t-p}$ son los $p$ valores anteriores en la serie que se utilizan para calcular el valor actual. Los valores $\phi_1, ..., \phi_p$ son parámetros que el modelo modifica para ajustarse a la serie; $c$ es un término independiente. En la figura \ref{fig:211} se muestran dos tipos de modelos AR.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/autoregression_example.png}
 	\caption{Diferentes modelos AR.}
@@ -29,7 +29,7 @@ $$ y_t = c + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{
 
 \newpage
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/moving_averages_example.png}
 	\caption{Diferentes modelos MA.}
@@ -43,7 +43,7 @@ $$ y'_t = c + \phi_1 y'_{t-1} + ... + \phi_p y'_{t-p} + \theta_1 \varepsilon_{t-
 
 \noindent donde $y'_t$ es la serie diferenciada. De forma general, un modelo ARIMA se representa como $ARIMA(p,d,q)$ donde $p$ representa el grado del modelo AR, $d$ representa el grado de la diferenciación a la serie y $q$ representa el grado de del modelo MA. Si $p$ o $q$ son 0, entonces nos encontramos con un modelo MA o AR, dependiendo cual es 0. En la figura \ref{fig:213} se muestra un ejemplo de la predicción obtenido con un modelo ARIMA.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/arima_example.png}
 	\caption{Ejemplo predicción con modelo ARIMA.}
@@ -63,7 +63,7 @@ El SVM (Support Vector Machine, Máquinas de Soporte Vectorial en español) \cit
 Con este producto escalar, se puede definir un hiperplano como $<x,w> + b = 0$; modificando el valor de $w$, se puede adaptar dicho hiperplano para separar mejor los datos, un ejemplo clásico de esto es el perceptron.La imagen \ref{fig:214} muestra un ejemplo de hiperplano.\newline
 
 \newpage
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=80mm]{imagenes/perceptron_example.png}
 	\caption{Ejemplo de hiperplano.}
@@ -81,7 +81,7 @@ $$ K(x_1,x_2) = <\phi(x_1), \phi(x_2)> $$
 
 Existen diferentes tipos de kernels, como por ejemplo el polinomial o el radial. A continuación se muestra un ejemplo de proyección en el espacio. En la imagen \ref{fig:215} se muestra un ejemplo de proyección a otro espacio mediante el uso de un kernel.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/svm_kernel_example.png}
 	\caption{Ejemplo de proyección.}
@@ -102,7 +102,7 @@ Para decidir que atributos son los que mejor separan las clase existe diferentes
 
 En la siguiente imagen \ref{fig:216} se muestra un ejemplo sencillo de árbol de clasificación.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/tree_example.png}
 	\caption{Ejemplo de árbol de clasificación.}
@@ -127,7 +127,7 @@ El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente 
 
 Una vez creados los $N$ clasificadores, la clase final se decide mediante una combinación lineal de la salida de cada clasificador y su importancia. En la imagen \ref{fig:217} se muestra un ejemplo del funcionamiento de AdaBoost.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.4\textwidth}
 		\centering
@@ -149,7 +149,7 @@ XGBoost añade también el concepto de regularización a los Gradient Boosted Tr
 
 \newpage
 \section{LSTM}
-Las LSTM ( Long Short-Term Memory ) \cite{hochreiter1997long} son un tipo de red neuronal recurrente; este tipo de red es capaz de procesar de procesar secuencias de datos, como por ejemplo vídeos o frases. Este tipo de red neuronal se fueron creadas para ser usadas en problemas donde la información que se procesa es dependiente de información anteriormente procesada, y esta relación debe ser recordada hasta que deje de ser útil. Actualmente las redes con LSTM se utilizan en diversas tareas, como por ejemplo reconocimiento del habla, traducción, etc.\newline
+Las LSTM (Long Short-Term Memory) \cite{hochreiter1997long} son un tipo de red neuronal recurrente; este tipo de red es capaz de procesar de procesar secuencias de datos, como por ejemplo vídeos o frases. Este tipo de red neuronal se fueron creadas para ser usadas en problemas donde la información que se procesa es dependiente de información anteriormente procesada, y esta relación debe ser recordada hasta que deje de ser útil. Actualmente las redes con LSTM se utilizan en diversas tareas, como por ejemplo reconocimiento del habla, traducción, etc.\newline
 
 Una unidad de LSTM o una neurona de LSTM tiene la siguiente estructura:
 \begin{itemize}
@@ -161,7 +161,7 @@ Una unidad de LSTM o una neurona de LSTM tiene la siguiente estructura:
 \vspace{0.09in}
 La célula es la encargada de almacenar información; el valor de la célula depende de los valores de las puertas de entrada, salida y olvido. Además, los valores de dichas puertas van cambiando en cada instante de tiempo. En la imagen \ref{fig:22} se puede ver una representación de las estructura de una LSTM.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=120mm]{imagenes/lstm-struct.png}
 	\caption{Estructura de una LSTM.}
@@ -214,7 +214,7 @@ Como puede verse, las LSTM son capaces de guardar información relevante durante
 Las LSTM son un tipo de red recurrente, por lo que se pueden construir arquitecturas basadas en una LSTM que procesa la secuencia de izquierda a derecha y otra de derecha a izquierda; a estas estructuras se les llama LSTM bidireccionales, la imagen \ref{fig:23} muestra un ejemplo de esta estructura.\newline
 \newpage
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=85mm]{imagenes/bidi-lstm.jpg}
 	\caption{Ejemplo de estructura de LSTM bidireccional.}
@@ -226,7 +226,7 @@ Gracias a este tipo de estructuras pueden resolverse problemas donde la importan
 \section{Clasificación con clases no balanceadas}
 El problema de desbalanceo de clases es un tipo de problema que aparece en problemas de clasificación. El desbalanceo de clases ocurre cuando el número de elementos de una clase es mucho mayor que el número de elementos de la otra clase; a esta clase se le llama clase minoritaria. La figura \ref{fig:24} muestra un ejemplo en 2D de un problema de desbalanceo de clases.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=85mm]{imagenes/imbalance_class.png}
 	\caption{Desbalanceo de clases.}
@@ -247,7 +247,7 @@ Modificar un modelo reduce su flexibilidad y por lo tanto lo hace válido para u
 
 Algunos ejemplos de modelos modificados son árboles de decisión que utilizan la distancia de Hellinger para la separación de nodos, utilizar un método diferente de cálculo de pertenencia de clases para KNN, por ejemplo con pesos en vez de distancias, uso de kernels específicos con SVM, etc. La imagen \ref{fig:25} muestra el cambio en el comportamiento de un árbol de decisión utilizando diferentes métricas.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=100mm]{imagenes/hellinger-example.png}
 	\caption{Ejemplo comportamiento algoritmo.}
@@ -257,7 +257,7 @@ Algunos ejemplos de modelos modificados son árboles de decisión que utilizan l
 
 Otra posible solución es modificar el peso asociado a clasificar mal un elemento, dando un peso mayor a clasificar mal un elemento de la clase minoritaria que de la mayoritaria, de forma que cuando se entrena el modelo intenta minimizarse el coste. El peso asociado a cada fallo se almacena en la matriz de costes. Dicha matriz puede ser calculada con diferentes heurísticas o aportada por un experto en el problema que se plantee. La figura \ref{fig:26} se muestra un ejemplo del uso de la matriz de costes para un clasificador simple.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=90mm]{imagenes/cost-sentitive.png}
 	\caption{Ejemplo uso de matriz de pesos.}
@@ -270,7 +270,7 @@ Existen dos formas de usar la matriz de costes, la primera es integrar el uso de
 \subsection{Técnicas basadas en la modificación del conjunto de datos}
 La idea de este tipo de técnica es manipular la distribución de los datos con los que entrena el clasificador, para ello se añaden o suprimen elementos del conjunto de datos. Cuando se añaden elementos, se llama “oversampling” y cuando eliminan “undersampling”; dependiendo del problema se puede usar una de estas técnicas o ambas. La imagen \ref{fig:27} muestra un ejemplo sobre el funcionamiento de cada uno de estos métodos.\newline
 \newpage
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=110mm]{imagenes/oversampling_undersampling.png}
 	\caption{Esquema funcionamiento técnicas de muestreo de datos.}
@@ -281,7 +281,7 @@ La idea de este tipo de técnica es manipular la distribución de los datos con 
 Un ejemplo clásico de algoritmo de undersampling es Tomek Links \cite{tomek1976two}; este algoritmo elimina elementos de la clase mayoritaria que sean fronterizos con elementos de la clase minoritaria; para ello calcula las parejas de elementos de clases diferentes que estén a la distancia mínima entre ellos, es decir, que no haya ningún otro elemento dentro del conjunto de datos que su distancia hacia ese elemento sea menor; y elimina aquellos que sean de la clase mayoritaria. En la figura \ref{fig:28} se muestra un ejemplo del uso de este algoritmo.\newline
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=120mm]{imagenes/tomek-example.png}
 	\caption{Ejemplo funcionamiento algoritmo Tomek-Links.}
@@ -293,7 +293,7 @@ Otros métodos de undersampling son OSS \cite{kubat1997addressing}, CNN \cite{ha
 
 Un algoritmo clásico de oversampling es SMOTE \cite{chawla2002smote}, este algoritmo crea nuevas instancias usando una combinación de K instancias de la clase minoritaria que sean vecinas. En la figura \ref{fig:29} se muestra un ejemplo del funcionamiento del SMOTE.\newline
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=120mm]{imagenes/smote-example.png}
 	\caption{Ejemplo funcionamiento algoritmo SMOTE.}

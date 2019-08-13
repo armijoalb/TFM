@@ -1,5 +1,6 @@
 \documentclass[a4paper,11pt]{book}
 %\documentclass[a4paper,twoside,11pt,titlepage]{book}
+% ! TEX root = ./proyecto.tex
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -7,12 +8,26 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{adjustbox}
-\usepackage[maxnames=50,firstinits=true,backend=bibtex]{biblatex}
+\usepackage{csquotes}
+\usepackage[maxnames=50,giveninits=true,backend=bibtex]{biblatex}
+\usepackage{float} % Para poner [H] en las imagenes/tablas
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Cambiar nombre de las tablas de 'Cuadro' a 'Tabla'
 \captionsetup[table]{name=Tabla}
+% Cambiar el nombre de Algorithm a Algoritmo.
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 
 % \usepackage[style=list, number=none]{glossary} %
 %\usepackage{titlesec}
-%\usepackage{pailatino}
+%\usepackage{pailatino}\textbf{}
 
 \decimalpoint
 \usepackage{dcolumn}
@@ -55,12 +70,12 @@ Telecomunicación\xspace}
 
 
 \hypersetup{
-pdfauthor = {\myName (email (en) ugr (punto) es)},
-pdftitle = {\myTitle},
-pdfsubject = {},
-pdfkeywords = {palabra_clave1, palabra_clave2, palabra_clave3, ...},
-pdfcreator = {LaTeX con el paquete ....},
-pdfproducer = {pdflatex}
+   pdfauthor = {\myName (email (en) ugr (punto) es)},
+   pdftitle = {\myTitle},
+   pdfsubject = {},
+   pdfkeywords = {palabra_clave1, palabra_clave2, palabra_clave3, ...},
+   pdfcreator = {LaTeX con el paquete ....},
+   pdfproducer = {pdflatex}
 }
 
 %\hyphenation{}
