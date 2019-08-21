@@ -24,11 +24,16 @@ Alberto Armijo Ruiz\\
 \vspace{0.7cm}
 \noindent{\textbf{Resumen}}\\
 
-Actualmente la Ciencia de Datos es una de las áreas de estudio que más repercusión está causando, dentro de esta, el Deep Learning es uno de los campos más famosos. Por ello el objetivo de este trabajo será estudiar la aplicación del Deep Learning a las Series Temporales de Clasificación con desbalanceo de clases.\newline
+Actualmente la Ciencia de Datos es una de las áreas de estudio que más repercusión está causando, dentro de esta, el Deep Learning es uno de los campos más famosos.\newline
 
-Para ello, se hará uso de las LSTM, uno de los tipos de red neuronal más utilizados en la actualidad. Durante el desarrollo de este trabajo se estudiarán dichas redes, el problema propuesto, posibles soluciones y diferentes técnicas de procesamiento de datos.\newline
+Hoy en día existen estudios específicos sobre Series Temporales de Clasificación \cite{cao2013integrated} \cite{cao2014parsimonious} \cite{geng2018cost} \cite{he2017uncertainty} \cite{karim2017lstm} \cite{liang2013effective} \cite{roychoudhury2017cost} \cite{xu2018spatio}, pero no existe ningún estudio sobre la aplicación generalista del Deep Learning a casos de estudio estándar de Series Temporales de Clasificación. Por ello el objetivo de este trabajo será estudiar la aplicación del Deep Learning a las Series Temporales de Clasificación con desbalanceo de clases.\newline 
 
-Finalmente, se aplicarán y analizarán el uso de técnbicas de oversampling y selección de características para mejorar el rendimiento de las LSTM y otros modelos en el problema anterior.
+Este estudio utilizará ocho conjuntos de datos sobre Series Temporales de Clasificación con diferentes grados de desbalanceo de clases. A estos se aplicarán diferentes métodos de oversampling, existen otras técnicas que se han estudiado como el undersampling o el peso de clases pero no se han utilizan dentro del estudio. También se utiliza el algoritmo Boruta como método de selección de características, existen otras características como selección de características con Chi-Cuadrado pero Boruta ofrece un buen rendimiento de forma general.\newline
+
+A parte de los métodos anteriores, se estudiará el uso de una ventana de diferentes tamaños para aprovechar la dependencia temporal con la que cuentan la series temporales e intentar mejorar los resultados iniciales.\newline 
+
+Para la predicción se hará uso de las LSTM, uno de los tipos de red neuronal más utilizados en la actualidad; además de este, se estudiarán otros modelos clásicos en problemas de clasificación y sobre series temporales.\newline
+
 \cleardoublepage
 
 
@@ -48,11 +53,15 @@ Alberto Armijo Ruiz \\
 \vspace{0.7cm}
 \noindent{\textbf{Abstract}}\\
 
-Currently Data Science is one of the areas of study that is causing more impact, within this, Deep Learning is one of the most famous fields. Therefore, the objective of this work will be to study the application of Deep Learning to the  Time Series Classification with class imbalance.\newline
+Currently Data Science is one of the areas of study that is causing more impact, within this, Deep Learning is one of the most famous fields. \newline
 
-For this purpose, LSTM will be used, one of the most widely used types of neural networks today. During the develpment of this work we will study these neural networks, the proposed problem, possible solutions and different data processing techniques.\newline
+Nowadays there are specific studies on Classification Time Series \cite{cao2013integrated} \cite{cao2014parsimonious} \cite{geng2018cost} \cite{he2017uncertainty} \cite{karim2017lstm} \cite{liang2013effective} \cite{roychoudhury2017cost} \cite{xu2018spatio}, but there is no study on the generalist application of Deep Learning to standard case studies of Time Series Classification. Therefore, the objective of this paper will be to study the application of Deep Learning to Classification Time Series with class imbalance.\newline
 
-Finally, the use of oversampling and feature selection techniques to improve the performance of LSTMs and other models in the above problem will be applied and analyzed.
+This study will use eight datasets of Classification Time Series problems with different degrees of class imbalance. To these different methods of oversampling will be applied, there are other techniques that have been studied as undersampling or class weight but have not been used within the study. The Boruta algorithm is also used for feature selection. There are others such as Chi-Square, but Boruta offers good performance in general.\newline
+
+Apart from the previous methods, we will study the use of a window of different sizes to take advantage of the time dependency of time series and try to improve the initial results.\newline
+
+For the prediction, use will be made of LSTM, one of the most commonly used neural network types at present; in addition to this, other classical models in classification problems and over time series will be studied. \newline
 
 
 \chapter*{}
