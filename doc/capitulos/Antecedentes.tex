@@ -49,11 +49,39 @@ $$ y'_t = c + \phi_1 y'_{t-1} + ... + \phi_p y'_{t-p} + \theta_1 \varepsilon_{t-
 	\caption{Ejemplo predicción con modelo ARIMA.}
 	\label{fig:213}
 \end{figure}
-\newpage
 \subsection{Series temporales de clasificación}
 En el apartado anterior se ha descrito modelos utilizados cuando se estudian series temporales de regresión; en este apartado se verán diferentes modelos utilizados cuando se estudian series temporales de clasificación.\newline
 
 Las series temporales de clasificación tienen propiedades que hacen que ciertos aspectos del preprocesamiento haya que abarcarlos de forma diferente a diferencia de otro tipo de problemas; sin embargo, los métodos que se utilizan para su clasificación son los mismo que para cualquier otro tipo de problema de clasificación.\newline
+
+Podemos encontrarnos las series temporales de clasificación de dos formas. La primera forma son aquellas series en las que cada serie temporal completa tiene asociada una clase; este tipo de series puede definirse de la siguiente forma:\newline
+$$ (S_1, S_2 ,..., S_n) \rightarrow (Y_1, Y_2, ..., Y_n) $$
+\noindent donde $(S_1, ..., S_n)$ corresponde con un conjunto de datos formados por $n$ series temporales de la misma longitud y cada $Y_x$ es la clase asociada a la serie temporal $x$.\newline
+
+Un ejemplo de este tipo de series temporales sería obtener series con los valores de un sensor cada cierto tiempo y detectar si el comportamiento es normal u anomálo. Otro ejemplo puede ser detectar la cara de una persona utilizando el contorno de esta como una señal, este ejemplo corresponde con el dataset \textit{FaceAll} que se utilizará en este estudio. De este último la figura \ref{fig:face_all_fig} muestra un ejemplo de ello.\newline
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=110mm]{imagenes/facell_all_example.jpg}
+	\caption{Ejemplo primer tipo de serie temporal de clasificación.}
+	\label{fig:face_all_fig}
+\end{figure}
+\verticalspace
+
+La segunda forma son aquellas donde solamente hay una serie temporal multivariada con $m$ series, donde cada instante de dicha serie $x$ tiene asociado una clase. Este tipo de series puede definirse como:\newline
+$$ ((S_{11},S_{12}, ..., S_{1m}), ...,(S_{n1},S_{n2}, ..., S_{nm})) \rightarrow (Y_1, Y_2, ..., Y_n) $$
+\noindent donde $(S_{x1}, S_{x2}, ..., S_{xm})$ es un instante $x$ de la serie e $Y_x$ es la clase asociada a ese instante.\newline
+
+Un ejemplo de esto puede ser la detección de si un ojo está cerrado o abierto dependiendo de los valores de ondas cerebrales, este ejemplo corresponde con el dataset \textit{EGG\_Eye} que se utilizará en este estudio. La figura muestra un ejemplo de este tipo de serie temporal.\newline
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=100mm]{imagenes/egg_eye_example.png}
+	\caption{Ejemplo segundo tipo de serie temporal de clasificación.}
+	\label{fig:egg_eye_example}
+\end{figure}
+\verticalspace
 
 Los métodos más utilizados, a parte de las redes neuronales que no se discutirán en este apartado; son SVM, RandomForest y Boosting. A continuación, se describirá el funcionamiento de estos algoritmos.\newline
 
@@ -87,7 +115,8 @@ Existen diferentes tipos de kernels, como por ejemplo el polinomial o el radial.
 	\caption{Ejemplo de proyección.}
 	\label{fig:215}
 \end{figure}
-\newpage
+\verticalspace
+
 Por último, la última características de las SVM es que tiene la capacidad
 de maximizar el margen, es decir, de entre todos los hiperplanos que separan las dos clases, SVM se queda con aquel que maximiza la distancia a las dos clases, de esta forma se minimiza el riesgo de sobreaprendizaje.\newline
 
@@ -159,7 +188,9 @@ Una unidad de LSTM o una neurona de LSTM tiene la siguiente estructura:
 	\item Célula.
 \end{itemize}
 \vspace{0.09in}
-La célula es la encargada de almacenar información; el valor de la célula depende de los valores de las puertas de entrada, salida y olvido. Además, los valores de dichas puertas van cambiando en cada instante de tiempo. En la imagen \ref{fig:22} se puede ver una representación de las estructura de una LSTM.\newline
+La célula es la encargada de almacenar información; el valor de la célula depende de los valores de las puertas de entrada, salida y olvido. Además, los valores de dichas puertas van cambiando en cada instante de tiempo. En la imagen \ref{fig:22} se puede ver una representación de las estructura de una LSTM.
+
+\newpage
 
 \begin{figure}[H]
 	\centering
