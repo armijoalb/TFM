@@ -53,24 +53,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Tratamiento de series temporales de clasificaci\IeC {\'o}n multivariadas}{51}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Marco Experimental}{55}{chapter.6}
+\contentsline {section}{\numberline {5.1}Procesamiento normal}{52}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Datasets}{55}{section.6.1}
+\contentsline {section}{\numberline {5.2}M\IeC {\'e}todo de la ventana}{54}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Medidas utilizadas}{56}{section.6.2}
+\contentsline {chapter}{\numberline {6}Marco Experimental}{57}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Par\IeC {\'a}metros de la red}{59}{section.6.3}
+\contentsline {section}{\numberline {6.1}Datasets}{57}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Resultados y discusi\IeC {\'o}n}{61}{chapter.7}
+\contentsline {section}{\numberline {6.2}Medidas utilizadas}{58}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Comparaci\IeC {\'o}n resultados}{62}{section.7.1}
+\contentsline {section}{\numberline {6.3}Par\IeC {\'a}metros de la red}{61}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{69}{chapter.8}
+\contentsline {chapter}{\numberline {7}Resultados y discusi\IeC {\'o}n}{63}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Conclusiones}{69}{section.8.1}
+\contentsline {section}{\numberline {7.1}Comparaci\IeC {\'o}n resultados}{64}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Trabajos Futuros}{70}{section.8.2}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajos futuros}{71}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{70}{section.8.2}
+\contentsline {section}{\numberline {8.1}Conclusiones}{71}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Ap\IeC {\'e}ndice}{75}{chapter.9}
+\contentsline {section}{\numberline {8.2}Trabajos Futuros}{72}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{72}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Ap\IeC {\'e}ndice}{77}{chapter.9}
