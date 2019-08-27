@@ -856,6 +856,45 @@
     \field{year}{1999}
   \endentry
 
+  \entry{shimodaira2002dynamic}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SH}{%
+         family={Shimodaira},
+         familyi={S\bibinitperiod},
+         given={Hiroshi},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=NKi}{%
+         family={Noma},
+         familyi={N\bibinitperiod},
+         given={Ken-ichi},
+         giveni={K\bibinitperiod-i\bibinitperiod},
+      }}%
+      {{hash=NM}{%
+         family={Nakai},
+         familyi={N\bibinitperiod},
+         given={Mitsuru},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Sagayama},
+         familyi={S\bibinitperiod},
+         given={Shigeki},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SHNKiNMSS1}
+    \strng{fullhash}{SHNKiNMSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Advances in neural information processing systems}
+    \field{pages}{921\bibrangedash 928}
+    \field{title}{Dynamic time-alignment kernel in support vector machine}
+    \field{year}{2002}
+  \endentry
+
   \entry{swapna2018automated}{article}{}
     \name{author}{3}{}{%
       {{hash=SG}{%

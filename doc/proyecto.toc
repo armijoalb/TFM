@@ -25,15 +25,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Boosting}{27}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}LSTM}{29}{section.2.2}
+\contentsline {section}{\numberline {2.2}LSTM}{30}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Clasificaci\IeC {\'o}n con clases no balanceadas}{33}{section.2.3}
+\contentsline {section}{\numberline {2.3}Clasificaci\IeC {\'o}n con clases no balanceadas}{34}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}T\IeC {\'e}cnicas basadas en modificaci\IeC {\'o}n del algoritmo}{34}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}T\IeC {\'e}cnicas basadas en modificaci\IeC {\'o}n del algoritmo}{35}{subsection.2.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}T\IeC {\'e}cnicas basadas en la modificaci\IeC {\'o}n del conjunto de datos}{35}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}T\IeC {\'e}cnicas basadas en la modificaci\IeC {\'o}n del conjunto de datos}{36}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.3}Otros enfoques}{37}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}Otros enfoques}{38}{subsection.2.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}LSTMs para clasificaci\IeC {\'o}n de series temporales}{39}{chapter.3}
 \defcounter {refsection}{0}\relax 

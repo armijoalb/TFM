@@ -117,13 +117,15 @@ Existen diferentes tipos de kernels, como por ejemplo el polinomial o el radial.
 \end{figure}
 \verticalspace
 
-Por último, la última características de las SVM es que tiene la capacidad
+La última características de las SVM es que tiene la capacidad
 de maximizar el margen, es decir, de entre todos los hiperplanos que separan las dos clases, SVM se queda con aquel que maximiza la distancia a las dos clases, de esta forma se minimiza el riesgo de sobreaprendizaje.\newline
+
+Por último, para utilizar SVM con series temporales se pueden utilizar kernels específicos \cite{shimodaira2002dynamic}; para el caso de las series temporales de clasificación se puede utilizar kernels más comunes como el lineal.\newline
 
 \subsubsection{RandomForest}
 RandomForest \cite{breiman2001random} es uno de los métodos clásicos que forma parte del estado del arte para algoritmos de clasificación. RandomForest se trata de un multiclasificador, es decir, es un modelo formado por varios modelos más simples; en el caso de RandomForest se utilizan árboles de clasificación.\newline
 
-Los árboles de clasificación son un algorimto clásico de clasificación. El proceso que realiza un árbol de clasificación es dividir el espacio del problema hasta que llega decisión. El proceso que sigue para generar el árbol es el siguiente.\newline
+Los árboles de clasificación son un algoritmo clásico de clasificación. El proceso que realiza un árbol de clasificación es dividir el espacio del problema hasta que llega decisión. El proceso que sigue para generar el árbol es el siguiente.\newline
 
 Primero se busca el atributo que mejor separe las clases sobre el conjunto de datos entero (nodo raíz). Segundo, se divide el conjunto de datos según el atributo elegido y se elimina este. Este proceso se repite en cada nodo hasta que todos los elementos en ese elemento sea de la misma clase. El proceso se repite hasta que todas las ramas del árbol llegan a una solución.\newline
 
@@ -141,17 +143,31 @@ En la siguiente imagen \ref{fig:216} se muestra un ejemplo sencillo de árbol de
 
 RandomForest crea un conjunto de árboles de clasificación para realizar su decisión; una vez creados los árboles, se decide la clase final mediante voto. Para generar los árboles se utiliza \textit{Bagging}. Para cada uno de los árboles, se eligen $m$ atributos y un subconjunto de instancias del conjunto de datos, de esta forma se obtiene modelos más simples que pueden aprender mejor ciertos atributos que si se creara un solo árbol de decisión.\newline
 
+Para el caso de las series temporales de clasificación, el proceso es el mismo; RandomForest crea un conjunto de modelos que tienen en cuenta un subconjunto de las series temporales y mediante votación se decide la clase de nuevas instancias.
+
 \subsubsection{Boosting}
 Boosting \cite{schapire1999brief}, al igual que RandomForest se trata de un multiclasificador, aunque su enfoque es diferente. Boosting puede utilizarse tanto con árboles de decisión como con otros algoritmos.\newline
 
 A diferencia de RandomForest, donde cada árbol que se genera es independiente, en Boosting cada árbol o clasificador que se genera utiliza información de los árboles que se han creado anteriormente.\newline
 
-El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente proceso para crear $N$ clasificadores. 
-\begin{itemize}
-	\item Primero, elige un subconjunto de instancias del conjunto de datos según su peso y entrena un clasificador simple.
-	\item Segundo, prueba el clasificador sobre el conjunto de datos completo y aumenta el peso de aquellos datos mal clasificados y reduce el de aquellos bien clasificados.
-	\item Por último, asocia al clasificador entrenado un peso/importancia basada en el error cometido.
-\end{itemize}
+El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente proceso para crear $N$ clasificadores mostrado en el algoritmo \ref{alg:adaboost}. \newline
+
+\begin{algorithm}[H]
+	\caption{AdaBoost(N,C)}
+	\label{alg:adaboost}
+	\begin{algorithmic}[0]
+		\State \textbf{Entrada:} Conjunto de datos $C$, Número de clasificadores a entrenar $N$
+		\State \textbf{Salida:} Clasificador entrenado.
+		\State Iniciar una distribución uniforme de pesos para todas las instancias de $C$.
+		\For{$i \gets 1,N$}
+			\State Entrenar un clasificador débil $h_i$ con un subconjunto de los datos.
+			\State Probar el clasificador débil $h_i$ sobre $C$.
+			\State Asociar al clasificador un peso $\alpha_i$ basado en el error.
+			\State Modificar el peso de las instancias utilizadas basado en el error cometido.
+		\EndFor
+		\State return $H_final = sign(\sum_{i=1}^{N}\alpha_ih_i)$
+	\end{algorithmic}
+\end{algorithm}
 \verticalspace
 
 Una vez creados los $N$ clasificadores, la clase final se decide mediante una combinación lineal de la salida de cada clasificador y su importancia. En la imagen \ref{fig:217} se muestra un ejemplo del funcionamiento de AdaBoost.\newline
@@ -174,7 +190,9 @@ Una vez creados los $N$ clasificadores, la clase final se decide mediante una co
 
 Para este estudio, el algoritmo que se utilizará es XGBoost \cite{chen2016xgboost}; este es un algoritmo de Boosting, específicamente Gradient Boosted Trees \cite{friedman2002stochastic}. Este algoritmo utiliza el Boosting para generar nuevos árboles que puedan predecir la clase de los errores que han cometido árboles anteriores. Para minimizar la pérdida al añadir nuevos modelos se utiliza gradiente descendiente.\newline
 
-XGBoost añade también el concepto de regularización a los Gradient Boosted Trees. La regularización es un mecanismo para evitar el sobreaprendizaje, para conseguir esto se mide la complejidad del modelo, de forma que se premian modelos más sencillos. XGBoost, a parte de optimizar la pérdida para conseguir mejores modelos, optimiza la regularización para obtener modelos más sencillos. Esto hace que pueda producir mejores resultados mejores que los Gradient Boosted Trees, ya que modelos más sencillos suelen generalizar mejor y por lo tanto sufrir menos sobreaprendizaje y siendo más estables.
+XGBoost añade también el concepto de regularización a los Gradient Boosted Trees. La regularización es un mecanismo para evitar el sobreaprendizaje, para conseguir esto se mide la complejidad del modelo, de forma que se premian modelos más sencillos. XGBoost, a parte de optimizar la pérdida para conseguir mejores modelos, optimiza la regularización para obtener modelos más sencillos. Esto hace que pueda producir mejores resultados mejores que los Gradient Boosted Trees, ya que modelos más sencillos suelen generalizar mejor y por lo tanto sufrir menos sobreaprendizaje y siendo más estables.\newline
+
+XGBoost no hace ningún tipo de tratamiento adicional a las series temporales de clasificación, aprende de los datos como con cualquier conjunto de datos de clasificación.\newline
 
 \newpage
 \section{LSTM}
