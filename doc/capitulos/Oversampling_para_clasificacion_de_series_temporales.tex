@@ -8,7 +8,7 @@ Para balancear los datos de las diferentes clases, SMOTE propone generar instanc
 
 Para conseguir dicho objetivo SMOTE sigue el siguiente proceso, elige una instancia de la clase minoritaria cualquiera, tras esto se buscan sus $K$ vecinos más cercanos que sean también de la clase minoritaria; dicho parámetro $K$ se puede cambiar y afecta a como son las instancias generadas sintéticamente; si por ejemplo su valor fuera $K=1$, las instancias se generan a partir de dos instancias de la clase minoritaria, esto hace que las características de dichas instancias nuevas sean muy parecidas a las de las instancias que se han utilizado; en cambio si $K$ tiene un valor muy grande entonces las instancias generadas tienen menos parecido a las instancias con las que se han generado.\newline
 
-Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se genera como una combinación de las instancias que se utilizan, por ejemplo si $K=1$, la nueva instancia se generaría como la media de los valores de dichas instancias. El algoritmo \ref{algo:smote} muestra el pseudocodigo de este algoritmo.\newline
+Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se genera como una combinación de las instancias que se utilizan, por ejemplo si $K=1$, la nueva instancia se generaría como la media de los valores de dichas instancias. El Algoritmo \ref{algo:smote} muestra el pseudocodigo de este algoritmo.\newline
 
 \begin{algorithm}[H]
 	\caption{SMOTE(T,N,k)}
@@ -38,7 +38,7 @@ Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se ge
 	\end{algorithmic}
 \end{algorithm}
 
-La figura \ref{fig:41} muestra un ejemplo de generación de instancias con SMOTE.\newline
+La Figura \ref{fig:41} muestra un ejemplo de generación de instancias con SMOTE.\newline
 
 \begin{figure}[H]
 	\centering
@@ -59,7 +59,7 @@ En la primera fase se identifican los ejemplos de la clase minoritaria, a este c
 
 En la segunda fase, cada uno de los ejemplos de $S_{imin}$ se le agrega un peso dependiendo de la importancia de dicho ejemplo dentro de el conjunto de datos de $S_{min}$. Para ello se calcula la cantidad de información que se obtiene de cada uno de los puntos, esta medida se calcula teniendo en cuenta como de cercano está cada instancia al conjunto de datos de la clase mayoritaria. Por último, una vez calculado el peso de cada instancia se le asocia una probabilidad a dicho peso.\newline
 
-En la tercera fase, el algoritmo genera instancias sintéticas a partir de $S_{imin}$ usando dicho peso y los añade al conjunto de datos de la clase minoritaria. Para generar dichas instancias, se detectan diferentes clústers dentro de $S_{min}$ y se por cada instancia que se genera se elige un elemento del conjunto $S_{imin}$ $x$, se elige otra instancia $y$ de $S_{min}$ que se encuentre en el mismo clúster que $x$ y se genera una nueva instancia de la siguiente forma: $ s = x + \alpha \times (y-x)$. El pseudocódigo de este algoritmo se puede encontrar en el algoritmo \ref{algo:mwmote}.
+En la tercera fase, el algoritmo genera instancias sintéticas a partir de $S_{imin}$ usando dicho peso y los añade al conjunto de datos de la clase minoritaria. Para generar dichas instancias, se detectan diferentes clústers dentro de $S_{min}$ y se por cada instancia que se genera se elige un elemento del conjunto $S_{imin}$ $x$, se elige otra instancia $y$ de $S_{min}$ que se encuentre en el mismo clúster que $x$ y se genera una nueva instancia de la siguiente forma: $ s = x + \alpha \times (y-x)$. El pseudocódigo de este algoritmo se puede encontrar en el Algoritmo \ref{algo:mwmote}.
 
 \newpage
 
@@ -101,7 +101,7 @@ En la tercera fase, el algoritmo genera instancias sintéticas a partir de $S_{i
 	\end{algorithmic}
 \end{algorithm}
 
-La figura \ref{fig:42} muestra un ejemplo de generación de instancias con MWMOTE.\newline
+La Figura \ref{fig:42} muestra un ejemplo de generación de instancias con MWMOTE.\newline
 
 \begin{figure}[H]
 	\centering
@@ -121,7 +121,7 @@ Tras esto, por cada instancia perteneciente a la clase minoritaria, se calcula s
 Cuando todas las medidas $r_i$ han sido calculadas, se calcula el número de instancias a generar en el vecindario de dicha instancia de la siguiente manera: $G_i = G r_i$; donde $G$ es el número de instancias a generar que se calculó al principio.\newline
 \newpage
 
-Por último, cada una de las instancias en un vecindario $i$ se genera de la siguiente forma: se selecciona una instancia del vecindario, $x_i$; después se selecciona de forma aleatoria otra instancia vecina a la instancia $x_i$, la llamaremos $x_{zi}$; por último se calcula un número aleatorio entre 0 y 1 y se calcula la nueva instancia como la siguiente fórmula: $ s_i = x_i + (x_{zi}-x_i)\lambda$. El algoritmo \ref{algo:adasyn} muestra el pseudocodigo del algoritmo \textit{ADASYN}.
+Por último, cada una de las instancias en un vecindario $i$ se genera de la siguiente forma: se selecciona una instancia del vecindario, $x_i$; después se selecciona de forma aleatoria otra instancia vecina a la instancia $x_i$, la llamaremos $x_{zi}$; por último se calcula un número aleatorio entre 0 y 1 y se calcula la nueva instancia como la siguiente fórmula: $ s_i = x_i + (x_{zi}-x_i)\lambda$. El Algoritmo \ref{algo:adasyn} muestra el pseudocodigo del algoritmo \textit{ADASYN}.
 
 \begin{algorithm}
 	\caption{ADASYN($D_{tr}, \beta, K$)}
@@ -154,7 +154,7 @@ Por último, cada una de las instancias en un vecindario $i$ se genera de la sig
 
 
 
-La figura \ref{fig:43} muestra un ejemplo de generación de instancias con ADASYN.\newline
+La Figura \ref{fig:43} muestra un ejemplo de generación de instancias con ADASYN.\newline
 
 \begin{figure}[H]
 	\centering

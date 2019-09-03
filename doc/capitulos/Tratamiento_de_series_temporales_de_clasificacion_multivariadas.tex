@@ -18,7 +18,7 @@ Un paso importante en el preprocesamiento si se están utilizando redes neuronal
 
 Otro tipo de tratamiento necesario para series temporales es analizar valores perdidos en la serie. Si existen valores perdidos hay dos posibilidades; la primera es eliminar dichos valores perdidos, esta opción no es muy recomendable si la serie tiene muy pocos datos, la otra opción es imputar los valores perdidos. Para imputar dichos valores, se puede utilizar biblioteca específicas para series temporales o utilizar métodos clásicos de imputación, aunque estos no tienen por qué tener en cuenta las particularidades de las series temporales.\newline
 
-Un buen método para imputar datos puede ser realizar un media móvil. La idea es calcular la media de los $x$ momentos anteriores y $x$ momentos siguientes, de esta forma se puede imputar cada dato con un valor cercano al resto de valores. La siguiente imagen muestra un ejemplo de media móvil. A parte de este método, se pueden utilizar métodos clásicos de predicción con series temporales como ARIMA, usando los datos anteriores al dato que se quiere imputar y realizar una predicción del valor de dicho dato con el modelo entrenado; sin embargo esto puede ser bastante costoso si hay bastantes datos perdidos ya que habría que generar un modelo para cada uno de ellos. La figura \ref{fig:51} muestra un ejemplo de serie procesada mediante medias móviles.\newline
+Un buen método para imputar datos puede ser realizar un media móvil. La idea es calcular la media de los $x$ momentos anteriores y $x$ momentos siguientes, de esta forma se puede imputar cada dato con un valor cercano al resto de valores. A parte de este método, se pueden utilizar métodos clásicos de predicción con series temporales como ARIMA, usando los datos anteriores al dato que se quiere imputar y realizar una predicción del valor de dicho dato con el modelo entrenado; sin embargo esto puede ser bastante costoso si hay bastantes datos perdidos ya que habría que generar un modelo para cada uno de ellos. La Figura \ref{fig:51} muestra un ejemplo de serie procesada mediante medias móviles.\newline
 
 \begin{figure}[H]
 	\centering
@@ -33,7 +33,7 @@ Para la detección de outliers se puede utilizar cualquier método de detección
 
 Normalmente $f$ suele tomar el valor $1.5$ , pero para el caso de las series temporales este valor provoca que se detecten demasiados datos como outliers; por ello, en este estudio se ha utilizado $f=3$ para asegurarse de que los outliers detectados sean realmente anomalías en los datos de la serie y no una pequeña variación. Una vez detectados los outliers, se pueden utilizar diferentes métodos para modificar dichos outliers, por ejemplo el método comentado anteriormente (medias móviles).\newline
 
-Por último, se puede aplicar una selección de características, o en este caso de series temporales; para ello se pueden utilizar algoritmos de selección de características como por ejemplo Boruta \cite{kursa2010boruta}. Este algoritmo selecciona características dependiendo de su importancia. El proceso que sigue este algoritmo para seleccionar características se muestra en algoritmo \ref{alg:boruta}.\newline
+Por último, se puede aplicar una selección de características, o en este caso de series temporales; para ello se pueden utilizar algoritmos de selección de características como por ejemplo Boruta \cite{kursa2010boruta}. Este algoritmo selecciona características dependiendo de su importancia. El proceso que sigue este algoritmo para seleccionar características se muestra en Algoritmo \ref{alg:boruta}.\newline
 
 \begin{algorithm}[H]
 	\caption{Boruta(C,N)}
@@ -66,7 +66,7 @@ Por último, se puede aplicar una selección de características, o en este caso
 \section{Método de la ventana}
 Otro tipo de procesamiento que se propone es este trabajo es el uso de una ventana. El objetivo de utilizar este procesamiento es aprovechar la dependencia temporal que existe en las series temporales; es decir, los valores obtenidos en un instante (o para el caso de las series temporales de clasificación una clase) son dependientes de los $n$ valores anteriores.\newline
 \newpage
-Esta dependencia se utiliza en modelos clásicos de predicción de series temporales como es ARIMA. La figura \ref{fig:52} muestra un ejemplo de predicción usando una ventana.\newline
+Esta dependencia se utiliza en modelos clásicos de predicción de series temporales como es ARIMA. La Figura \ref{fig:52} muestra un ejemplo de predicción usando una ventana.\newline
 
 \begin{figure}[H]
 	\centering
@@ -76,7 +76,7 @@ Esta dependencia se utiliza en modelos clásicos de predicción de series tempor
 \end{figure}
 \verticalspace
 
-Para los algoritmos clásicos de clasificación, así como las redes neuronales que se utilizan en este trabajo, no hay forma de que el modelo detecte dicha dependencia o se le pueda indicar directamente. Por ello, el procesamiento que se propone es replicar los datos anteriores, añadiendolos como columnas a cada instancia, para replicar la misma ventana que se podría usar en un problema clásico de series temporales. El algoritmo \ref{alg:wind_method} muestra el proceso para crear la ventana.\newline
+Para los algoritmos clásicos de clasificación, así como las redes neuronales que se utilizan en este trabajo, no hay forma de que el modelo detecte dicha dependencia o se le pueda indicar directamente. Por ello, el procesamiento que se propone es replicar los datos anteriores, añadiendolos como columnas a cada instancia, para replicar la misma ventana que se podría usar en un problema clásico de series temporales. El Algoritmo \ref{alg:wind_method} muestra el proceso para crear la ventana.\newline
 
 \begin{algorithm}[H]
 	\caption{Ventana(C,t)}
@@ -95,7 +95,7 @@ Para los algoritmos clásicos de clasificación, así como las redes neuronales 
 \end{algorithm}
 \verticalspace
 
-Con este algoritmo se puede generar conjuntos de datos con una ventana añadidda en cada columna, de forma que los algoritmos puedan hacer uso de la dependencia temporal. La figura \ref{fig:53} muestra un ejemplo de dataset modificado por el algoritmo.\newline
+Con este algoritmo se puede generar conjuntos de datos con una ventana añadidda en cada columna, de forma que los algoritmos puedan hacer uso de la dependencia temporal. La Figura \ref{fig:53} muestra un ejemplo de dataset modificado por el algoritmo.\newline
 
 \begin{figure}[H]
 	\centering

@@ -3,7 +3,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{13}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Marco Introductiorio}{13}{section.1.1}
+\contentsline {section}{\numberline {1.1}Marco Introductorio}{13}{section.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Objetivos}{15}{section.1.2}
 \defcounter {refsection}{0}\relax 
@@ -77,4 +77,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{72}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Ap\IeC {\'e}ndice}{77}{chapter.9}
+\contentsline {chapter}{\numberline {A}Tablas de resultados}{77}{appendix.Alph1}

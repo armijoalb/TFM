@@ -12,7 +12,7 @@ ARIMA se trata de un modelo clásico para series temporales. Dicho modelo se tra
 En un modelo AR; a diferencia de un modelo de regresión normal, donde se utiliza una combinación lineal de características para predecir una variable; se utiliza una combinación lineal de los valores anteriores de dicha variable. Un modelo AR de order $p$, al que nos referimos como $AR(p)$ se define de la siguiente forma:\newline
 $$ y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + ... + \phi_p y_{t-p} + \varepsilon_t $$
 
-\noindent donde $\varepsilon_t$ es ruido blanco, el ruido blanco es un tipo de serie temporal donde su varianza es siempre la misma y cada valor no tiene correlación con el resto de valores de la serie. Los valores $y_{t-1}, ..., y_{t-p}$ son los $p$ valores anteriores en la serie que se utilizan para calcular el valor actual. Los valores $\phi_1, ..., \phi_p$ son parámetros que el modelo modifica para ajustarse a la serie; $c$ es un término independiente. En la figura \ref{fig:211} se muestran dos tipos de modelos AR.\newline
+\noindent donde $\varepsilon_t$ es ruido blanco, el ruido blanco es un tipo de serie temporal donde su varianza es siempre la misma y cada valor no tiene correlación con el resto de valores de la serie. Los valores $y_{t-1}, ..., y_{t-p}$ son los $p$ valores anteriores en la serie que se utilizan para calcular el valor actual. Los valores $\phi_1, ..., \phi_p$ son parámetros que el modelo modifica para ajustarse a la serie; $c$ es un término independiente. En la Figura \ref{fig:211} se muestran dos tipos de modelos AR.\newline
 
 \begin{figure}[H]
 	\centering
@@ -25,7 +25,7 @@ $$ y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + ... + \phi_p y_{t-p} + \varepsilo
 Un modelo MA, a diferencia de un modelo AR utiliza los errores de predicciones anteriores para generar un modelo de regresión. Un modelo MA con grado $q$, al que llamaremos $MA(q)$ se define de la siguiente manera:
 $$ y_t = c + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + ... + \theta_q \varepsilon_{t-q}$$
 
-\noindent donde $\varepsilon_t$ es ruido blanco. Al igual que en el modelo anterior, $\theta_1, ..., \theta_q$ son parámetros que el modelo entrena para ajustarse a una serie temporal. En la siguiente imagen \ref{fig:212} se muestran dos ejemplos de modelos MA.
+\noindent donde $\varepsilon_t$ es ruido blanco. Al igual que en el modelo anterior, $\theta_1, ..., \theta_q$ son parámetros que el modelo entrena para ajustarse a una serie temporal. En la Figura \ref{fig:212} se muestran dos ejemplos de modelos MA.
 
 \newpage
 
@@ -41,7 +41,7 @@ El último concepto que añade ARIMA es la diferenciación. La diferenciación e
 Combinando la diferenciación junto con los modelos AR y MA en un único modelo, se obtiene un modelo ARIMA. Un modelo ARIMA puede expresarse de la siguiente manera.
 $$ y'_t = c + \phi_1 y'_{t-1} + ... + \phi_p y'_{t-p} + \theta_1 \varepsilon_{t-1} + ... + \theta_q \varepsilon_{t-q} + \varepsilon_t $$
 
-\noindent donde $y'_t$ es la serie diferenciada. De forma general, un modelo ARIMA se representa como $ARIMA(p,d,q)$ donde $p$ representa el grado del modelo AR, $d$ representa el grado de la diferenciación a la serie y $q$ representa el grado de del modelo MA. Si $p$ o $q$ son 0, entonces nos encontramos con un modelo MA o AR, dependiendo cual es 0. En la figura \ref{fig:213} se muestra un ejemplo de la predicción obtenido con un modelo ARIMA.\newline
+\noindent donde $y'_t$ es la serie diferenciada. De forma general, un modelo ARIMA se representa como $ARIMA(p,d,q)$ donde $p$ representa el grado del modelo AR, $d$ representa el grado de la diferenciación a la serie y $q$ representa el grado de del modelo MA. Si $p$ o $q$ son 0, entonces nos encontramos con un modelo MA o AR, dependiendo cual es 0. En la Figura \ref{fig:213} se muestra un ejemplo de la predicción obtenido con un modelo ARIMA.\newline
 
 \begin{figure}[H]
 	\centering
@@ -58,7 +58,7 @@ Podemos encontrarnos las series temporales de clasificación de dos formas. La p
 $$ (S_1, S_2 ,..., S_n) \rightarrow (Y_1, Y_2, ..., Y_n) $$
 \noindent donde $(S_1, ..., S_n)$ corresponde con un conjunto de datos formados por $n$ series temporales de la misma longitud y cada $Y_x$ es la clase asociada a la serie temporal $x$.\newline
 
-Un ejemplo de este tipo de series temporales sería obtener series con los valores de un sensor cada cierto tiempo y detectar si el comportamiento es normal u anomálo. Otro ejemplo puede ser detectar la cara de una persona utilizando el contorno de esta como una señal, este ejemplo corresponde con el dataset \textit{FaceAll} que se utilizará en este estudio. De este último la figura \ref{fig:face_all_fig} muestra un ejemplo de ello.\newline
+Un ejemplo de este tipo de series temporales sería obtener series con los valores de un sensor cada cierto tiempo y detectar si el comportamiento es normal u anomálo. Otro ejemplo puede ser detectar la cara de una persona utilizando el contorno de esta como una señal, este ejemplo corresponde con el dataset \textit{FaceAll} que se utilizará en este estudio. De este último la Figura \ref{fig:face_all_fig} muestra un ejemplo de ello.\newline
 
 \begin{figure}[H]
 	\centering
@@ -72,7 +72,7 @@ La segunda forma son aquellas donde solamente hay una serie temporal multivariad
 $$ ((S_{11},S_{12}, ..., S_{1m}), ...,(S_{n1},S_{n2}, ..., S_{nm})) \rightarrow (Y_1, Y_2, ..., Y_n) $$
 \noindent donde $(S_{x1}, S_{x2}, ..., S_{xm})$ es un instante $x$ de la serie e $Y_x$ es la clase asociada a ese instante.\newline
 
-Un ejemplo de esto puede ser la detección de si un ojo está cerrado o abierto dependiendo de los valores de ondas cerebrales, este ejemplo corresponde con el dataset \textit{EGG\_Eye} que se utilizará en este estudio. La figura muestra un ejemplo de este tipo de serie temporal.\newline
+Un ejemplo de esto puede ser la detección de si un ojo está cerrado o abierto dependiendo de los valores de ondas cerebrales, este ejemplo corresponde con el dataset \textit{EGG\_Eye} que se utilizará en este estudio. La Figura muestra un ejemplo de este tipo de serie temporal.\newline
 \newpage
 
 \begin{figure}[H]
@@ -88,7 +88,7 @@ Los métodos más utilizados, a parte de las redes neuronales que no se discutir
 \subsubsection{SVM}
 El SVM (Support Vector Machine, Máquinas de Soporte Vectorial en español) \cite{boser1992training} fue introducido en 1992. Las SVM son un caso particular de \say{Kernel Machines} (KM). Este tipo de algoritmos utilizan el producto escalar de los datos de entrada, de esta forma, el producto escalar se usa como una forma de establecer una similitud entre los elementos.\newline
 
-Con este producto escalar, se puede definir un hiperplano como $<x,w> + b = 0$; modificando el valor de $w$, se puede adaptar dicho hiperplano para separar mejor los datos, un ejemplo clásico de esto es el perceptron.La imagen \ref{fig:214} muestra un ejemplo de hiperplano.\newline
+Con este producto escalar, se puede definir un hiperplano como $<x,w> + b = 0$; modificando el valor de $w$, se puede adaptar dicho hiperplano para separar mejor los datos, un ejemplo clásico de esto es el perceptron.La Figura \ref{fig:214} muestra un ejemplo de hiperplano.\newline
 
 \newpage
 \begin{figure}[H]
@@ -107,7 +107,7 @@ $$ K(x_1,x_2) = <\phi(x_1), \phi(x_2)> $$
 
 \noindent donde $x_1, x_2$ son datos en el espacio original y $\phi$ representa la transformación para llevar un dato a otro espacio. Gracias a los kernels no es necesario saber la transformación $\phi$, además, a partir de este momento en la función del hiperplano se puede sustituir el producto escalar por la función kernel.\newline
 
-Existen diferentes tipos de kernels, como por ejemplo el polinomial o el radial. A continuación se muestra un ejemplo de proyección en el espacio. En la imagen \ref{fig:215} se muestra un ejemplo de proyección a otro espacio mediante el uso de un kernel.\newline
+Existen diferentes tipos de kernels, como por ejemplo el polinomial o el radial. A continuación se muestra un ejemplo de proyección en el espacio. En la Figura \ref{fig:215} se muestra un ejemplo de proyección a otro espacio mediante el uso de un kernel.\newline
 
 \begin{figure}[H]
 	\centering
@@ -131,7 +131,7 @@ Primero se busca el atributo que mejor separe las clases sobre el conjunto de da
 
 Para decidir que atributos son los que mejor separan las clase existe diferentes medidas como por ejemplo el índice GINI, Entropía, Ganancia de información o el Ratio de Gananacia. Las medidas GINI y Entropía miden interés en un atributo a partir de la frecuencia relativa entre clases para la partición de dicho atributo, la Ganancia mide la reducción en la Entropía al realizar una partición, el Ratio de Ganancia mide la Ganancia dividido entre el número de particiones que se realizan al particionar con ese atributo. \newline
 
-En la siguiente imagen \ref{fig:216} se muestra un ejemplo sencillo de árbol de clasificación.
+En la Figura \ref{fig:216} se muestra un ejemplo sencillo de árbol de clasificación.
 
 \begin{figure}[H]
 	\centering
@@ -150,7 +150,7 @@ Boosting \cite{schapire1999brief}, al igual que RandomForest se trata de un mult
 
 A diferencia de RandomForest, donde cada árbol que se genera es independiente, en Boosting cada árbol o clasificador que se genera utiliza información de los árboles que se han creado anteriormente.\newline
 
-El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente proceso para crear $N$ clasificadores mostrado en el algoritmo \ref{alg:adaboost}. \newline
+El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente proceso para crear $N$ clasificadores mostrado en el Algoritmo \ref{alg:adaboost}. \newline
 
 \begin{algorithm}[H]
 	\caption{AdaBoost(N,C)}
@@ -170,7 +170,7 @@ El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente 
 \end{algorithm}
 \verticalspace
 
-Una vez creados los $N$ clasificadores, la clase final se decide mediante una combinación lineal de la salida de cada clasificador y su importancia. En la imagen \ref{fig:217} se muestra un ejemplo del funcionamiento de AdaBoost.\newline
+Una vez creados los $N$ clasificadores, la clase final se decide mediante una combinación lineal de la salida de cada clasificador y su importancia. En la Figura \ref{fig:217} se muestra un ejemplo del funcionamiento de AdaBoost.\newline
 
 \begin{figure}[H]
 	\centering
@@ -206,7 +206,7 @@ Una unidad de LSTM o una neurona de LSTM tiene la siguiente estructura:
 	\item Célula.
 \end{itemize}
 \vspace{0.09in}
-La célula es la encargada de almacenar información; el valor de la célula depende de los valores de las puertas de entrada, salida y olvido. Además, los valores de dichas puertas van cambiando en cada instante de tiempo. En la imagen \ref{fig:22} se puede ver una representación de las estructura de una LSTM.
+La célula es la encargada de almacenar información; el valor de la célula depende de los valores de las puertas de entrada, salida y olvido. Además, los valores de dichas puertas van cambiando en cada instante de tiempo. En la Figura \ref{fig:22} se puede ver una representación de las estructura de una LSTM.
 
 \newpage
 
@@ -260,7 +260,7 @@ La función para calcular la salida puede ser otra, como ReLu; las funciones de 
 
 Como puede verse, las LSTM son capaces de guardar información relevante durante un largo periodo de tiempo y eliminar la información poco importante; por ello, son muy utilizadas en problemas con series temporales, ya que la información en un momento t es dependiente de la información que había en instantes anteriores y las LSTMs son capaces de detectar dicha dependencia y aprenderla.\newline
 
-Las LSTM son un tipo de red recurrente, por lo que se pueden construir arquitecturas basadas en una LSTM que procesa la secuencia de izquierda a derecha y otra de derecha a izquierda; a estas estructuras se les llama LSTM bidireccionales, la imagen \ref{fig:23} muestra un ejemplo de esta estructura.\newline
+Las LSTM son un tipo de red recurrente, por lo que se pueden construir arquitecturas basadas en una LSTM que procesa la secuencia de izquierda a derecha y otra de derecha a izquierda; a estas estructuras se les llama LSTM bidireccionales, la Figura \ref{fig:23} muestra un ejemplo de esta estructura.\newline
 \newpage
 
 \begin{figure}[H]
@@ -273,7 +273,7 @@ Las LSTM son un tipo de red recurrente, por lo que se pueden construir arquitect
 Gracias a este tipo de estructuras pueden resolverse problemas donde la importancia/sentido de un dato no depende de datos anteriores sino por información posterior; por ejemplo, el significado de una palabra puede ser diferente dependiendo de las palabras siguientes que haya en una secuencia y no en las anteriores.
 \newpage
 \section{Clasificación con clases no balanceadas}
-El problema de desbalanceo de clases es un tipo de problema que aparece en problemas de clasificación. El desbalanceo de clases ocurre cuando el número de elementos de una clase es mucho mayor que el número de elementos de la otra clase; a esta clase se le llama clase minoritaria. La figura \ref{fig:24} muestra un ejemplo en 2D de un problema de desbalanceo de clases.\newline
+El problema de desbalanceo de clases es un tipo de problema que aparece en problemas de clasificación. El desbalanceo de clases ocurre cuando el número de elementos de una clase es mucho mayor que el número de elementos de la otra clase; a esta clase se le llama clase minoritaria. La Figura \ref{fig:24} muestra un ejemplo en 2D de un problema de desbalanceo de clases.\newline
 
 \begin{figure}[H]
 	\centering
@@ -294,7 +294,7 @@ Este enfoque se centra en modificar clasificadores ya existentes para aliviar el
 
 Modificar un modelo reduce su flexibilidad y por lo tanto lo hace válido para un número menor de problemas, pero a cambio ofrece una mayor especialización para el tipo de problema que se modifica.\newline
 
-Algunos ejemplos de modelos modificados son árboles de decisión que utilizan la distancia de Hellinger para la separación de nodos, utilizar un método diferente de cálculo de pertenencia de clases para KNN, por ejemplo con pesos en vez de distancias, uso de kernels específicos con SVM, etc. La imagen \ref{fig:25} muestra el cambio en el comportamiento de un árbol de decisión utilizando diferentes métricas.\newline
+Algunos ejemplos de modelos modificados son árboles de decisión que utilizan la distancia de Hellinger para la separación de nodos, utilizar un método diferente de cálculo de pertenencia de clases para KNN, por ejemplo con pesos en vez de distancias, uso de kernels específicos con SVM, etc. La Figura \ref{fig:25} muestra el cambio en el comportamiento de un árbol de decisión utilizando diferentes métricas.\newline
 
 \begin{figure}[H]
 	\centering
@@ -304,7 +304,7 @@ Algunos ejemplos de modelos modificados son árboles de decisión que utilizan l
 \end{figure}
 \verticalspace
 
-Otra posible solución es modificar el peso asociado a clasificar mal un elemento, dando un peso mayor a clasificar mal un elemento de la clase minoritaria que de la mayoritaria, de forma que cuando se entrena el modelo intenta minimizarse el coste. El peso asociado a cada fallo se almacena en la matriz de costes. Dicha matriz puede ser calculada con diferentes heurísticas o aportada por un experto en el problema que se plantee. La figura \ref{fig:26} se muestra un ejemplo del uso de la matriz de costes para un clasificador simple.\newline
+Otra posible solución es modificar el peso asociado a clasificar mal un elemento, dando un peso mayor a clasificar mal un elemento de la clase minoritaria que de la mayoritaria, de forma que cuando se entrena el modelo intenta minimizarse el coste. El peso asociado a cada fallo se almacena en la matriz de costes. Dicha matriz puede ser calculada con diferentes heurísticas o aportada por un experto en el problema que se plantee. La Figura \ref{fig:26} se muestra un ejemplo del uso de la matriz de costes para un clasificador simple.\newline
 
 \begin{figure}[H]
 	\centering
@@ -317,7 +317,7 @@ Otra posible solución es modificar el peso asociado a clasificar mal un element
 Existen dos formas de usar la matriz de costes, la primera es integrar el uso de la matriz dentro del algoritmo, lo que significa que hay modificarlo para que use dicha matriz; la segunda forma es preprocesando los datos de entrada asignándole un peso o asignando a cada elemento la clase que se cree que tendrá menor coste (para ello se hace uso del Teorema de Bayes).
 
 \subsection{Técnicas basadas en la modificación del conjunto de datos}
-La idea de este tipo de técnica es manipular la distribución de los datos con los que entrena el clasificador, para ello se añaden o suprimen elementos del conjunto de datos. Cuando se añaden elementos, se llama “oversampling” y cuando eliminan “undersampling”; dependiendo del problema se puede usar una de estas técnicas o ambas. La imagen \ref{fig:27} muestra un ejemplo sobre el funcionamiento de cada uno de estos métodos.\newline
+La idea de este tipo de técnica es manipular la distribución de los datos con los que entrena el clasificador, para ello se añaden o suprimen elementos del conjunto de datos. Cuando se añaden elementos, se llama “oversampling” y cuando eliminan “undersampling”; dependiendo del problema se puede usar una de estas técnicas o ambas. La Figura \ref{fig:27} muestra un ejemplo sobre el funcionamiento de cada uno de estos métodos.\newline
 \newpage
 \begin{figure}[H]
 	\centering
@@ -327,7 +327,7 @@ La idea de este tipo de técnica es manipular la distribución de los datos con 
 \end{figure}
 \verticalspace
 
-Un ejemplo clásico de algoritmo de undersampling es Tomek Links \cite{tomek1976two}; este algoritmo elimina elementos de la clase mayoritaria que sean fronterizos con elementos de la clase minoritaria; para ello calcula las parejas de elementos de clases diferentes que estén a la distancia mínima entre ellos, es decir, que no haya ningún otro elemento dentro del conjunto de datos que su distancia hacia ese elemento sea menor; y elimina aquellos que sean de la clase mayoritaria. En la figura \ref{fig:28} se muestra un ejemplo del uso de este algoritmo.\newline
+Un ejemplo clásico de algoritmo de undersampling es Tomek Links \cite{tomek1976two}; este algoritmo elimina elementos de la clase mayoritaria que sean fronterizos con elementos de la clase minoritaria; para ello calcula las parejas de elementos de clases diferentes que estén a la distancia mínima entre ellos, es decir, que no haya ningún otro elemento dentro del conjunto de datos que su distancia hacia ese elemento sea menor; y elimina aquellos que sean de la clase mayoritaria. En la Figura \ref{fig:28} se muestra un ejemplo del uso de este algoritmo.\newline
 
 
 \begin{figure}[H]
@@ -340,7 +340,7 @@ Un ejemplo clásico de algoritmo de undersampling es Tomek Links \cite{tomek1976
 
 Otros métodos de undersampling son OSS \cite{kubat1997addressing}, CNN \cite{hart1968condensed} y combinaciones de ellos. El problema del undersampling es que al eliminar elementos de la clase mayoritaria hace que cierta información se pierda, y dicha información puede ser importante al evaluar.\newline
 
-Un algoritmo clásico de oversampling es SMOTE \cite{chawla2002smote}, este algoritmo crea nuevas instancias usando una combinación de K instancias de la clase minoritaria que sean vecinas. En la figura \ref{fig:29} se muestra un ejemplo del funcionamiento del SMOTE.\newline
+Un algoritmo clásico de oversampling es SMOTE \cite{chawla2002smote}, este algoritmo crea nuevas instancias usando una combinación de K instancias de la clase minoritaria que sean vecinas. En la Figura \ref{fig:29} se muestra un ejemplo del funcionamiento del SMOTE.\newline
 
 \begin{figure}[H]
 	\centering

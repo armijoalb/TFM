@@ -24,7 +24,7 @@ Como ya se mencionó en el segundo capítulo, las medidas usuales no sirven para
 
 Antes de describir las diferentes medidas que se van a utilizar, se van a describir algunos conceptos básicos sobre problemas de clasificación. Un modelo de clasificación o clasificador es una función que permite decidir qué elementos de un conjunto de datos pertenecen a una cierta clase; para realizar esta decisión, el clasificador puede utilizar un umbral sobre un valor real o directamente obtener un valor discreto.\newline
 
-Pongamos el caso de un problema de clasificación binario, en la que los datos se clasifican como positivos, lo representaremos con la letra p, o negativos, lo representaremos con la letra n. Una vez se ha entrenado un clasificador y se han obtenido los resultados, estos se pueden representar en una Matriz de confusión (para clasificación binaria es una matriz de 2x2) de la siguiente forma. La figura \ref{fig:61} muestra una representación clásica de una Matriz de confusión.\newline
+Pongamos el caso de un problema de clasificación binario, en la que los datos se clasifican como positivos, lo representaremos con la letra p, o negativos, lo representaremos con la letra n. Una vez se ha entrenado un clasificador y se han obtenido los resultados, estos se pueden representar en una Matriz de confusión (para clasificación binaria es una matriz de 2x2) de la siguiente forma. La Figura \ref{fig:61} muestra una representación clásica de una Matriz de confusión.\newline
 
 \begin{figure}[H]
 	\centering
@@ -58,7 +58,7 @@ La medida G-Mean representa la media geométrica, sirve también para medir el e
 $$ G-Mean = \sqrt{Precision*Recall} $$
 
 Para esta medida, si cualquier de las medidas toma valores bajo su valor es 0.\newline
-La última medida es AUC (Area Under Curve), esta medida representa el área bajo la curva ROC. La curva ROC es una representación gráfica del rendimiento entre TPR y TNR; cuanto más alto sea el valor de ambas medidas, mayor será el valor de la medida AUC. La figura \ref{fig:62} muestra un ejemplo de curva ROC.\newline
+La última medida es AUC (Area Under Curve), esta medida representa el área bajo la curva ROC. La curva ROC es una representación gráfica del rendimiento entre TPR y TNR; cuanto más alto sea el valor de ambas medidas, mayor será el valor de la medida AUC. La Figura \ref{fig:62} muestra un ejemplo de curva ROC.\newline
 
 \begin{figure}[H]
 	\centering
@@ -75,7 +75,7 @@ En este apartado se va a describir la estructura de la red utilizada en este est
 
 Como se comentó anteriormente, la red usada está formada por un conjunto de LSTMs para procesar la información de las series temporales.\newline
 
-La red básica utilizada está formada por dos capas; una capa formada por 32 LSTM y otra formada por una única neurona conectada a todas las LSTM usada para calcular la clase; para ello utiliza una función sigmoide como salida de la neurona. La estructura de la red se muestra en la figura \ref{fig:63}.\newline
+La red básica utilizada está formada por dos capas; una capa formada por 32 LSTM y otra formada por una única neurona conectada a todas las LSTM usada para calcular la clase; para ello utiliza una función sigmoide como salida de la neurona. La estructura de la red se muestra en la Figura \ref{fig:63}.\newline
 
 \begin{figure}[H]
 	\centering

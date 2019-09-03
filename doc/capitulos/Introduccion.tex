@@ -1,25 +1,26 @@
 \chapter{Introducción}
-\section{Marco Introductiorio}
+\section{Marco Introductorio}
 En la actualidad se producen cada vez más datos, la Ciencia de Datos es la encargada de dar una aplicación útil a estos datos. La Ciencia de Datos es un campo encargado de extraer conocimiento de datos y utilizar este para obtener beneficios. La Ciencia de Datos se encuentra en muchos otros campos como por ejemplo la Medicina o la Industria.\newline
 
 Netflix y Spotify utilizan la Ciencias de Datos para estudiar las costumbres de sus clientes y así poder realizar recomendaciones personalizadas. Otro caso de uso de Ciencias de Datos es en los gobiernos, la cual se utiliza para llevar a cabo análisis que sirvan para desarrollar políticas.\newline
 
 Dentro de la Ciencia de Datos se hace uso tanto de la Estadística como de la Minería de Datos. La Minería de Datos es un campo que estudia grandes volúmenes de datos para intentar obtener patrones internos de estos, para ello, hace uso de técnicas de Machine Learning (Aprendizaje Automático en español). Algunos usos de la Minería de Datos son la detección de patrones en la compra, el estudio de grupos diferentes de clientes en un banco, predicción del tiempo o clasificación automática de datos.\newline
 
-El Machine Learning es un subcampo de la Inteligencia Artificial cuyo objetivo es crear algoritmos que permitan a un ordenador aprender. El resultado de esto algoritmos es la obtención de un modelo, que puede utilizarse para resolver una tarea sin que el ordenador tenga que volver a aprender. Existen diferentes tipos de modelos, como por ejemplo las redes neuronales o los árboles de decisión.\newline
+El Machine Learning es un subcampo de la Inteligencia Artificial cuyo objetivo es crear algoritmos que permitan a un ordenador aprender. El resultado de esto algoritmos es la obtención de un modelo, que puede utilizarse para resolver una tarea sin que el ordenador tenga que volver a aprender. Existen diferentes tipos de modelos, como por ejemplo los árboles de decisión o modelos más complejos como las redes neuronales o combinaciones de modelos \cite{boser1992training,breiman2001random,chen2016xgboost}.\newline
 
+\newpage
 El desbalanceo de clases es un problema asociado a la clasificación y muy común en problemas de la vida real. La mayoría de los algoritmos clásicos suelen trabajar sobre la suposición de que el número de datos de cada clase están balanceados, por lo que el desbalanceo entre las diferentes clases hace que el rendimiento de estos algoritmos sea pobre. Esto hace que cuando la clase minoritaria es aquella que tiene más interés en clasificar, como por ejemplo detección de un terremoto; se necesite buscar una solución.\newline
 
-Existen diferentes soluciones para intentar abordar el problema de desbalanceo entre clases a diferentes niveles: a nivel de datos, a nivel del algoritmo o combinaciones de estas dos. Los métodos que abordan el problema a nivel de datos intentan restablecer el balance entre clases mediante el muestreo de datos, añadiendo datos de la clase minoritaria (oversampling), eliminando datos de la clase mayoritaria (undersampling) o una combinación de ambos. Los métodos que abordan el problema a nivel del algoritmo enfatizan en la clase minoritaria manipulando e incorporando diferentes parámetros como el peso de cada clase.\newline
+Existen diferentes soluciones para intentar abordar el problema de desbalanceo entre clases a diferentes niveles: a nivel de datos, a nivel del algoritmo o combinaciones de estas dos. Los métodos que abordan el problema a nivel de datos intentan restablecer el balance entre clases mediante el muestreo de datos, añadiendo datos de la clase minoritaria (oversampling) \cite{chawla2002smote,he2008adasyn,barua2012mwmote}, eliminando datos de la clase mayoritaria (undersampling) o una combinación de ambos. Los métodos que abordan el problema a nivel del algoritmo enfatizan en la clase minoritaria manipulando e incorporando diferentes parámetros como el peso de cada clase.\newline
 
 En los últimos años, el Deep Learning se ha convertido en una de los campos del Machine Learning más famosos. El Deep Learning se trata de un conjunto de modelos basados en redes neuronales con un gran número de capas (a veces incluso miles). Algunas de las aplicaciones más comunes del Deep Learning en la vida real es la detección de caras o el procesamiento de textos, ya bien sea para traducirlo o para que un asistente virtual como Alexa pueda llevar a cabo una acción.\newline
 
-Las redes formadas por LSTM (Long Short Term Memory) son un tipo de red que se utiliza en un gran número de problemas de gran complejidad como es la toma de decisiones en videojuegos, reconocimiento del habla o traducción de textos. Este tipo de redes son especialmente buenas en problemas donde hay que procesar secuencias de datos, como  es el caso de las series temporales.\newline
+Las redes formadas por LSTM (Long Short Term Memory) \cite{hochreiter1997long} son un tipo de red que se utiliza en un gran número de problemas de gran complejidad como es la toma de decisiones en videojuegos, reconocimiento del habla o traducción de textos. Este tipo de redes son especialmente buenas en problemas donde hay que procesar secuencias de datos, como  es el caso de las series temporales.\newline
 
 Las Series Temporales, son un tipo de problema en Ciencias de Datos bastante común por su gran cantidad de aplicaciones en el mundo real, algunos de estos son la predicción del tiempo o el valor de una empresa en la bolsa basandose en los datos anteriores.\newline
-
-Las Series Temporales de Clasificación (TSC, Time Series Classification), son otro tipo de problema el cual el objetivo es predecir la clase de una serie temporal completa o predecir la clase en los momentos siguientes sobre los datos de un serie temporal. Este tipo de problema tiene una gran cantidad de aplicaciones como por ejemplo detectar funcionamiento anormal de una máquina según los datos obtenidos por sensores.\newline
 \newpage
+Las Series Temporales de Clasificación (TSC, Time Series Classification), son otro tipo de problema el cual el objetivo es predecir la clase de una serie temporal completa o predecir la clase en los momentos siguientes sobre los datos de un serie temporal. Este tipo de problema tiene una gran cantidad de aplicaciones \cite{liang2013effective,cao2013integrated,cao2014parsimonious,geng2018cost,roychoudhury2017cost,xu2018spatio,he2017uncertainty,swapna2018automated,karim2017lstm} como por ejemplo detectar funcionamiento anormal de una máquina según los datos obtenidos por sensores.
+
 \section{Objetivos}
 Los objetivos propuesto para este Trabajo Fin de Máster son los siguientes:
 
@@ -28,7 +29,6 @@ Los objetivos propuesto para este Trabajo Fin de Máster son los siguientes:
 	\item Estudio sobre problema de desbalanceo de clases, métodos para tratar con desbalanceo, centrándose en el estudio de técnicas de oversampling utilizadas actualmente, métricas utilizadas para este tipo de problema.
 	\item Estudio sobre LSTM y aplicación de estas al problemas de clasificación.
 	\item Realización de pruebas sobre un conjunto de datasets de series temporales de clasificación con desbalanceo de clases, comparación y análisis de los resultados obtenidos por los diferentes modelos.
-	\item Obtener conclusiones y trabajos futuros.
 \end{itemize}
 \section{Motivación}
 A día de hoy, la minería de datos en series temporales son un tipo de problema en auge. La Clasificación de Series Temporales (TSC, Time Series Classification en Inglés) es una de las áreas donde más investigación se está realizando en los últimos años debido a su gran número de aplicaciones en diferentes sectores como la industria, salud o transporte \cite{cao2013integrated} \cite{cao2014parsimonious} \cite{he2017uncertainty} \cite{xu2018spatio} \cite{roychoudhury2017cost} \cite{liang2013effective} \cite{geng2018cost}. Obtener una buena precisión en este tipo de problema puede ofrecer grandes beneficios por lo que existe un gran interés en este área.\newline
@@ -49,7 +49,9 @@ Por ello, en este trabajo se realizará un estudio generalista sobre la aplicaci
 La memoria de este TFM se organizará en ocho capítulos. En el primer capítulo se mostrarán los objetivos de este trabajo y se describirá la motivación para su realización.\newline
 
 El segundo capítulo trata sobre antecedentes, métodos de clásificación clásicos y métodos de predicción de series temporales, teoría básica sobre funcionamiento de LSTMs y algunas aplicaciones, por último, teoría sobre el problema de desbalanceo de clases.\newline
-
+\newpage
 El tercer, cuarto y quinto capítulo describen tanto métodos de preprocesamiento, funcionamiento de métodos de oversampling que se utilizarán en el estudio, características específicas al preprocesar series temporales de clasificación  como implementación de una red de LSTMs para clasificación.\newline
 
-El sexto capítulo contiene la información sobre los datos que se utilizan en el estudio, la arquitectura de la red básica que se utilizará y medidas para evaluar el rendimiento de la red. El capítulo siete contiene los resultados de las pruebas realizadas y un análisis sobre estos. Por último, el capítulo ocho contiene las conclusiones obtenidas por el estudio.
+El sexto capítulo contiene la información sobre los datos que se utilizan en el estudio, la arquitectura de la red básica que se utilizará y medidas para evaluar el rendimiento de la red. El capítulo siete contiene los resultados de las pruebas realizadas y un análisis sobre estos. El capítulo ocho contiene las conclusiones obtenidas por el estudio.\newline
+
+Por último, el apéndice contiene las tablas de los experimentos realizados por cadas uno de los conjuntos de datos.

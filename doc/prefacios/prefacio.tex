@@ -26,13 +26,13 @@ Alberto Armijo Ruiz\\
 
 Actualmente la Ciencia de Datos es una de las áreas de estudio que más repercusión está causando, dentro de esta, el Deep Learning es uno de los campos más famosos.\newline
 
-Hoy en día existen estudios específicos sobre Series Temporales de Clasificación \cite{cao2013integrated} \cite{cao2014parsimonious} \cite{geng2018cost} \cite{he2017uncertainty} \cite{karim2017lstm} \cite{liang2013effective} \cite{roychoudhury2017cost} \cite{xu2018spatio}, pero no existe ningún estudio sobre la aplicación generalista del Deep Learning a casos de estudio estándar de Series Temporales de Clasificación. Por ello el objetivo de este trabajo será estudiar la aplicación del Deep Learning a las Series Temporales de Clasificación con desbalanceo de clases.\newline 
+Hoy en día existen estudios específicos sobre Series Temporales de Clasificación, pero no existe ningún estudio sobre la aplicación generalista del Deep Learning a casos de estudio estándar de Series Temporales de Clasificación. Por ello el objetivo de este trabajo será estudiar la aplicación del Deep Learning a las Series Temporales de Clasificación con desbalanceo de clases.\newline 
 
-Este estudio utilizará ocho conjuntos de datos sobre Series Temporales de Clasificación con diferentes grados de desbalanceo de clases. A estos se aplicarán SMOTE \cite{chawla2002smote}, ADASYN \cite{he2008adasyn} y MWMOTE \cite{barua2012mwmote} para realizar oversampling, existen otras técnicas que se han estudiado como el undersampling o el peso de clases pero no se han utilizan dentro del estudio. También se utiliza el algoritmo Boruta \cite{kursa2010boruta} como método de selección de características, existen otras características como selección de características con Chi-Cuadrado pero Boruta ofrece un buen rendimiento de forma general.\newline
+Este estudio utilizará ocho conjuntos de datos sobre Series Temporales de Clasificación con diferentes grados de desbalanceo de clases. A estos se aplicarán SMOTE, ADASYN y MWMOTE para realizar oversampling, existen otras técnicas que se han estudiado como el undersampling o el peso de clases pero no se han utilizan dentro del estudio. También se utiliza el algoritmo Boruta como método de selección de características, existen otras características como selección de características con Chi-Cuadrado pero Boruta ofrece un buen rendimiento de forma general.\newline
 
 A parte de los métodos anteriores, se estudiará el uso de una ventana de diferentes tamaños para aprovechar la dependencia temporal con la que cuentan la series temporales intentando replicar el comportamiento de modelos de predicción de series temporales clásicos para mejorar los resultados iniciales.\newline 
 
-Para la predicción se hará uso de las LSTM, uno de los tipos de red neuronal más utilizados en la actualidad; además de este, se utilizarán otros modelos que se encuentran en el estado del arte de la clasificación como son SVM \cite{boser1992training}, RandomForest \cite{breiman2001random} y XGBoost \cite{chen2016xgboost} y se comparán los resultados obtenidos.\newline
+Para la predicción se hará uso de las LSTM, uno de los tipos de red neuronal más utilizados en la actualidad; además de este, se utilizarán otros modelos que se encuentran en el estado del arte de la clasificación como son SVM, RandomForest y XGBoost y se comparán los resultados obtenidos.\newline
 
 \cleardoublepage
 
@@ -55,13 +55,13 @@ Alberto Armijo Ruiz \\
 
 Currently Data Science is one of the areas of study that is causing more impact, within this, Deep Learning is one of the most famous fields. \newline
 
-Nowadays there are specific studies on Classification Time Series \cite{cao2013integrated} \cite{cao2014parsimonious} \cite{geng2018cost} \cite{he2017uncertainty} \cite{karim2017lstm} \cite{liang2013effective} \cite{roychoudhury2017cost} \cite{xu2018spatio}, but there is no study on the generalist application of Deep Learning to standard case studies of Time Series Classification. Therefore, the objective of this paper will be to study the application of Deep Learning to Classification Time Series with class imbalance.\newline
+Nowadays there are specific studies on Time Series Classification, but there is no study on the generalist application of Deep Learning to standard case studies of Time Series Classification. Therefore, the objective of this paper will be to study the application of Deep Learning to Classification Time Series with class imbalance.\newline
 
-This study will use eight datasets of Time Series Classification problems with different degrees of class imbalance. To these will be applied SMOTE \cite{chawla2002smote}, ADASYN \cite{he2008adasyn} and MWMOTE \cite{barua2012mwmote} to perform oversampling, there are other techniques that have been studied as undersampling or class-weight but have not been used within the study. The Boruta \cite{kursa2010boruta} algorithm is also used  as a method of feature selection, there are other features such as feature selection with Chi-Square but Boruta offers good performance overall.\newline
+This study will use eight datasets of Time Series Classification problems with different degrees of class imbalance. To these will be applied SMOTE, ADASYN and MWMOTE to perform oversampling, there are other techniques that have been studied as undersampling or class-weight but have not been used within the study. The Boruta algorithm is also used  as a method of feature selection, there are other features such as feature selection with Chi-Square but Boruta offers good performance overall.\newline
 
 Apart from the previous methods, we will study the use of a window of different sizes to take advantage of the time dependency of the time series trying to replicate the behavior of classic time series models to improve the initial results.\newline
 
-For the prediction, use will be made of LSTM, one of the most commonly used neural network types at present; in addition to this, other state of the art models for classification will be used, such as SVM \cite{boser1992training}, RandomForest \cite{breiman2001random} and XGBoost \cite{chen2016xgboost}, and the results obtained will be compared.\newline
+For the prediction, use will be made of LSTM, one of the most commonly used neural network types at present; in addition to this, other state of the art models for classification will be used, such as SVM, RandomForest and XGBoost, and the results obtained will be compared.\newline
 
 
 \chapter*{}

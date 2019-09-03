@@ -1,7 +1,7 @@
 \chapter{Resultados y discusión}
 En este aparatado se describirán los resultados obtenidos por los modelos en cada uno de los conjuntos de datos y se discutirá el rendimiento de cada uno. Para ver las tablas de resultados de dichas pruebas se puede mirar el apéndice. Tras esto, se mostrarán tablas comparativas para analizar el rendimiento general de cada uno de los modelos. \newline
 
-En la tabla \ref{tab:resumen_datasets} se muestran el tamaño de entrenamiento, tamaño de test y número de atributos de cada uno de los conjuntos de datos utilizados en el trabajo.\newline
+En la Tabla \ref{tab:resumen_datasets} se muestran el tamaño de entrenamiento, tamaño de test y número de atributos de cada uno de los conjuntos de datos utilizados en el trabajo.\newline
 
 \begin{table}[H]
 	\centering
@@ -32,7 +32,7 @@ Primero, se analizará los resultados obtenidos sin realizar ningún procesamien
 
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1                        & 3               & 5               & 7                        & 9      & 11              & 13     & 15              & 17                       & 19              & 21                       \\
@@ -82,15 +82,15 @@ Primero, se analizará los resultados obtenidos sin realizar ningún procesamien
 	\caption{Comparación métodos base.}
 	\label{tab:all_comp_base}
 \end{table}
-
-En la tabla \ref{tab:all_comp_base} se muestran los resultados sin preprocesamiento. En ella, \textit{LSTM} muestra ventaja con respecto al resto de modelos que se han utilizado ya que obtiene la mejor puntuación en la mayoría de los conjuntos de datos. Los modelos ensemble \textit{RandomForest} y \textit{XGBoost} también obtienen resultados competitivos, en muchos casos cercanos a los que obtiene \textit{LSTM}. \textit{SVM} consigue buenos resultados en alguno de los conjuntos de datos, aunque por lo general su rendimiento es inferior al resto de modelos. Para alguno de los conjuntos de datos, como por ejemplo \textit{EGG\_eye}, el método de la ventana consigue mejorar los resultados conforme se aumenta el tamaño de la ventana.\newline
+\newpage
+En la Tabla \ref{tab:all_comp_base} se muestran los resultados sin preprocesamiento. En ella, \textit{LSTM} muestra ventaja con respecto al resto de modelos que se han utilizado ya que obtiene la mejor puntuación en la mayoría de los conjuntos de datos. Los modelos ensemble \textit{RandomForest} y \textit{XGBoost} también obtienen resultados competitivos, en muchos casos cercanos a los que obtiene \textit{LSTM}. \textit{SVM} consigue buenos resultados en alguno de los conjuntos de datos, aunque por lo general su rendimiento es inferior al resto de modelos. Para alguno de los conjuntos de datos, como por ejemplo \textit{EGG\_eye}, el método de la ventana consigue mejorar los resultados conforme se aumenta el tamaño de la ventana.\newline
 
 
 A continuación, se analizarán los resultados obtenidos utilizando \newline \textit{SMOTE} balancear los conjuntos de datos. Tras esta, se analizarán las tablas de resultados utilizando \textit{ADASYN} y \textit{MWMOTE}.
 
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1                        & 3                        & 5               & 7      & 9               & 11                       & 13                       & 15                       & 17     & 19                       & 21              \\
@@ -141,12 +141,12 @@ A continuación, se analizarán los resultados obtenidos utilizando \newline \te
 	\label{tab:all_comp_smote}
 \end{table}
 
-La tabla \ref{tab:all_comp_smote} muestra los resultados obtenidos utilizando \textit{SMOTE}. Utilizando este método de oversampling se puede apreciar una mejora general en el rendimiento de todos los modelos menos \textit{LSTM}, que solamente en algún caso aislado consigue mejorar sus resultados anteriores, como por ejemplo para el datasets \textit{Adiac}; en el resto de casos la mejora es muy pequeña o incluso empeore como por ejemplo \textit{HAR} o \textit{EGG\_eye}.\newline
+La Tabla \ref{tab:all_comp_smote} muestra los resultados obtenidos utilizando \textit{SMOTE}. Utilizando este método de oversampling se puede apreciar una mejora general en el rendimiento de todos los modelos menos \textit{LSTM}, que solamente en algún caso aislado consigue mejorar sus resultados anteriores, como por ejemplo para el datasets \textit{Adiac}; en el resto de casos la mejora es muy pequeña o incluso empeore como por ejemplo \textit{HAR} o \textit{EGG\_eye}.\newline
 \newpage
 
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1                        & 3                        & 5               & 7                        & 9               & 11     & 13              & 15                       & 17                       & 19              & 21              \\
@@ -199,7 +199,7 @@ La tabla \ref{tab:all_comp_smote} muestra los resultados obtenidos utilizando \t
 
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1                        & 3               & 5                        & 7                        & 9               & 11                       & 13     & 15     & 17                       & 19              & 21              \\
@@ -250,22 +250,22 @@ La tabla \ref{tab:all_comp_smote} muestra los resultados obtenidos utilizando \t
 	\label{tab:all_comp_mwmote}
 \end{table}
 
-La tabla \ref{tab:all_comp_adasyn} muestra resultados los resultados obtenidos al aplicar \textit{ADASYN} a los conjuntos de datos. Esta tabla muestra una caida en el rendimiento de \textit{LSTM} conforme a los resultados iniciales, el resto de modelos sí experimentan una mejora en el rendimiento. Los resultados obtenidos son muy similares a los obtenidos utilizando \textit{SMOTE}.\newline
+La Tabla \ref{tab:all_comp_adasyn} muestra resultados los resultados obtenidos al aplicar \textit{ADASYN} a los conjuntos de datos. Esta tabla muestra una caida en el rendimiento de \textit{LSTM} conforme a los resultados iniciales, el resto de modelos sí experimentan una mejora en el rendimiento. Los resultados obtenidos son muy similares a los obtenidos utilizando \textit{SMOTE}.\newline
 
-La tabla \ref{tab:all_comp_mwmote} muestra los resultados utilizando \textit{MWMOTE} como método de oversampling. Al igual que con los otros dos métodos de oversampling, el rendimiento de los modelos \textit{LSTM} se reduce conforme a los resultados base y el resto de los modelos consiguen mejorar. El rendimiento general mostrado en esta tabla también es muy similar a los obtenidos por los otros dos métodos de oversampling, por lo que ninguno parece tener ningún tipo de ventaja a la hora de procesar series temporales. \newline
+La Tabla \ref{tab:all_comp_mwmote} muestra los resultados utilizando \textit{MWMOTE} como método de oversampling. Al igual que con los otros dos métodos de oversampling, el rendimiento de los modelos \textit{LSTM} se reduce conforme a los resultados base y el resto de los modelos consiguen mejorar. El rendimiento general mostrado en esta tabla también es muy similar a los obtenidos por los otros dos métodos de oversampling, por lo que ninguno parece tener ningún tipo de ventaja a la hora de procesar series temporales. \newline
 
 A continuación, se comentarán los resultados obtenidos por los modelos utilizando oversampling y selección de características.\newline
 
-La tabla \ref{tab:all_comp_smote_boruta} muestra los resultados obtenidos utilizando selección de características con \textit{Boruta} y oversampling con \textit{SMOTE}. A diferencia de para los resultados obtenidos utilizando solamente \textit{SMOTE}, aquí \textit{LSTM} consigue mejorar su rendimiento en casi todos los conjuntos de datos menos en aquellos para los que en ningún caso consigue mejorar como es el caso de \textit{Adiac}. También se puede ver una mejora para el resto de modelos en la mayoría de los conjuntos de datos. Además, los modelos donde se utiliza el método de la ventana obtienen mejores resultados que aquellos que no lo utilizan en conjuntos de datos que inicialmente empeoraban, como por ejemplo el dataset \textit{Yoga}.\newline
+La Tabla \ref{tab:all_comp_smote_boruta} muestra los resultados obtenidos utilizando selección de características con \textit{Boruta} y oversampling con \textit{SMOTE}. A diferencia de para los resultados obtenidos utilizando solamente \textit{SMOTE}, aquí \textit{LSTM} consigue mejorar su rendimiento en casi todos los conjuntos de datos menos en aquellos para los que en ningún caso consigue mejorar como es el caso de \textit{Adiac}. También se puede ver una mejora para el resto de modelos en la mayoría de los conjuntos de datos. Además, los modelos donde se utiliza el método de la ventana obtienen mejores resultados que aquellos que no lo utilizan en conjuntos de datos que inicialmente empeoraban, como por ejemplo el dataset \textit{Yoga}.\newline
 
-La tabla \ref{tab:all_comp_adasyn_boruta} muestra los resultados obtenidos utilizando \textit{Boruta} y \textit{ADASYN}. En esta tabla se pueden ver resultados muy parecidos a los obtenidos mediante el uso de \textit{Boruta} y \textit{SMOTE}, todos los modelos consigue una mejora con respecto a utilizar solamente oversampling. Al igual que para el caso anterior, en algunos datasets los modelos que utilizan el método de la ventana obtienen mejores resultados que aquellos que no lo utilizan.\newline
+La Tabla \ref{tab:all_comp_adasyn_boruta} muestra los resultados obtenidos utilizando \textit{Boruta} y \textit{ADASYN}. En esta tabla se pueden ver resultados muy parecidos a los obtenidos mediante el uso de \textit{Boruta} y \textit{SMOTE}, todos los modelos consigue una mejora con respecto a utilizar solamente oversampling. Al igual que para el caso anterior, en algunos datasets los modelos que utilizan el método de la ventana obtienen mejores resultados que aquellos que no lo utilizan.\newline
 
-La tabla \ref{tab:all_comp_mwmote_boruta} muestra los resultados al combinar los algoritmos \textit{Boruta} y \textit{MWMOTE}; al igual que en los resultados obtenidos para el resto de pruebas que han utilizado selección de características, los resultados mejoran conforme a cuando solamente se utiliza oversampling y el uso de una ventana comienza a ser útil para los casos en los que no lo era.
+La Tabla \ref{tab:all_comp_mwmote_boruta} muestra los resultados al combinar los algoritmos \textit{Boruta} y \textit{MWMOTE}; al igual que en los resultados obtenidos para el resto de pruebas que han utilizado selección de características, los resultados mejoran conforme a cuando solamente se utiliza oversampling y el uso de una ventana comienza a ser útil para los casos en los que no lo era.
 
 \newpage
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1                        & 3               & 5               & 7               & 9                        & 11              & 13     & 15     & 17              & 19                       & 21                       \\
@@ -319,7 +319,7 @@ La tabla \ref{tab:all_comp_mwmote_boruta} muestra los resultados al combinar los
 
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1                        & 3      & 5               & 7      & 9               & 11     & 13              & 15                       & 17                       & 19              & 21     \\
@@ -374,7 +374,7 @@ La tabla \ref{tab:all_comp_mwmote_boruta} muestra los resultados al combinar los
 
 \begin{table}[H]
 	\centering
-	\begin{adjustbox}{max width=14cm}
+	\begin{adjustbox}{max width=12cm}
 		\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|r|}
 			\hline
 			\textbf{Tam. Ventana} &              & 1               & 3      & 5      & 7               & 9               & 11              & 13     & 15     & 17              & 19     & 21              \\
