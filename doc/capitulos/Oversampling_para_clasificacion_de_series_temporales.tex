@@ -2,13 +2,13 @@
 En este capítulo se describirán diferentes algoritmos de oversampling que se utilizarán más adelante en el estudio. Con dichos algoritmos de oversampling se busca mejorar el rendimiento de los modelos que se probarán en el estudio. Los algoritmos que a continuación se van a describir son SMOTE, MWMOTE y ADASYN.
 
 \section{SMOTE}
-SMOTE (Synthetic Minority Oversampling Technique) \cite{chawla2002smote} es uno de los algoritmos de oversampling más utilizados a día de hoy. Este algortimo fue creado en 2002 y actualmente se considera como uno de los algoritmos en el estado del arte del oversampling.\newline
+SMOTE (Synthetic Minority Oversampling Technique) \cite{chawla2002smote} es uno de los algoritmos de oversampling más utilizados a día de hoy. Este algoritmo fue creado en 2002 y actualmente se considera como uno de los algoritmos en el estado del arte del oversampling.\newline
 
 Para balancear los datos de las diferentes clases, SMOTE propone generar instancias de la clase minoritaria de forma sintética. Para ello, SMOTE utiliza las instancias de la clase minoritaria para generar nuevas instancias de dicha clase con características parecidas a las ya existentes.\newline
 
 Para conseguir dicho objetivo SMOTE sigue el siguiente proceso, elige una instancia de la clase minoritaria cualquiera, tras esto se buscan sus $K$ vecinos más cercanos que sean también de la clase minoritaria; dicho parámetro $K$ se puede cambiar y afecta a como son las instancias generadas sintéticamente; si por ejemplo su valor fuera $K=1$, las instancias se generan a partir de dos instancias de la clase minoritaria, esto hace que las características de dichas instancias nuevas sean muy parecidas a las de las instancias que se han utilizado; en cambio si $K$ tiene un valor muy grande entonces las instancias generadas tienen menos parecido a las instancias con las que se han generado.\newline
 
-Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se genera como una combinación de las instancias que se utilizan, por ejemplo si $K=1$, la nueva instancia se generaría como la media de los valores de dichas instancias. El Algoritmo \ref{algo:smote} muestra el pseudocodigo de este algoritmo.\newline
+Una vez se han obtenido el número de vecinos elegidos, la nueva instancia se genera como una combinación de las instancias que se utilizan, por ejemplo si $K=1$, la nueva instancia se generaría como la media de los valores de dichas instancias. El Algoritmo \ref{algo:smote} muestra el pseudocódigo de este algoritmo.\newline
 
 \begin{algorithm}[H]
 	\caption{SMOTE(T,N,k)}
@@ -121,7 +121,7 @@ Tras esto, por cada instancia perteneciente a la clase minoritaria, se calcula s
 Cuando todas las medidas $r_i$ han sido calculadas, se calcula el número de instancias a generar en el vecindario de dicha instancia de la siguiente manera: $G_i = G r_i$; donde $G$ es el número de instancias a generar que se calculó al principio.\newline
 \newpage
 
-Por último, cada una de las instancias en un vecindario $i$ se genera de la siguiente forma: se selecciona una instancia del vecindario, $x_i$; después se selecciona de forma aleatoria otra instancia vecina a la instancia $x_i$, la llamaremos $x_{zi}$; por último se calcula un número aleatorio entre 0 y 1 y se calcula la nueva instancia como la siguiente fórmula: $ s_i = x_i + (x_{zi}-x_i)\lambda$. El Algoritmo \ref{algo:adasyn} muestra el pseudocodigo del algoritmo \textit{ADASYN}.
+Por último, cada una de las instancias en un vecindario $i$ se genera de la siguiente forma: se selecciona una instancia del vecindario, $x_i$; después se selecciona de forma aleatoria otra instancia vecina a la instancia $x_i$, la llamaremos $x_{zi}$; por último se calcula un número aleatorio entre 0 y 1 y se calcula la nueva instancia como la siguiente fórmula: $ s_i = x_i + (x_{zi}-x_i)\lambda$. El Algoritmo \ref{algo:adasyn} muestra el pseudocódigo del algoritmo \textit{ADASYN}.
 
 \begin{algorithm}
 	\caption{ADASYN($D_{tr}, \beta, K$)}

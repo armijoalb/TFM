@@ -7,9 +7,9 @@ En esta sección se describirán algoritmos básicos para predicción de series 
 \subsection{Series temporales de regresión.}
 Cuando tratamos con series temporales nos encontramos con un problema de regresión clásico; en principio, se puede intentar utilizar métodos clásicos de regresión, pero normalmente no suelen dar buenos resultados. Para este tipo de problemas, el modelo más utilizado es ARIMA.\newline
 
-ARIMA se trata de un modelo clásico para series temporales. Dicho modelo se trata de una combinación de otros modelos, modelos autoregresivos (AR, AutoRegressive) y modelos de medias móviles (MA, Moving Averages). Además de esto, incorporan la diferenciación de series temporales dentro del propio modelo.\newline
+ARIMA se trata de un modelo clásico para series temporales. Dicho modelo se trata de una combinación de otros modelos, modelos autorregresivos (AR, AutoRegressive) y modelos de medias móviles (MA, Moving Averages). Además de esto, incorporan la diferenciación de series temporales dentro del propio modelo.\newline
 
-En un modelo AR; a diferencia de un modelo de regresión normal, donde se utiliza una combinación lineal de características para predecir una variable; se utiliza una combinación lineal de los valores anteriores de dicha variable. Un modelo AR de order $p$, al que nos referimos como $AR(p)$ se define de la siguiente forma:\newline
+En un modelo AR; a diferencia de un modelo de regresión normal, donde se utiliza una combinación lineal de características para predecir una variable; se utiliza una combinación lineal de los valores anteriores de dicha variable. Un modelo AR de orden $p$, al que nos referimos como $AR(p)$ se define de la siguiente forma:\newline
 $$ y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + ... + \phi_p y_{t-p} + \varepsilon_t $$
 
 \noindent donde $\varepsilon_t$ es ruido blanco, el ruido blanco es un tipo de serie temporal donde su varianza es siempre la misma y cada valor no tiene correlación con el resto de valores de la serie. Los valores $y_{t-1}, ..., y_{t-p}$ son los $p$ valores anteriores en la serie que se utilizan para calcular el valor actual. Los valores $\phi_1, ..., \phi_p$ son parámetros que el modelo modifica para ajustarse a la serie; $c$ es un término independiente. En la Figura \ref{fig:211} se muestran dos tipos de modelos AR.\newline
@@ -58,7 +58,7 @@ Podemos encontrarnos las series temporales de clasificación de dos formas. La p
 $$ (S_1, S_2 ,..., S_n) \rightarrow (Y_1, Y_2, ..., Y_n) $$
 \noindent donde $(S_1, ..., S_n)$ corresponde con un conjunto de datos formados por $n$ series temporales de la misma longitud y cada $Y_x$ es la clase asociada a la serie temporal $x$.\newline
 
-Un ejemplo de este tipo de series temporales sería obtener series con los valores de un sensor cada cierto tiempo y detectar si el comportamiento es normal u anomálo. Otro ejemplo puede ser detectar la cara de una persona utilizando el contorno de esta como una señal, este ejemplo corresponde con el dataset \textit{FaceAll} que se utilizará en este estudio. De este último la Figura \ref{fig:face_all_fig} muestra un ejemplo de ello.\newline
+Un ejemplo de este tipo de series temporales sería obtener series con los valores de un sensor cada cierto tiempo y detectar si el comportamiento es normal u anómalo. Otro ejemplo puede ser detectar la cara de una persona utilizando el contorno de esta como una señal, este ejemplo corresponde con el dataset \textit{FaceAll} que se utilizará en este estudio. De este último la Figura \ref{fig:face_all_fig} muestra un ejemplo de ello.\newline
 
 \begin{figure}[H]
 	\centering
@@ -150,7 +150,7 @@ Boosting \cite{schapire1999brief}, al igual que RandomForest se trata de un mult
 
 A diferencia de RandomForest, donde cada árbol que se genera es independiente, en Boosting cada árbol o clasificador que se genera utiliza información de los árboles que se han creado anteriormente.\newline
 
-El algorimto más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente proceso para crear $N$ clasificadores mostrado en el Algoritmo \ref{alg:adaboost}. \newline
+El algoritmo más conocido de Boosting es AdaBoost. AdaBoost sigue el siguiente proceso para crear $N$ clasificadores mostrado en el Algoritmo \ref{alg:adaboost}. \newline
 
 \begin{algorithm}[H]
 	\caption{AdaBoost(N,C)}

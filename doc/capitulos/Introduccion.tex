@@ -37,18 +37,18 @@ Por otro lado, las redes neuronales son unos de los modelos más famosos actualm
 
 Muchos de los problemas de la vida real suelen tener problemas de desbalanceo de clases, para ello existen diferentes métodos para paliarlo como son SMOTE, ADASYN o MWMOTE \cite{chawla2002smote,he2008adasyn,barua2012mwmote}.\newline
 
-En los articulos actuales sobre Clasificación de Series Temporales se muestran propuestas específicas, como por ejemplo nuevos métodos para realizar oversampling \cite{liang2013effective} u optimizar el coste asociado a cada clase \cite{roychoudhury2017cost} pero no existe ningún estudio que encargado de comprobar cual es el rendimiento de los algoritmos que utilizamos normalmente ni cuales son las ventajas de utilizar un red neuronal con este tipo de problemas a utilizar modelos de clasificación clásicos como son Boosting, RandomForest o SVM.\newline
+En los artículos actuales sobre Clasificación de Series Temporales se muestran propuestas específicas, como por ejemplo nuevos métodos para realizar oversampling \cite{liang2013effective} u optimizar el coste asociado a cada clase \cite{roychoudhury2017cost} pero no existe ningún estudio que encargado de comprobar cual es el rendimiento de los algoritmos que utilizamos normalmente ni cuales son las ventajas de utilizar un red neuronal con este tipo de problemas a utilizar modelos de clasificación clásicos como son Boosting, RandomForest o SVM.\newline
 
 Además, no hay ningún estudio que compruebe el uso de técnicas de selección de características como puede ser Boruta y cómo afecta al rendimiento, mientras que en otros problemas de clasificación la reducción de la dimensionalidad suele ser siempre algo a tener en cuenta. \newline
 
-Por otro lado, tampoco existe ningún método que tenga en cuenta las características de las series temporales y se utilizen para mejorar el rendimiento, en este aspecto se propone utilizar un método basado en el uso de una ventana para tener en cuenta los valores pasados. El uso de una ventana ya ha sido utilizado en problemas similares como son los flujos de datos para detección de cambios de concepto \cite{du2014detecting} con buenos resultados y en algoritmos clásicos de predicción para series temporales como es ARIMA \cite{hyndman2018forecasting}.\newline
+Por otro lado, tampoco existe ningún método que tenga en cuenta las características de las series temporales y se utilicen para mejorar el rendimiento, en este aspecto se propone utilizar un método basado en el uso de una ventana para tener en cuenta los valores pasados. El uso de una ventana ya ha sido utilizado en problemas similares como son los flujos de datos para detección de cambios de concepto \cite{du2014detecting} con buenos resultados y en algoritmos clásicos de predicción para series temporales como es ARIMA \cite{hyndman2018forecasting}.\newline
 
 Por ello, en este trabajo se realizará un estudio generalista sobre la aplicación de redes LSTM a problemas de Clasificación de Series Temporales con desbalanceo, utilizando técnicas de oversampling, selección de características y del método de la ventana mencionado anteriormente.\newline
 
 \section{Organización de la memoria}
 La memoria de este TFM se organizará en ocho capítulos. En el primer capítulo se mostrarán los objetivos de este trabajo y se describirá la motivación para su realización.\newline
 
-El segundo capítulo trata sobre antecedentes, métodos de clásificación clásicos y métodos de predicción de series temporales, teoría básica sobre funcionamiento de LSTMs y algunas aplicaciones, por último, teoría sobre el problema de desbalanceo de clases.\newline
+El segundo capítulo trata sobre antecedentes, métodos de clasificación clásicos y métodos de predicción de series temporales, teoría básica sobre funcionamiento de LSTMs y algunas aplicaciones, por último, teoría sobre el problema de desbalanceo de clases.\newline
 \newpage
 El tercer, cuarto y quinto capítulo describen tanto métodos de preprocesamiento, funcionamiento de métodos de oversampling que se utilizarán en el estudio, características específicas al preprocesar series temporales de clasificación  como implementación de una red de LSTMs para clasificación.\newline
 

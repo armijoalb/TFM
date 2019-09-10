@@ -3,7 +3,7 @@ En este capítulo se describirán las características principales de las series
 
 Las series temporales multivariadas de clasificación, al igual que cualquier otro conjunto de datos, deben ser preprocesadas para ofrecer un mejor rendimiento a la hora de predecir.\newline
 
-Podemos definir un conjunto de datos de serie temporal de clasificación de dos formas diferentes, como ya se vió en el segundo capítulo. Sobre las series temporales de clasificación puede haber dos tipos diferentes de conjuntos de datos.\newline
+Podemos definir un conjunto de datos de serie temporal de clasificación de dos formas diferentes, como ya se vio en el segundo capítulo. Sobre las series temporales de clasificación puede haber dos tipos diferentes de conjuntos de datos.\newline
 
 El primer tipo se puede definir como un conjunto de series temporales completas, donde cada una de ellas tiene una clase asociada, es decir un conjunto de datos $C = \{ (S_1,Y_1), (S_2,Y_2), ..., (S_n,Y_n)\}$ donde cada $S_x$ es una serie temporal e $Y_x$ es la clase asociada a esa serie. Un ejemplo de conjunto de datos con este tipo de series puede ser uno formado por las mediciones realizadas por una sensor durante un proceso y clasificar dichas mediciones como un proceso normal u anómalo.\newline
 
@@ -76,7 +76,7 @@ Esta dependencia se utiliza en modelos clásicos de predicción de series tempor
 \end{figure}
 \verticalspace
 
-Para los algoritmos clásicos de clasificación, así como las redes neuronales que se utilizan en este trabajo, no hay forma de que el modelo detecte dicha dependencia o se le pueda indicar directamente. Por ello, el procesamiento que se propone es replicar los datos anteriores, añadiendolos como columnas a cada instancia, para replicar la misma ventana que se podría usar en un problema clásico de series temporales. El Algoritmo \ref{alg:wind_method} muestra el proceso para crear la ventana.\newline
+Para los algoritmos clásicos de clasificación, así como las redes neuronales que se utilizan en este trabajo, no hay forma de que el modelo detecte dicha dependencia o se le pueda indicar directamente. Por ello, el procesamiento que se propone es replicar los datos anteriores, añadiéndolos como columnas a cada instancia, para replicar la misma ventana que se podría usar en un problema clásico de series temporales. El Algoritmo \ref{alg:wind_method} muestra el proceso para crear la ventana.\newline
 
 \begin{algorithm}[H]
 	\caption{Ventana(C,t)}
@@ -95,7 +95,7 @@ Para los algoritmos clásicos de clasificación, así como las redes neuronales 
 \end{algorithm}
 \verticalspace
 
-Con este algoritmo se puede generar conjuntos de datos con una ventana añadidda en cada columna, de forma que los algoritmos puedan hacer uso de la dependencia temporal. La Figura \ref{fig:53} muestra un ejemplo de dataset modificado por el algoritmo.\newline
+Con este algoritmo se puede generar conjuntos de datos con una ventana añadida en cada columna, de forma que los algoritmos puedan hacer uso de la dependencia temporal. La Figura \ref{fig:53} muestra un ejemplo de dataset modificado por el algoritmo.\newline
 
 \begin{figure}[H]
 	\centering
@@ -105,7 +105,7 @@ Con este algoritmo se puede generar conjuntos de datos con una ventana añadidda
 \end{figure}
 \verticalspace
 
-Para obtener una mejora en el rendimiento, se debe estudiar que tamaño de vetana utilizar y este es diferente para cada conjunto de datos, aunque esto no se cubre dentro de este trabajo. Un aspecto a tener en cuenta cuando se utiliza es este algoritmo también es la dimensionalidad del conjutno de datos, ya que cuanto mayor es la ventana seleccionada mayor es el tamaño final del conjunto de datos y más costoso puede ser para un modelo procesarlo; además, un tamaño demasiado grande puede provocar sobreajuste, incluso emperorar el rendimiento.\newline
+Para obtener una mejora en el rendimiento, se debe estudiar que tamaño de ventana utilizar y este es diferente para cada conjunto de datos, aunque esto no se cubre dentro de este trabajo. Un aspecto a tener en cuenta cuando se utiliza es este algoritmo también es la dimensionalidad del conjunto de datos, ya que cuanto mayor es la ventana seleccionada mayor es el tamaño final del conjunto de datos y más costoso puede ser para un modelo procesarlo; además, un tamaño demasiado grande puede provocar sobreajuste, incluso empeorar el rendimiento.\newline
 
 
 
